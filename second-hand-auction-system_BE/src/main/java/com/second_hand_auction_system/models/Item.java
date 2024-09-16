@@ -21,19 +21,15 @@ public class Item extends BaseEntity{
     @Column(name = "item_name")
     private String itemName;
 
-    @Column(name = "description")
-    private String description;
+    @Column(name = "item_description")
+    private String itemDescription;
 
-    @Column(name = "condition")
-    private String condition;
+    @Column(name = "item_condition")
+    private String itemCondition;
 
     @Column(name = "status")
     private String status;
 
     @Column(name = "thumbnail")
     private String thumbnail;
-
-    
-
-
 }
