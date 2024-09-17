@@ -46,8 +46,8 @@ public class OpenApiConfig {
     @Bean
     public GroupedOpenApi groupedOpenApi() {
         return GroupedOpenApi.builder()
-                .group("api-service-eScentedCandle")
-                .packagesToScan("com.eScentedCandle_project_BackEnd.eScentedCandle.controllers")
+                .group("api-service-auction")
+                .packagesToScan("com.second_hand_auction_system.controller")
                 .build();
     }
 }

@@ -1,6 +1,6 @@
-package com.second_hand_auction_system.responses.item;
+package com.second_hand_auction_system.dtos.responses.item;
 
-import com.second_hand_auction_system.responses.BaseResponse;
+import com.second_hand_auction_system.dtos.responses.BaseResponse;
 import lombok.*;
 
 @Getter

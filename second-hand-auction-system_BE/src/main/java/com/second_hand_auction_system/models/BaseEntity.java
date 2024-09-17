@@ -2,12 +2,20 @@ package com.second_hand_auction_system.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Column;
+import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
+import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@MappedSuperclass
 public abstract class BaseEntity implements Serializable {
     @Column(name = "create_at")
     @JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)

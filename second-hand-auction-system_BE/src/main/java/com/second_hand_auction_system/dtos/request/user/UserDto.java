@@ -1,4 +1,5 @@
-package com.second_hand_auction_system.dtos.item;
+package com.second_hand_auction_system.dtos.request.user;
+
 
 import lombok.*;
 
@@ -8,6 +9,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ItemDto {
+public class UserDto {
     private int id;
 }

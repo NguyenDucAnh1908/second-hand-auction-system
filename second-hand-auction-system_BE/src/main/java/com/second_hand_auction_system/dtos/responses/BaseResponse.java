@@ -1,4 +1,4 @@
-package com.second_hand_auction_system.responses;
+package com.second_hand_auction_system.dtos.responses;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;

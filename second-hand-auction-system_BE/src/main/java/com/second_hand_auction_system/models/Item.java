@@ -32,4 +32,8 @@ public class Item extends BaseEntity{
 
     @Column(name = "thumbnail")
     private String thumbnail;
+
+    
+
+
 }

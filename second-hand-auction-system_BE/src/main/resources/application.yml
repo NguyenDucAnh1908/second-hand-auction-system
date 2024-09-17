@@ -1,13 +1,22 @@
+server:
+  port: 8080
+
 open:
   api:
     title: API-service document
     version: V1.0.0
-    description: description
-    licenseUrl: ??
-    licenseName: API license
+    description: API for the second-hand auction system
+    licenseUrl: "https://example.com/license"  # Replace with actual license URL
+    licenseName: API License
     serversUrl: http://localhost:8080/
     serversDescription: Server v1
----
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+
 spring:
   application:
     name: second-hand-auction-system_BE
@@ -22,9 +31,27 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
-        format_sql: true
+        format_sql: false
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 580547647050-dofpnm5ifeb9i1uejp56qdsfiudlklvq.apps.googleusercontent.com
+            client-secret: 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
+            scope: profile, email
+            redirect-uri: http://localhost:8080/login/oauth2/code/google
+application:
+  security:
+    jwt:
+      secret-key: "b60c9e7a2e251192f67c2b02773e76c8096a6e38ea49627334eddae82dc7da95"
+      expiration: 900000  # 1 day in milliseconds
+      refresh-token:
+        expiration: 604800000  # 7 days in milliseconds
 
 api:
   prefix: api/v1
+
 
 
