@@ -9,35 +9,34 @@ import Login from "pages/Login";
 import Register from "pages/Register";
 
 const ProjectRoutes = () => {
-  let element = useRoutes([
-    { path: "dhiwise-dashboard", element: <Home /> },
-    { path: "*", element: <NotFound /> },
-    {
-      path: "/",
-      element: <HomePage />,
-    },
-    {
-      path: "product",
-      element: <Product />,
-    },
-    {
-      path: "auction",
-      element: <Auction />,
-    },
-    {
-      path: "login",
-      element: <Login />,
-    },
-    {
-      path: "register",
-      element: <Register />,
-    },
-  ]);
+  let element =
+    useRoutes();
+    //   [
+    //   { path: "dhiwise-dashboard", element: <Home /> },
+    //   { path: "*", element: <NotFound /> },
+    //   {
+    //     path: "/",
+    //     element: <HomePage />,
+    //   },
+    //   {
+    //     path: "product",
+    //     element: <Product />,
+    //   },
+    //   {
+    //     path: "auction",
+    //     element: <Auction />,
+    //   },
+    //   {
+    //     path: "login",
+    //     element: <Login />,
+    //   },
+    //   {
+    //     path: "register",
+    //     element: <Register />,
+    //   },
+    // ]
 
   return element;
 };
 
 export default ProjectRoutes;
-
-
-

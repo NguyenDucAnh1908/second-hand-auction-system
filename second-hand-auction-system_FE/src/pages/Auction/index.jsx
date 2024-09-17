@@ -1,7 +1,17 @@
 import { Helmet } from "react-helmet";
-import { Button, Img, Slider, Heading, Input, TextArea, RatingBar, Text } from "../../components";
+import {
+  Button,
+  Img,
+  Slider,
+  Heading,
+  Input,
+  TextArea,
+  RatingBar,
+  Text,
+} from "../../components";
 import Footer13 from "../../components/Footer13";
-import Header21 from "../../components/Header21";
+//import Header21 from "../../components/Header21";
+import Header2 from "../../components/Header2";
 import ProductDetails4 from "../../components/ProductDetails4";
 import UserProfile from "../../components/UserProfile";
 import UserStatistics from "../../components/UserStatistics";
@@ -46,15 +56,19 @@ export default function AuctionPage() {
         />
       </Helmet>
       <div className="flex w-full flex-col items-center bg-bg-white">
-        <Header21 />
-
+        {/* <Header21 /> */}
+        <Header2 />
         {/* auction section */}
         <AuctionSection />
         <div className="container-xs mt-[70px] flex flex-col gap-[114px] md:gap-[85px] md:px-5 sm:gap-[57px]">
           <div className="ml-1 mr-2.5 flex flex-col items-start md:mx-0">
             <div className="flex flex-col gap-4 self-stretch px-2.5">
               <div className="flex flex-col items-start gap-3.5">
-                <Heading size="text3xl" as="h2" className="text-[20px] font-medium text-blue_gray-900_01">
+                <Heading
+                  size="text3xl"
+                  as="h2"
+                  className="text-[20px] font-medium text-blue_gray-900_01"
+                >
                   Tổng Quan
                 </Heading>
                 <div className="flex flex-col gap-4 self-stretch">
@@ -62,21 +76,33 @@ export default function AuctionPage() {
                     as="h3"
                     className="w-[72%] text-[16px] font-normal leading-7 text-blue_gray-600_01 md:w-full"
                   >
-                    Cho dù bạn mặc nó sau khi tập gym hay chuẩn bị bắt đầu ngày mới, chiếc áo phông này đang gọi tên
-                    bạn. Được thiết kế cho phong cách thoải mái và dễ dàng, thể hiện trọn vẹn niềm tự hào của bạn. Kết
-                    hợp với mọi món đồ trong tủ quần áo của bạn - cảm giác thể thao cổ điển phù hợp với mọi kiểu dáng.
+                    Cho dù bạn mặc nó sau khi tập gym hay chuẩn bị bắt đầu ngày
+                    mới, chiếc áo phông này đang gọi tên bạn. Được thiết kế cho
+                    phong cách thoải mái và dễ dàng, thể hiện trọn vẹn niềm tự
+                    hào của bạn. Kết hợp với mọi món đồ trong tủ quần áo của bạn
+                    - cảm giác thể thao cổ điển phù hợp với mọi kiểu dáng.
                   </Heading>
                   <div className="mb-2 flex items-center">
-                    <Heading as="h4" className="text-[16px] font-normal text-green-a700">
+                    <Heading
+                      as="h4"
+                      className="text-[16px] font-normal text-green-a700"
+                    >
                       Xem Thêm
                     </Heading>
-                    <Img src="images/img_vector_19b269_1.svg" alt="Vector Image" className="mb-1 h-[5px] self-end" />
+                    <Img
+                      src="images/img_vector_19b269_1.svg"
+                      alt="Vector Image"
+                      className="mb-1 h-[5px] self-end"
+                    />
                   </div>
                 </div>
               </div>
               <div className="flex flex-col items-start gap-6">
                 <div className="h-px w-[72%] bg-gray-200" />
-                <Accordion preExpanded={[0]} className="flex flex-col gap-6 self-stretch">
+                <Accordion
+                  preExpanded={[0]}
+                  className="flex flex-col gap-6 self-stretch"
+                >
                   {accordionData.map((d, i) => (
                     <AccordionItem uuid={i} key={`Expandable List${i}`}>
                       <div className="flex flex-1 flex-col gap-[18px]">
@@ -114,7 +140,10 @@ export default function AuctionPage() {
                         </AccordionItemHeading>
                         <AccordionItemPanel>
                           <div className="mb-4 flex flex-col items-start gap-3">
-                            <Heading as="h6" className="text-[16px] font-medium text-blue_gray-900_01">
+                            <Heading
+                              as="h6"
+                              className="text-[16px] font-medium text-blue_gray-900_01"
+                            >
                               Đặc điểm
                             </Heading>
                             <div className="flex items-start self-stretch md:flex-col">
@@ -129,10 +158,11 @@ export default function AuctionPage() {
                                 className="ml-2.5 w-[62%] self-center text-[16px] font-normal leading-10 text-blue_gray-600_01 md:ml-0 md:w-full"
                               >
                                 <>
-                                  Thiết kế dáng rộng có phần vai trễ xuống mang lại vẻ ngoài và cảm giác thoải mái.
+                                  Thiết kế dáng rộng có phần vai trễ xuống mang
+                                  lại vẻ ngoài và cảm giác thoải mái.
                                   <br />
-                                  Chất liệu cotton dày dặn có độ rủ cứng giúp outfits của bạn trông bắt mắt và đặc biệt
-                                  hơn.
+                                  Chất liệu cotton dày dặn có độ rủ cứng giúp
+                                  outfits của bạn trông bắt mắt và đặc biệt hơn.
                                   <br />
                                   Logo thêu phía trước tạo điểm nhấn tinh tế.
                                   <br />
@@ -148,7 +178,7 @@ export default function AuctionPage() {
                         </AccordionItemPanel>
                       </div>
                       <div className="h-px w-[83%] rotate-[0deg] bg-gray-200" />
-                      </AccordionItem>
+                    </AccordionItem>
                   ))}
                 </Accordion>
               </div>
@@ -180,18 +210,28 @@ export default function AuctionPage() {
                         size={18}
                         className="flex gap-2.5"
                       />
-                      <Text size="textlg" as="p" className="text-[15px] font-normal text-blue_gray-900_01">
+                      <Text
+                        size="textlg"
+                        as="p"
+                        className="text-[15px] font-normal text-blue_gray-900_01"
+                      >
                         2 đánh giá
                       </Text>
                     </div>
                   </div>
                   <div className="flex flex-col gap-[46px]">
                     <div className="flex items-start justify-center gap-[26px] sm:flex-col">
-                      <Heading as="p" className="font-jost text-[16px] font-normal text-blue_gray-900_01">
+                      <Heading
+                        as="p"
+                        className="font-jost text-[16px] font-normal text-blue_gray-900_01"
+                      >
                         5 sao
                       </Heading>
                       <div className="flex flex-1 flex-col items-end self-center sm:self-stretch">
-                        <Heading as="p" className="font-jost text-[16px] font-normal text-blue_gray-900_01">
+                        <Heading
+                          as="p"
+                          className="font-jost text-[16px] font-normal text-blue_gray-900_01"
+                        >
                           89%
                         </Heading>
                         <div className="relative mt-[-2px] flex self-stretch rounded-md bg-gray-100">
@@ -200,21 +240,33 @@ export default function AuctionPage() {
                       </div>
                     </div>
                     <div className="flex items-start justify-center gap-[26px] sm:flex-col">
-                      <Heading as="p" className="font-jost text-[16px] font-normal text-blue_gray-900_01">
+                      <Heading
+                        as="p"
+                        className="font-jost text-[16px] font-normal text-blue_gray-900_01"
+                      >
                         4 sao
                       </Heading>
                       <div className="flex flex-1 flex-col items-end self-center sm:self-stretch">
-                        <Heading as="p" className="font-jost text-[16px] font-normal text-blue_gray-900_01">
+                        <Heading
+                          as="p"
+                          className="font-jost text-[16px] font-normal text-blue_gray-900_01"
+                        >
                           4%
                         </Heading>
                         <div className="relative mt-[-2px] h-[12px] self-stretch rounded-md bg-gray-100">
-                          <div style={{ width: "70%" }} className="absolute h-full rounded-md bg-orange-300" />
+                          <div
+                            style={{ width: "70%" }}
+                            className="absolute h-full rounded-md bg-orange-300"
+                          />
                         </div>
                       </div>
                     </div>
                     <div className="flex flex-col gap-[46px]">
                       <UserProfile />
-                      <UserProfile saoCounterText="2 sao" threePercentText="1%" />
+                      <UserProfile
+                        saoCounterText="2 sao"
+                        threePercentText="1%"
+                      />
                     </div>
                     <UserStatistics />
                   </div>
@@ -243,130 +295,162 @@ export default function AuctionPage() {
                       <div className="flex items-center gap-[30px] md:flex-col">
                         <div className="flex w-[8%] flex-col items-center gap-1 rounded-[36px] bg-gray-100_01 md:w-full">
                           <Img
-                             src="images/img_checkmark_bg_white_.svg"
-                             alt="Checkmark Image"
-                             className="h-[20px] w-[20px] self-end"
-                           />
-                           <Heading as="p" className="mb-[26px] font-jost text-[16px] font-medium text-blue_gray-900_01">
-                             A.T
-                           </Heading>
-                         </div>
-                         <div className="flex flex-1 flex-col items-start gap-3.5 md:self-stretch">
-                           <div className="flex items-center gap-[15px] self-stretch">
-                             <Img
-                               src="images/img_television.svg"
-                               alt="Television Image"
-                               className="h-[10px] w-[10%] self-end object-contain"
-                             />
-                             <Heading as="p" className="text-[16px] font-medium text-blue_gray-900_01">
-                               Sản phẩm tuyệt vời
-                             </Heading>
-                           </div>
-                           <Heading as="p" className="text-[16px] font-normal text-blue_gray-900_01">
-                             Đánh giá bởi Ali Tufan - 27.04.2022
-                           </Heading>
-                         </div>
-                       </div>
-                       <Heading as="p" className="text-[16px] font-normal leading-7 text-blue_gray-600_01">
-                         <>
-                           Đây là một bước tiến lớn bất thường so với các mẫu máy trước đó, đặc biệt là về sức mạnh tính
-                           toán thô cũng như những điều thú vị như hỗ trợ màn hình và tai nghe.
-                           <br />
-                           <br />
-                           Danh sách Amazon này có hai bộ xử lý khác nhau, M1 Pro (được liệt kê là &quot;kiểu GPU 16
-                           lõi&quot;) và M1 Max (GPU 32 lõi). Tôi sẽ gọi một người là Pro, người còn lại là Max. Tôi đã
-                           mua phiên bản Pro cơ bản, nhưng phần lớn những gì tôi sẽ nói đều áp dụng cho cả hai phiên bản
-                           này và tôi cũng sẽ có một số nhận xét cụ thể về phiên bản Max.
-                         </>
-                       </Heading>
-                       <div className="mr-[496px] flex gap-2.5 md:mr-0 md:flex-col">
-                         <Suspense fallback={<div>Loading feed...</div>}>
-                           {[...Array(4)].map((d, index) => (
-                             <Img
-                               key={"galleryList" + index}
-                               src="images/img_rectangle_294.png"
-                               alt="Gallery Image"
-                               className="h-[96px] w-[26%] rounded object-contain md:w-full"
-                             />
-                           ))}
-                         </Suspense>
-                       </div>
-                       <div className="flex items-center">
-                         <Button
-                           color="gray_200"
-                           size="sm"
-                           variant="outline"
-                           shape="round"
-                           className="relative z-[1] min-w-[104px] rounded-md !border-2 px-[22px] font-medium sm:px-5"
-                         >
-                           Hữu ích
-                         </Button>
-                         <Text
-                           size="textlg"
-                           as="p"
-                           className="relative mb-1.5 ml-[-10px] w-[14%] self-end text-center text-[15px] font-medium leading-[22px] text-blue_gray-600_01"
-                         >
-                           Báo cáo lạm dụng
-                         </Text>
-                       </div>
-                     </div>
-                   </div>
-                   <Button
-                     color="green_A700"
-                     size="xl"
-                     variant="outline"
-                     shape="round"
-                     className="ml-[218px] min-w-[298px] rounded-md !border-2 px-8 font-medium md:ml-0 sm:px-5"
-                   >
-                     Xem Tất Cả
-                   </Button>
-                 </div>
-                 <div className="flex flex-col items-start gap-2.5">
-                   <Heading size="text2xl" as="p" className="text-[18px] font-medium text-blue_gray-900_01">
-                     Viết đánh giá
-                   </Heading>
-                   <div className="ml-1.5 flex flex-col items-start self-stretch md:ml-0">
-                     <div className="flex flex-col items-start gap-9 self-stretch">
-                       <Heading as="p" className="text-[16px] font-medium text-blue_gray-900_01">
-                         Đánh giá của bạn về sản phẩm
-                       </Heading>
-                       <RatingBar
-                         value={5}
-                         isEditable={true}
-                         color="#f5c34b"
-                         activeColor="#f5c34b"
-                         size={24}
-                         className="flex gap-2.5"
-                       />
-                     </div>
-                     <div className="mt-2 self-stretch">
-                       <div className="flex flex-col items-start">
-                         <Heading as="p" className="relative z-[2] mt-1 text-[16px] font-medium text-blue_gray-900_01">
-                           Bình luận
-                         </Heading>
-                         <TextArea
-                           shape="round"
-                           name="Comment TextArea"
-                           placeholder={`Viết bình luận của bạn ở đây`}
-                           className="self-stretch rounded-md !border !border-gray-200 px-5 text-blue_gray-900_01 sm:pt-5"
-                         />
-                       </div>
-                       <div className="flex gap-[38px] md:flex-col">
-                         <div className="flex w-full flex-col items-start justify-center gap-5">
-                           <Heading as="p" className="text-[16px] font-medium text-blue_gray-900_01">
-                             Tên
-                           </Heading>
-                           <TextArea
-                             size="xs"
-                             variant="tarOutlineGreenA700"
-                             shape="round"
-                             name="Name TextArea"
+                            src="images/img_checkmark_bg_white_.svg"
+                            alt="Checkmark Image"
+                            className="h-[20px] w-[20px] self-end"
+                          />
+                          <Heading
+                            as="p"
+                            className="mb-[26px] font-jost text-[16px] font-medium text-blue_gray-900_01"
+                          >
+                            A.T
+                          </Heading>
+                        </div>
+                        <div className="flex flex-1 flex-col items-start gap-3.5 md:self-stretch">
+                          <div className="flex items-center gap-[15px] self-stretch">
+                            <Img
+                              src="images/img_television.svg"
+                              alt="Television Image"
+                              className="h-[10px] w-[10%] self-end object-contain"
+                            />
+                            <Heading
+                              as="p"
+                              className="text-[16px] font-medium text-blue_gray-900_01"
+                            >
+                              Sản phẩm tuyệt vời
+                            </Heading>
+                          </div>
+                          <Heading
+                            as="p"
+                            className="text-[16px] font-normal text-blue_gray-900_01"
+                          >
+                            Đánh giá bởi Ali Tufan - 27.04.2022
+                          </Heading>
+                        </div>
+                      </div>
+                      <Heading
+                        as="p"
+                        className="text-[16px] font-normal leading-7 text-blue_gray-600_01"
+                      >
+                        <>
+                          Đây là một bước tiến lớn bất thường so với các mẫu máy
+                          trước đó, đặc biệt là về sức mạnh tính toán thô cũng
+                          như những điều thú vị như hỗ trợ màn hình và tai nghe.
+                          <br />
+                          <br />
+                          Danh sách Amazon này có hai bộ xử lý khác nhau, M1 Pro
+                          (được liệt kê là &quot;kiểu GPU 16 lõi&quot;) và M1
+                          Max (GPU 32 lõi). Tôi sẽ gọi một người là Pro, người
+                          còn lại là Max. Tôi đã mua phiên bản Pro cơ bản, nhưng
+                          phần lớn những gì tôi sẽ nói đều áp dụng cho cả hai
+                          phiên bản này và tôi cũng sẽ có một số nhận xét cụ thể
+                          về phiên bản Max.
+                        </>
+                      </Heading>
+                      <div className="mr-[496px] flex gap-2.5 md:mr-0 md:flex-col">
+                        <Suspense fallback={<div>Loading feed...</div>}>
+                          {[...Array(4)].map((d, index) => (
+                            <Img
+                              key={"galleryList" + index}
+                              src="images/img_rectangle_294.png"
+                              alt="Gallery Image"
+                              className="h-[96px] w-[26%] rounded object-contain md:w-full"
+                            />
+                          ))}
+                        </Suspense>
+                      </div>
+                      <div className="flex items-center">
+                        <Button
+                          color="gray_200"
+                          size="sm"
+                          variant="outline"
+                          shape="round"
+                          className="relative z-[1] min-w-[104px] rounded-md !border-2 px-[22px] font-medium sm:px-5"
+                        >
+                          Hữu ích
+                        </Button>
+                        <Text
+                          size="textlg"
+                          as="p"
+                          className="relative mb-1.5 ml-[-10px] w-[14%] self-end text-center text-[15px] font-medium leading-[22px] text-blue_gray-600_01"
+                        >
+                          Báo cáo lạm dụng
+                        </Text>
+                      </div>
+                    </div>
+                  </div>
+                  <Button
+                    color="green_A700"
+                    size="xl"
+                    variant="outline"
+                    shape="round"
+                    className="ml-[218px] min-w-[298px] rounded-md !border-2 px-8 font-medium md:ml-0 sm:px-5"
+                  >
+                    Xem Tất Cả
+                  </Button>
+                </div>
+                <div className="flex flex-col items-start gap-2.5">
+                  <Heading
+                    size="text2xl"
+                    as="p"
+                    className="text-[18px] font-medium text-blue_gray-900_01"
+                  >
+                    Viết đánh giá
+                  </Heading>
+                  <div className="ml-1.5 flex flex-col items-start self-stretch md:ml-0">
+                    <div className="flex flex-col items-start gap-9 self-stretch">
+                      <Heading
+                        as="p"
+                        className="text-[16px] font-medium text-blue_gray-900_01"
+                      >
+                        Đánh giá của bạn về sản phẩm
+                      </Heading>
+                      <RatingBar
+                        value={5}
+                        isEditable={true}
+                        color="#f5c34b"
+                        activeColor="#f5c34b"
+                        size={24}
+                        className="flex gap-2.5"
+                      />
+                    </div>
+                    <div className="mt-2 self-stretch">
+                      <div className="flex flex-col items-start">
+                        <Heading
+                          as="p"
+                          className="relative z-[2] mt-1 text-[16px] font-medium text-blue_gray-900_01"
+                        >
+                          Bình luận
+                        </Heading>
+                        <TextArea
+                          shape="round"
+                          name="Comment TextArea"
+                          placeholder={`Viết bình luận của bạn ở đây`}
+                          className="self-stretch rounded-md !border !border-gray-200 px-5 text-blue_gray-900_01 sm:pt-5"
+                        />
+                      </div>
+                      <div className="flex gap-[38px] md:flex-col">
+                        <div className="flex w-full flex-col items-start justify-center gap-5">
+                          <Heading
+                            as="p"
+                            className="text-[16px] font-medium text-blue_gray-900_01"
+                          >
+                            Tên
+                          </Heading>
+                          <TextArea
+                            size="xs"
+                            variant="tarOutlineGreenA700"
+                            shape="round"
+                            name="Name TextArea"
                             placeholder={`Ali Tufan`}
                             className="self-stretch rounded-md !border !border-green-a700 px-3.5 text-blue_gray-900_01"
                           />
                         </div>
                         <div className="flex w-full flex-col items-start justify-center gap-5">
-                          <Heading as="p" className="text-[16px] font-medium text-blue_gray-900_01">
+                          <Heading
+                            as="p"
+                            className="text-[16px] font-medium text-blue_gray-900_01"
+                          >
                             Email
                           </Heading>
                           <Input
@@ -386,7 +470,8 @@ export default function AuctionPage() {
                         as="p"
                         className="w-[72%] text-[16px] font-normal leading-7 text-blue_gray-900_01 md:w-full"
                       >
-                        Lưu tên, email và trang web của tôi trong trình duyệt này cho lần đánh giá tiếp theo.
+                        Lưu tên, email và trang web của tôi trong trình duyệt
+                        này cho lần đánh giá tiếp theo.
                       </Heading>
                     </div>
                     <Button
@@ -407,7 +492,11 @@ export default function AuctionPage() {
               <Slider
                 autoPlay
                 autoPlayInterval={2000}
-                responsive={{ 0: { items: 1 }, 551: { items: 1 }, 1051: { items: 4 } }}
+                responsive={{
+                  0: { items: 1 },
+                  551: { items: 1 },
+                  1051: { items: 4 },
+                }}
                 disableDotsControls
                 activeIndex={sliderState}
                 onSlideChanged={(e) => {
@@ -457,16 +546,3 @@ export default function AuctionPage() {
     </>
   );
 }
-
-
-
-
- 
- 
- 
-
-
-
-
-
-
