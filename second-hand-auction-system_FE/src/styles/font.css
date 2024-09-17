@@ -1,21 +1,21 @@
 @font-face {
     font-display: swap;
     font-style: normal;
-    src: url("/public/fonts/BeVietnamProRegular.ttf");
+    src: url("/public/fonts/BeVietnamPro-Regular.ttf");
     font-family: "Be Vietnam Pro";
     font-weight: 400;
   }
   @font-face {
     font-display: swap;
     font-style: normal;
-    src: url("/public/fonts/JostRomanRegular.ttf");
+    src: url("/public/fonts/Jost-Regular.ttf");
     font-family: "Jost";
     font-weight: 400;
   }
   @font-face {
     font-display: swap;
     font-style: normal;
-    src: url("/public/fonts/BeVietnamProMedium.ttf");
+    src: url("/public/fonts/BeVietnamPro-Medium.ttf");
     font-family: "Be Vietnam Pro";
     font-weight: 500;
   }
@@ -29,21 +29,21 @@
   @font-face {
     font-display: swap;
     font-style: normal;
-    src: url("/public/fonts/BeVietnamProBold.ttf");
+    src: url("/public/fonts/BeVietnamPro-Bold.ttf");
     font-family: "Be Vietnam Pro";
     font-weight: 700;
   }
   @font-face {
     font-display: swap;
     font-style: normal;
-    src: url("/public/fonts/BeVietnamProSemiBold.ttf");
+    src: url("/public/fonts/BeVietnamPro-SemiBold.ttf");
     font-family: "Be Vietnam Pro";
     font-weight: 600;
   }
   @font-face {
     font-display: swap;
     font-style: normal;
-    src: url("/public/fonts/JostRomanMedium.ttf");
+    src: url("/public/fonts/Jost-Medium.ttf");
     font-family: "Jost";
     font-weight: 500;
   }
