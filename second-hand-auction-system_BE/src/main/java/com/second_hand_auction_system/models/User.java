@@ -67,10 +67,10 @@ public class User extends BaseEntity implements UserDetails, Serializable {
         return true;
     }
 
-    @Override
-    public String getUsername() {
-        return email;
-    }
+//    @Override
+//    public String getUsername() {
+//        return email;
+//    }
 
     @Override
     public String getPassword() {

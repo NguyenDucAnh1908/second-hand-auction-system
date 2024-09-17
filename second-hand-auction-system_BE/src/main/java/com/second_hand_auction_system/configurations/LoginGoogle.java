@@ -47,8 +47,7 @@ public class LoginGoogle implements AuthenticationSuccessHandler {
                 .email(user.getEmail())
                 .status(user.isStatus())
                 .role(user.getRole())
-                .userName(user.getUsername())
-                .phoneNumber(user.getPhoneNumber())
+                .username(user.getUsername())
                 .build();
 
 
