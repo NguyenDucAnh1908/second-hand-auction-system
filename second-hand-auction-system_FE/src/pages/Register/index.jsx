@@ -16,7 +16,9 @@ export default function RegisterPage() {
       <div className="flex w-full flex-col gap-[82px] bg-indigo-100_01 md:gap-[61px] sm:gap-[41px]">
         {/* register section */}
         <RegisterSection />
-        <Footer5 />
+        <div className="mt-[194px] self-stretch">
+            <Footer5 className="mt-[34px] h-[388px] bg-[url(/public/images/img_group_19979.png)] bg-cover bg-no-repeat md:h-auto" />
+          </div>
       </div>
     </>
   );

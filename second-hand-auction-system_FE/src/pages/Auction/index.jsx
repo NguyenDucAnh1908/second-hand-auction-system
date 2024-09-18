@@ -541,7 +541,9 @@ export default function AuctionPage() {
 
         {/* recommended products section */}
         <RecommendedProductsSection />
-        <Footer13 />
+        <div className="mt-[194px] self-stretch">
+            <Footer5 className="mt-[34px] h-[388px] bg-[url(/public/images/img_group_19979.png)] bg-cover bg-no-repeat md:h-auto" />
+          </div>
       </div>
     </>
   );

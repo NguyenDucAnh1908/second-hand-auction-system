@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Footer5({ ...props }) {
   return (
-    <ul {...props} className={`${props.className} flex justify-center items-end`}>
+    <ul {...props} className={`${props.className} flex flex-col justify-center items-center`}>
       <li>
         <div className="container-xs mt-10 flex justify-center md:px-5">
           <div className="flex w-full flex-col items-start gap-4">
@@ -50,7 +50,7 @@ export default function Footer5({ ...props }) {
                 </div>
               </div>
               <div className="flex w-[52%] items-center justify-between gap-5 md:w-full sm:flex-col">
-                <div className="mb-1 flex w-[56%] flex-col items-start gap-[18px] sm:w-full">
+                <div className="mb-1 block w-[56%] flex-col items-start justify-center gap-[18px] sm:w-full">
                   <Heading size="text2xl" as="p" className="text-[18px] font-medium uppercase text-blue_gray-900_01">
                     Về EZShop
                   </Heading>
@@ -92,7 +92,7 @@ export default function Footer5({ ...props }) {
                     </li>
                   </ul>
                 </div>
-                <div className="mr-[34px] flex w-[44%] flex-col items-center gap-[18px] self-end sm:mr-0 sm:w-full sm:self-auto">
+                <div className="mr-[34px] block w-[44%] flex-col items-center gap-[18px] self-end sm:mr-0 sm:w-full sm:self-auto">
                   <Heading
                     size="text2xl"
                     as="p"
@@ -147,7 +147,7 @@ export default function Footer5({ ...props }) {
                   <Img src="images/img_facebook.svg" alt="Facebook Icon One" className="h-[16px]" />
                   <Img src="images/img_facebook.svg" alt="Facebook Icon Two" className="h-[16px]" />
                   <Img src="images/img_facebook.svg" alt="Facebook Icon Three" className="h-[16px]" />
-                 <Img src="images/img_facebook.svg" alt="Facebook Icon Four" className="h-[16px]" />
+                  <Img src="images/img_facebook.svg" alt="Facebook Icon Four" className="h-[16px]" />
                 </div>
                 <Heading
                   size="text2xl"
@@ -164,7 +164,7 @@ export default function Footer5({ ...props }) {
               </div>
             </div>
             <div className="ml-2.5 h-[0.92px] w-[90%] bg-gray-200 md:ml-0" />
-            <div className="ml-2.5 flex w-[90%] items-start justify-between gap-5 md:ml-0 md:w-full md:flex-col">
+            <div className="ml-2.5 flex w-[90%] flex-row items-start justify-between gap-5 md:ml-0 md:w-full md:flex-col">
               <Text
                 as="p"
                 className="w-[18%] self-center text-[14px] font-normal leading-10 text-blue_gray-900_01 md:w-full"
