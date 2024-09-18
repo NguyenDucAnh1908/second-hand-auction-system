@@ -55,7 +55,7 @@ public class UserService implements IUserService {
                     .email(registerRequest.getEmail())
                     .password(passwordEncoder.encode(registerRequest.getPassword()))
                     .role(Role.BUYER)
-                    .username(registerRequest.getFullName())
+                    .fullName(registerRequest.getFullName())
                     .phoneNumber(registerRequest.getPhoneNumber())
                     .status(true)
                     .build();

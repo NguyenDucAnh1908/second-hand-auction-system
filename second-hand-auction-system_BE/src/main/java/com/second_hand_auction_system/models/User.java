@@ -18,13 +18,13 @@ import java.util.List;
 @Builder
 @Getter
 @Setter
-public class User extends BaseEntity implements UserDetails, Serializable {
+public class User extends BaseEntity implements UserDetails  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "user_name")
-    private String username;
+    @Column(name = "full_name")
+    private String fullName;
 
     @Column(name = "email")
     private String email;
@@ -67,10 +67,10 @@ public class User extends BaseEntity implements UserDetails, Serializable {
         return true;
     }
 
-//    @Override
-//    public String getUsername() {
-//        return email;
-//    }
+    @Override
+    public String getUsername() {
+        return email;
+    }
 
     @Override
     public String getPassword() {

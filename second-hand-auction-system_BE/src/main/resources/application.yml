@@ -22,6 +22,7 @@ spring:
     name: second-hand-auction-system_BE
   datasource:
     url: jdbc:mysql://localhost:3306/secondHandAuction
+    driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 12345
   jpa:
@@ -31,7 +32,7 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
-        format_sql: false
+        format_sql: false  # Consider setting to 'true' for easier SQL readability
 
   security:
     oauth2:
@@ -42,16 +43,14 @@ spring:
             client-secret: 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
             scope: profile, email
             redirect-uri: http://localhost:8080/login/oauth2/code/google
+
 application:
   security:
     jwt:
       secret-key: "b60c9e7a2e251192f67c2b02773e76c8096a6e38ea49627334eddae82dc7da95"
-      expiration: 900000  # 1 day in milliseconds
+      expiration: 900000  # 15 minutes in milliseconds
       refresh-token:
         expiration: 604800000  # 7 days in milliseconds
 
 api:
   prefix: api/v1
-
-
-

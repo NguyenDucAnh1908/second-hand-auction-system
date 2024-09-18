@@ -21,6 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+
 @Service
 @RequiredArgsConstructor
 public class JwtService implements IJwtService, LogoutHandler {
@@ -28,13 +29,12 @@ public class JwtService implements IJwtService, LogoutHandler {
     private String SECRET_KEY;
 
     @Value("${application.security.jwt.expiration}")
-    private int jwtExpiration;
+    private long jwtExpiration;
 
     @Value("${application.security.jwt.refresh-token.expiration}")
-    private int refreshExpiration;
+    private long refreshExpiration;
 
     private final TokenRepository tokenRepository;
-
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
@@ -125,4 +125,5 @@ public class JwtService implements IJwtService, LogoutHandler {
         byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
         return Keys.hmacShaKeyFor(keyBytes);
     }
+
 }
