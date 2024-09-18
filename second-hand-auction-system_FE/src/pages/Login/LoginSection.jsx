@@ -1,7 +1,23 @@
 import { Img, Button, Text, CheckBox, Input, Heading } from "../../components";
 import React from "react";
+import useHook from "./hook/useHook";
+//import { useTranslation } from "react-i18next";
 
 export default function LoginSection() {
+  // const { t } = useTranslation();
+  const {
+    email,
+    password,
+    errMsg,
+    isLoading,
+    userRef,
+    errRef,
+    handleUserInput,
+    handlePwdInput,
+    handleSubmit,
+  } = useHook();
+  console.log("email: ", email);
+  console.log("password: ", password);
   return (
     <>
       {/* login section */}
@@ -17,18 +33,30 @@ export default function LoginSection() {
             </Heading>
             <div className="mb-[102px] mr-2 self-stretch md:mr-0">
               <div className="flex flex-col items-start justify-center gap-2.5">
-                <Heading size="headingxl" as="h2" className="text-[16px] font-semibold text-blue_gray-900_01">
+                <Heading
+                  size="headingxl"
+                  as="h2"
+                  className="text-[16px] font-semibold text-blue_gray-900_01"
+                >
                   Tài khoản
                 </Heading>
                 <Input
                   shape="round"
                   name="Name Field"
-                  placeholder={`Ali Tufan`}
+                  placeholder={`Nhập tên đầy đủ`}
+                  value={email}
+                  onChange={handleUserInput}
+                  ref={userRef}
+                  required
                   className="self-stretch rounded-md border border-solid border-blue_gray-900_01 px-3.5 !text-blue_gray-900_01 shadow-lg"
                 />
               </div>
               <div className="mt-5 flex flex-col items-start justify-center gap-2.5">
-                <Heading size="headingxl" as="h3" className="text-[16px] font-semibold text-blue_gray-900_01">
+                <Heading
+                  size="headingxl"
+                  as="h3"
+                  className="text-[16px] font-semibold text-blue_gray-900_01"
+                >
                   Mật khẩu
                 </Heading>
                 <Input
@@ -36,6 +64,9 @@ export default function LoginSection() {
                   type="password"
                   name="Password Field"
                   placeholder={`Mật khẩu của bạn`}
+                  value={password}
+                  onChange={handlePwdInput}
+                  required
                   className="self-stretch rounded-md border border-solid border-gray-200 px-3.5"
                 />
               </div>
@@ -49,7 +80,10 @@ export default function LoginSection() {
                         id="RememberCheckbox"
                         className="mt-1 gap-3 self-end text-[14px] text-blue_gray-900_01"
                       />
-                      <Text as="p" className="self-start text-[14px] font-normal text-blue_gray-600_01">
+                      <Text
+                        as="p"
+                        className="self-start text-[14px] font-normal text-blue_gray-600_01"
+                      >
                         Quên mật khẩu?
                       </Text>
                     </div>
@@ -58,19 +92,31 @@ export default function LoginSection() {
                       size="3xl"
                       shape="round"
                       className="self-stretch rounded-md border-[0.5px] border-solid border-green-a700 px-[34px] font-semibold shadow-md sm:px-5"
+                      onClick={handleSubmit}
                     >
                       Đăng nhập
                     </Button>
                   </div>
                 </div>
-                <a href="https://www.youtube.com/embed/bv8Fxk0sz7I" target="_blank">
-                  <Text as="p" className="mt-[26px] text-[14px] font-normal text-blue_gray-900_01">
-                    <span className="text-blue_gray-900_01">Bạn chưa có tài khoản?&nbsp;</span>
+                <a
+                  href="https://www.youtube.com/embed/bv8Fxk0sz7I"
+                  target="_blank"
+                >
+                  <Text
+                    as="p"
+                    className="mt-[26px] text-[14px] font-normal text-blue_gray-900_01"
+                  >
+                    <span className="text-blue_gray-900_01">
+                      Bạn chưa có tài khoản?&nbsp;
+                    </span>
                     <span className="text-green-a700">Đăng ký</span>
                   </Text>
                 </a>
                 <div className="mt-3.5 flex rounded-[24px] bg-bg-white p-1.5">
-                  <Text as="p" className="text-[14px] font-normal text-blue_gray-900_01">
+                  <Text
+                    as="p"
+                    className="text-[14px] font-normal text-blue_gray-900_01"
+                  >
                     hoặc
                   </Text>
                 </div>
@@ -78,7 +124,11 @@ export default function LoginSection() {
                   size="xs"
                   shape="round"
                   leftIcon={
-                    <Img src="images/img_image.png" alt="Image" className="mb-0.5 h-[16px] w-[24px] object-cover" />
+                    <Img
+                      src="images/img_image.png"
+                      alt="Image"
+                      className="mb-0.5 h-[16px] w-[24px] object-cover"
+                    />
                   }
                   className="mt-[18px] min-w-[208px] rounded-lg border-[0.5px] border-solid border-black-900 px-6 capitalize text-black-900 sm:px-5"
                 >
@@ -97,6 +147,3 @@ export default function LoginSection() {
     </>
   );
 }
-
-
-
