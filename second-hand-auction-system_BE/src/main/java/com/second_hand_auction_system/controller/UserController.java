@@ -19,6 +19,7 @@ public class UserController {
 
     @GetMapping("getUser")
     @PreAuthorize("hasAuthority('admin:read')")
+    //Test
     public ResponseEntity<ListUserResponse> getUser(){
         return userService.getListUser();
     }

@@ -33,6 +33,7 @@ function App() {
         <Route path="Login" index element={<Login />} />
         <Route path="Register" index element={<Register />} />
         <Route path="HistoryPage" index element={<CustomerTransactionHistoryPagePage />} />
+        <Route path="Register" index element={<Register />} />
       </Route>
     </Routes>
   );

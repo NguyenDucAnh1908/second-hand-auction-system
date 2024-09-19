@@ -30,7 +30,7 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
     if (refreshToken) {
       const refreshResult = await baseQueryWithoutAuth(
         {
-          url: "/user/refreshToken",
+          url: "/auth/refreshToken",
           method: "POST",
           headers: {
             authorization: `Bearer ${refreshToken}`,
