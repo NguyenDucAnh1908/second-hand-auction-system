@@ -91,23 +91,6 @@ public class JwtService implements IJwtService, LogoutHandler {
         return extractExpiration(token).before(new Date());
     }
 
-    @Override
-    public void logout(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
-        final String authHeader = request.getHeader("Authorization");
-        final String jwt;
-        if(authHeader == null || !authHeader.startsWith("Bearer ")){
-            return;
-        }
-        jwt = authHeader.substring(7);
-
-        var storedToken = tokenRepository.findByToken(jwt).orElse(null);
-        if(storedToken != null){
-            storedToken.setExpired(true);
-            storedToken.setRevoked(true);
-            tokenRepository.save(storedToken);
-        }
-    }
-
     private Date extractExpiration(String token) {
         return extractClaim(token, Claims::getExpiration);
     }
@@ -124,6 +107,23 @@ public class JwtService implements IJwtService, LogoutHandler {
     private Key getSignInKey() {
         byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
         return Keys.hmacShaKeyFor(keyBytes);
+    }
+
+    @Override
+    public void logout(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
+        final String authHeader = request.getHeader("Authorization");
+        final String jwt;
+        if(authHeader == null || !authHeader.startsWith("Bearer ")){
+            return;
+        }
+        jwt = authHeader.substring(7);
+
+        var storedToken = tokenRepository.findByToken(jwt).orElse(null);
+        if(storedToken != null){
+            storedToken.setExpired(true);
+            storedToken.setRevoked(true);
+            tokenRepository.save(storedToken);
+        }
     }
 
 }

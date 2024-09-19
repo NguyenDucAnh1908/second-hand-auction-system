@@ -1,19 +1,26 @@
 package com.second_hand_auction_system.controller;
 
+import com.second_hand_auction_system.dtos.responses.ResponseObject;
+import com.second_hand_auction_system.dtos.responses.user.ListUserResponse;
+import com.second_hand_auction_system.dtos.responses.user.UserResponse;
 import com.second_hand_auction_system.service.user.IUserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("api/v1/user")
+@RequestMapping("/api/v1/user")
 @RequiredArgsConstructor
-@CrossOrigin("*")
 public class UserController {
     private final IUserService userService;
 
-    @PostMapping
-    public String getUser(){
-        return "User1";
+    @GetMapping("getUser")
+    @PreAuthorize("hasAuthority('admin:read')")
+    public ResponseEntity<ListUserResponse> getUser(){
+        return userService.getListUser();
     }
 
 }

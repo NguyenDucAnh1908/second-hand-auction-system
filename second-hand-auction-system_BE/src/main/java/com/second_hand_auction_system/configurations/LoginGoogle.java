@@ -15,6 +15,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.net.CookieManager;
 
 @Component
 @RequiredArgsConstructor
@@ -42,14 +43,16 @@ public class LoginGoogle implements AuthenticationSuccessHandler {
         String token = jwtService.generateToken(user);
         String refreshToken = jwtService.generateRefreshToken(user);
 
-        // Tạo đối tượng phản hồi UserResponse
         UserResponse userResponse = UserResponse.builder()
                 .email(user.getEmail())
                 .status(user.isStatus())
                 .role(user.getRole())
-                .username(user.getUsername())
+                .fullName(user.getUsername())
                 .build();
-
+        response.addHeader("Authorization", "Bearer " + token);
+        response.addHeader("refreshToken", refreshToken);
+        CookieManager.setDefault(new CookieManager());
+        response.sendRedirect(request.getContextPath() + "/");
 
 
     }

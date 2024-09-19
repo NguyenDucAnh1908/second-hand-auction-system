@@ -33,6 +33,9 @@ public class Auction extends BaseEntity{
     @Column(name = "term_and_conditions")
     private String termConditions;
 
+    @Column(name = "price_step")
+    private double priceStep;
+
     @Column(name = "ship_type")
     private String shipType;
 

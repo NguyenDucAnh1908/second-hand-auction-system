@@ -1,9 +1,12 @@
 package com.second_hand_auction_system.service.user;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.nimbusds.oauth2.sdk.Response;
 import com.second_hand_auction_system.dtos.request.user.Authentication;
 import com.second_hand_auction_system.dtos.request.user.RegisterRequest;
+import com.second_hand_auction_system.dtos.responses.ResponseObject;
 import com.second_hand_auction_system.dtos.responses.user.AuthenticationResponse;
+import com.second_hand_auction_system.dtos.responses.user.ListUserResponse;
 import com.second_hand_auction_system.dtos.responses.user.RegisterResponse;
 import com.second_hand_auction_system.dtos.responses.user.UserResponse;
 import com.second_hand_auction_system.models.Token;
@@ -25,8 +28,14 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -109,10 +118,10 @@ public class UserService implements IUserService {
                     .build());
 
         } catch (BadCredentialsException e) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
                     AuthenticationResponse.builder()
-                            .status(HttpStatus.UNAUTHORIZED.value())
-                            .message("Invalid credentials")
+                            .status(HttpStatus.NOT_FOUND.value())
+                            .message("Your email or password is incorrect")
                             .build()
             );
         } catch (Exception e) {
@@ -155,6 +164,70 @@ public class UserService implements IUserService {
             }
         }
     }
+
+    @Override
+    public ResponseEntity<ListUserResponse> getListUser() {
+        try {
+            // Lấy token từ header Authorization
+            String authHeader = ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder.getRequestAttributes()))
+                    .getRequest().getHeader("Authorization");
+
+            // Kiểm tra nếu Authorization header không tồn tại hoặc không hợp lệ
+            if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                        .body(ListUserResponse.builder()
+                                .users(null)
+                                .message("Missing or invalid Authorization header")
+                                .build());
+            }
+
+            // Trích xuất token từ header
+            String token = authHeader.substring(7);
+            String userEmail = jwtService.extractUserEmail(token);
+
+            // Tìm người dùng dựa trên email từ token
+            var requester = userRepository.findUserByEmail(userEmail).orElse(null);
+
+            if (requester == null) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body(ListUserResponse.builder()
+                                .users(null)
+                                .message("Unauthorized request - User not found")
+                                .build());
+            }
+
+            // Kiểm tra quyền admin
+            if (!Role.ADMIN.equals(requester.getRole())) {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                        .body(ListUserResponse.builder()
+                                .users(null)
+                                .message("Access denied - Admin role required")
+                                .build());
+            }
+
+            // Lấy danh sách người dùng nếu người yêu cầu có quyền admin
+            List<User> users = userRepository.findAll();
+            List<UserResponse> userResponses = users.stream()
+                    .map(user -> modelMapper.map(user, UserResponse.class))
+                    .collect(Collectors.toList());
+
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body(ListUserResponse.builder()
+                            .users(userResponses)
+                            .message("Success")
+                            .build());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Trả về lỗi 500 nếu có exception xảy ra
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(ListUserResponse.builder()
+                            .users(null)
+                            .message("An error occurred: " + e.getMessage())
+                            .build());
+        }
+    }
+
 
     private void saveToken(User user, String jwtToken, String refreshToken) {
         Token token = Token.builder()
