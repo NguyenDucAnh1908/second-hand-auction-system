@@ -43,7 +43,7 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
       //console.log("Refresh result:", refreshResult);
 
       if (refreshResult?.data) {
-        const { token, refresh_token } = refreshResult.data;
+        const { token, refresh_token } = refreshResult.data.data;
         const user = api.getState().auth.user;
 
         // Cập nhật token mới vào Redux store và localStorage
