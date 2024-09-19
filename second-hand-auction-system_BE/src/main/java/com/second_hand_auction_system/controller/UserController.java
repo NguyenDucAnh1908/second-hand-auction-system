@@ -19,7 +19,6 @@ public class UserController {
 
     @GetMapping("getUser")
     @PreAuthorize("hasAuthority('admin:read')")
-    //DUCANH
     public ResponseEntity<ListUserResponse> getUser(){
         return userService.getListUser();
     }
