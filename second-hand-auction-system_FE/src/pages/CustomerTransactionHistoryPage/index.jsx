@@ -8,6 +8,7 @@ import Header2 from "../../components/Header2";
 import Footer5 from "../../components/Footer5";
 import ProfileCard from "../../components/ProfileCard";
 import AccountOptions from "../../components/AccountOption";
+import Pagination from "../../components/Pagination";
 
 const dropDownOptions = [
     { label: "Option1", value: "option1" },
@@ -204,7 +205,7 @@ export default function CustomerTransactionHistoryPagePage() {
                                                 </div>
                                             </TabPanel>
                                         ))}
-
+                                        <Pagination className="ml-[290px]"/>
 
 
 

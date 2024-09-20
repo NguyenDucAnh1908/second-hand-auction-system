@@ -1,5 +1,5 @@
 import { Text, SelectBox, Img, Heading } from "../../components";
-import NumberedListWithIcons from "../../components/NumberedListWithIcons";
+import Pagination from "../../components/Pagination";
 import ProductDetails21 from "../../components/ProductDetails21";
 import React, { Suspense } from "react";
 
@@ -199,7 +199,7 @@ export default function ProductSection() {
               ))}
             </Suspense>
           </div>
-          <NumberedListWithIcons />
+          <Pagination />
         </div>
       </div>
     </>
