@@ -12,6 +12,7 @@ import Register from "pages/Register";
 import Layout from "./components/layout";
 import CustomerTransactionHistoryPagePage from "pages/CustomerTransactionHistoryPage";
 import TestAPI from "pages/TestAPI.jsx";
+import ProfileDetailPage from "pages/ProfileDetail";
 
 // function App() {
 //   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="Register" index element={<Register />} />
         <Route path="HistoryPage" index element={<CustomerTransactionHistoryPagePage />} />
         <Route path="Test" index element={<TestAPI />} />
+        <Route path="ProfileDetail" index element={<ProfileDetailPage />} />
       </Route>
     </Routes>
   );

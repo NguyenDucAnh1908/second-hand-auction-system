@@ -48,8 +48,9 @@ export default function LoginSection() {
                   onChange={handleUserInput}
                   ref={userRef}
                   required
-                  className="self-stretch rounded-md border border-solid border-blue_gray-900_01 px-3.5 !text-blue_gray-900_01 shadow-lg"
+                  className="self-stretch rounded-md border-none outline-none px-3.5 !text-blue_gray-900_01 shadow-none"
                 />
+
               </div>
               <div className="mt-5 flex flex-col items-start justify-center gap-2.5">
                 <Heading

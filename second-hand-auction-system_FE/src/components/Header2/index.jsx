@@ -81,7 +81,7 @@ export default function Header2({ ...props }) {
                 className="h-[32px] w-[92px] self-end object-contain md:self-auto"
               />
               <div className="flex w-[86%] items-center justify-between gap-5 md:w-full md:flex-col">
-                <Input
+              <Input
                   name="Search Box"
                   placeholder={`Tìm kiếm`}
                   value={searchBarValue}
@@ -93,7 +93,7 @@ export default function Header2({ ...props }) {
                       <Img src="images/img_search.svg" alt="Search" className="h-[20px] w-[22px]" />
                     )
                   }
-                  className="mb-1 h-[38px] w-[62%] gap-4 self-end rounded-md border-none px-3.5 text-[14px] text-blue_gray-600_01 md:w-full md:self-auto"
+                  className="mb-1 h-[38px] w-[62%] gap-4 self-end rounded-md border border-solid border-green-a700 px-3.5 text-[14px] text-blue_gray-600_01 md:w-full md:self-auto"
                 />
 
                 <div className="mr-4 flex w-[32%] items-end justify-center gap-4 md:mr-0 md:w-full sm:flex-col">

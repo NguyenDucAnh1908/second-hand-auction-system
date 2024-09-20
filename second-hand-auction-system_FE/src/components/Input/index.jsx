@@ -43,16 +43,25 @@ const Input = React.forwardRef(
   ) => {
     return (
       <label
-        className={`${className} flex items-center justify-center cursor-text rounded-md  ${shape && shapes[shape]} ${variant && (variants[variant]?.[color] || variants[variant])} ${size && sizes[size]}`}
+        className={`${className} flex items-center justify-center cursor-text rounded-md ${shape && shapes[shape]} ${variant && (variants[variant]?.[color] || variants[variant])} ${size && sizes[size]}`}
       >
-        {!!label && label}
+        {!!label && <span>{label}</span>}
         {!!prefix && prefix}
-        <input ref={ref} type={type} name={name} placeholder={placeholder} onChange={onChange} {...restProps} />
+        <input
+          ref={ref}
+          type={type}
+          name={name}
+          placeholder={placeholder}
+          onChange={onChange}
+          className="border-none outline-none focus:outline-none focus:ring-0 focus:shadow-none flex-grow"
+          {...restProps}
+        />
         {!!suffix && suffix}
       </label>
     );
   },
 );
+
 Input.propTypes = {
   className: PropTypes.string,
   name: PropTypes.string,
@@ -68,6 +77,3 @@ Input.propTypes = {
 };
 
 export { Input };
-
-
-

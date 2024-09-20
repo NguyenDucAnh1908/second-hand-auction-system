@@ -18,6 +18,7 @@ import UserStatistics from "../../components/UserStatistics";
 import AuctionSection from "./AuctionSection";
 import RecommendedProductsSection from "./RecommendedProductsSection";
 import React, { Suspense } from "react";
+import Footer5 from "../../components/Footer5";
 import {
   AccordionItemPanel,
   AccordionItemHeading,
