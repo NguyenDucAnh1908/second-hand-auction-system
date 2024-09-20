@@ -1,9 +1,10 @@
 import { Helmet } from "react-helmet";
-// import { Heading, Button, Switch, Input, Text, Img } from "../../components";
 import { Img, Text, Button, Heading, SelectBox, Input } from "../../components";
 import Header2 from "../../components/Header2";
 import Footer5 from "../../components/Footer5";
 import React from "react";
+import ProfileCard from "../../components/ProfileCard";
+import AccountOptions from "../../components/AccountOption";
 
 export default function ProfileDetailPage() {
     return (
@@ -16,103 +17,27 @@ export default function ProfileDetailPage() {
                 />
             </Helmet>
             <div className="flex w-full flex-col items-center bg-bg-white">
-            <Header2 />
-            <div className="mx-auto w-full max-w-[1328px] md:px-5">
+                <Header2 />
+                <div className="mx-auto w-full max-w-[1328px] md:px-5">
                     <div className="mr-[46px] flex items-start gap-5 md:mr-0 md:flex-col">
-                        <div className="mt-12 flex w-[24%] flex-col gap-[46px] md:w-full">
-                            <div className="flex flex-col items-center">
-                                <div className="mx-5 flex items-center gap-5 self-stretch md:mx-0">
-                                    <Img
-                                        src="images/img_image_52x56_1.png"
-                                        alt="Profile Image"
-                                        className="h-[52px] w-[24%] rounded-[26px] object-contain"
-                                    />
-                                    <Heading as="h1" className="mb-3 self-end text-[16px] font-medium text-blue_gray-900_01">
-                                        Phuong Uyennn
-                                    </Heading>
-                                </div>
-                                <Heading
-                                    size="headingxl"
-                                    as="h2"
-                                    className="ml-3 mt-4 self-start text-[20px] font-semibold text-red-a400 md:ml-0"
-                                >
-                                    Số dư: 20,000,000đ
-                                </Heading>
-                                <div className="mt-1.5 h-[1.84px] w-full self-stretch bg-gray-200" />
-                            </div>
-                            <div>
-                                <div className="flex flex-col gap-[38px]">
-                                    <div className="flex items-center gap-[19px]">
-                                        <Img src="images/img_growth_1.svg" alt="Account Icon" className="h-[30px] w-[30px]" />
-                                        <Text size="textlg" as="p" className="self-end text-[15px] font-normal text-blue_gray-900_01">
-                                            Thông tin tài khoản
-                                        </Text>
-                                    </div>
-                                    <div className="flex items-center gap-[21px]">
-                                        <Img src="images/img_checked_box_1.svg" alt="Favorites Icon" className="h-[30px] w-[30px]" />
-                                        <Text size="textlg" as="p" className="self-end text-[15px] font-normal text-blue_gray-900_01">
-                                            Danh sách yêu thích
-                                        </Text>
-                                    </div>
-                                    <div className="mx-1 flex items-center gap-[17px] md:mx-0">
-                                        <Img src="images/img_location_1.svg" alt="Address Icon" className="h-[30px] w-[30px]" />
-                                        <Text size="textlg" as="p" className="self-end text-[15px] font-normal text-blue_gray-900_01">
-                                            Quản lý địa chỉ
-                                        </Text>
-                                    </div>
-                                    <div className="flex items-start gap-[21px]">
-                                        <Img src="images/img_thumbs_up.svg" alt="Orders Icon" className="h-[30px] w-[30px] self-center" />
-                                        <Text size="textlg" as="p" className="text-[15px] font-normal text-blue_gray-900_01">
-                                            Đơn hàng
-                                        </Text>
-                                    </div>
-                                    <div className="flex items-start gap-[22px]">
-                                        <Img src="images/img_lichsu.svg" alt="History Icon" className="h-[30px] w-[30px] self-center" />
-                                        <Text size="textlg" as="p" className="text-[15px] font-normal text-blue_gray-900_01">
-                                            Lịch sử giao dịch
-                                        </Text>
-                                    </div>
-                                    <div className="flex items-start gap-[22px]">
-                                        <Img
-                                            src="images/img_television.svg"
-                                            alt="Auctioned Icon"
-                                            className="h-[30px] w-[30px] self-center"
-                                        />
-                                        <Text size="textlg" as="p" className="mt-1 text-[15px] font-normal text-blue_gray-900_01">
-                                            Sản phẩm đã đấu giá
-                                        </Text>
-                                    </div>
-                                    <div className="flex items-start gap-[22px]">
-                                        <Img src="images/img_television.svg" alt="Top Up Icon" className="h-[30px] w-[30px] self-center" />
-                                        <Text size="textlg" as="p" className="text-[15px] font-normal text-blue_gray-900_01">
-                                            Nạp tiền
-                                        </Text>
-                                    </div>
-                                    <div className="flex items-start gap-[23px]">
-                                        <Img
-                                            src="images/img_television.svg"
-                                            alt="Logout Icon"
-                                            className="mt-1 h-[30px] w-[30px] self-end"
-                                        />
-                                        <Text size="textlg" as="p" className="text-[15px] font-normal text-blue_gray-900_01">
-                                            Đăng xuất
-                                        </Text>
-                                    </div>
-                                </div>
+                        <div className="mt-12 flex w-[24%] flex-col gap-[20px] md:w-full">
+
+                            {/* User Name and Wallet amount */}
+                            <ProfileCard />
+                            <div className="h-[1.84px] bg-gray-200" />
+
+
+                            <div className="py-7">
+                                <AccountOptions />
+
                             </div>
                         </div>
                         <div className="flex flex-1 flex-col items-center gap-[38px] self-center md:self-stretch">
-                            <Heading
-                                size="heading3xl"
-                                as="h3"
-                                className="text-[48px] font-semibold uppercase text-blue_gray-900_01 md:text-[44px] sm:text-[38px]"
-                            >
-                                Thông tin tài khoản
-                            </Heading>
+                            
                             <div className="self-stretch">
-                                <div className="flex flex-col gap-12">
+                                <div className="flex flex-col gap-4">
                                     <div className="mr-1 md:mr-0">
-                                        <div className="flex flex-col items-start gap-1.5 self-end">
+                                        <div className="flex flex-col items-start gap-1.5 self-end py-7">
                                             <Heading size="headingmd" as="h4" className="text-[16px] font-semibold text-blue_gray-900_01">
                                                 Thông tin tài khoản{" "}
                                             </Heading>
@@ -249,7 +174,7 @@ export default function ProfileDetailPage() {
                                                     <Heading as="p" className="self-end text-[16px] font-normal text-blue_gray-900_01">
                                                         Mã xác thực được gửi đến email của bạn
                                                     </Heading>
-                                                  
+
                                                 </div>
                                             </div>
                                         </div>

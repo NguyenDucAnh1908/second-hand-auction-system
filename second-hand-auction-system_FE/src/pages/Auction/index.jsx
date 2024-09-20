@@ -9,8 +9,6 @@ import {
   RatingBar,
   Text,
 } from "../../components";
-import Footer13 from "../../components/Footer13";
-//import Header21 from "../../components/Header21";
 import Header2 from "../../components/Header2";
 import ProductDetails4 from "../../components/ProductDetails4";
 import UserProfile from "../../components/UserProfile";
