@@ -1,12 +1,9 @@
 import { CloseSVG } from "../Input/close.jsx";
 import { Text, SelectBox, Img, Button, Input } from "./..";
+import NavBar from "../NavBar/index.jsx"
 import React from "react";
 
-const dropDownOptions = [
-  { label: "Option1", value: "option1" },
-  { label: "Option2", value: "option2" },
-  { label: "Option3", value: "option3" },
-];
+
 
 export default function Header2({ ...props }) {
   const [searchBarValue, setSearchBarValue] = React.useState("");
@@ -144,39 +141,40 @@ export default function Header2({ ...props }) {
             </div>
             <div className="h-[0.67px] bg-gray-200" />
           </div>
-          <div className="container-xs mt-1.5 flex flex-col items-start md:px-5">
-            <div className="flex w-[62%] items-start justify-between gap-5 md:w-full md:flex-col">
-              <SelectBox
-                indicator={<Img src="images/img_vector_bg_white_.svg" alt="Vector" className="h-[6px] w-[8px]" />}
-                name="Dropdown Categories"
-                placeholder={`Danh mục`}
-                options={dropDownOptions}
-                className="w-[38%] gap-4 self-center bg-green-a700 py-[18px] pl-[22px] pr-8 text-[16px] font-semibold text-bg-white md:w-full sm:px-5"
-              />
-              <ul className="!mt-3.5 flex flex-wrap gap-[66px] md:gap-5">
-                <li>
-                  <a href="#">
-                    <Text className="text-[16px] font-medium text-blue_gray-900_01">Trang chủ</Text>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <Text className="text-[16px] font-medium text-blue_gray-900_01">Sản phẩm</Text>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <Text className="text-[16px] font-medium text-blue_gray-900_01">Liên hệ</Text>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <Text className="text-[16px] font-medium text-blue_gray-900_01">Bài viết</Text>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <NavBar/>
+          {/*<div className="container-xs mt-1.5 flex flex-col items-start md:px-5">*/}
+          {/*  <div className="flex w-[62%] items-start justify-between gap-5 md:w-full md:flex-col">*/}
+          {/*    <SelectBox*/}
+          {/*      indicator={<Img src="images/img_vector_bg_white_.svg" alt="Vector" className="h-[6px] w-[8px]" />}*/}
+          {/*      name="Dropdown Categories"*/}
+          {/*      placeholder={`Danh mục`}*/}
+          {/*      options={dropDownOptions}*/}
+          {/*      className="w-[38%] gap-4 self-center bg-green-a700 py-[18px] pl-[22px] pr-8 text-[16px] font-semibold text-bg-white md:w-full sm:px-5"*/}
+          {/*    />*/}
+          {/*    <ul className="!mt-3.5 flex flex-wrap gap-[66px] md:gap-5">*/}
+          {/*      <li>*/}
+          {/*        <a href="#">*/}
+          {/*          <Text className="text-[16px] font-medium text-blue_gray-900_01">Trang chủ</Text>*/}
+          {/*        </a>*/}
+          {/*      </li>*/}
+          {/*      <li>*/}
+          {/*        <a href="#">*/}
+          {/*          <Text className="text-[16px] font-medium text-blue_gray-900_01">Sản phẩm</Text>*/}
+          {/*        </a>*/}
+          {/*      </li>*/}
+          {/*      <li>*/}
+          {/*        <a href="#">*/}
+          {/*          <Text className="text-[16px] font-medium text-blue_gray-900_01">Liên hệ</Text>*/}
+          {/*        </a>*/}
+          {/*      </li>*/}
+          {/*      <li>*/}
+          {/*        <a href="#">*/}
+          {/*          <Text className="text-[16px] font-medium text-blue_gray-900_01">Bài viết</Text>*/}
+          {/*        </a>*/}
+          {/*      </li>*/}
+          {/*    </ul>*/}
+          {/*  </div>*/}
+          {/*</div>*/}
         </div>
       </div>
     </header>
