@@ -1,9 +1,10 @@
-import {SelectBox} from "../SelectBox/index.jsx";
-import {Img} from "../Img/index.jsx";
-import {Text} from "../Text/index.jsx";
+import React from "react";
 import { Dropdown, Menu } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
-import React from "react";
+import { Text } from "../Text/index.jsx";
+import "./index.css"
+
+// Các tùy chọn trong dropdown
 const dropDownOptions = [
     {
         label: "Option1",
@@ -24,22 +25,31 @@ const dropDownOptions = [
     { label: "Option3", value: "option3" },
 ];
 
-
 // Tạo menu từ các options và sub-options
 const createMenu = (options) => {
     return (
         <Menu>
             {options.map(option => (
                 option.subItems ? (
-                    <Menu.SubMenu key={option.value} title={option.label}>
+                    <Menu.SubMenu
+                        key={option.value}
+                        title={option.label}
+                        className="custom-submenu-title" // Áp dụng cho Option1, Option2
+                    >
                         {option.subItems.map(subItem => (
-                            <Menu.Item key={subItem.value}>
+                            <Menu.Item
+                                key={subItem.value}
+                                className="custom-menu-item" // Áp dụng cho SubOption1-1, SubOption1-2
+                            >
                                 {subItem.label}
                             </Menu.Item>
                         ))}
                     </Menu.SubMenu>
                 ) : (
-                    <Menu.Item key={option.value}>
+                    <Menu.Item
+                        key={option.value}
+                        className="custom-menu-item" // Áp dụng cho các Option khác
+                    >
                         {option.label}
                     </Menu.Item>
                 )
@@ -47,40 +57,56 @@ const createMenu = (options) => {
         </Menu>
     );
 };
+
 const NavBar = () => {
     return (
         <div className="container-xs mt-1.5 flex flex-col items-start md:px-5">
             <div className="flex w-[62%] items-start justify-between gap-5 md:w-full md:flex-col">
-                {/* Sử dụng Dropdown thay vì SelectBox */}
-                <Dropdown overlay={createMenu(dropDownOptions)} trigger={['click']}>
-                    <a onClick={e => e.preventDefault()} className="w-[38%] bg-green-a700 py-[18px] pl-[22px] pr-8 text-[16px] font-semibold text-bg-white flex items-center justify-between">
+                {/* Sử dụng Dropdown */}
+                <Dropdown
+                    overlay={createMenu(dropDownOptions)}
+                    trigger={['hover']} // Sử dụng hover để hiển thị
+                    overlayClassName="custom-dropdown" // Thêm lớp tùy chỉnh
+                >
+                    <a
+                        className="w-[38%] bg-green-a700 py-[18px] pl-[22px] pr-8 text-[16px] font-semibold text-white flex items-center justify-between hover:bg-green-600 transition duration-200"
+                    >
                         Danh mục <DownOutlined />
                     </a>
                 </Dropdown>
                 <ul className="!mt-3.5 flex flex-wrap gap-[66px] md:gap-5">
                     <li>
                         <a href="#">
-                            <Text className="text-[16px] font-medium text-blue_gray-900_01">Trang chủ</Text>
+                            <Text className="text-[16px] font-medium text-blue_gray-900_01 hover:text-green-a700 transition duration-200">
+                                Trang chủ
+                            </Text>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <Text className="text-[16px] font-medium text-blue_gray-900_01">Sản phẩm</Text>
+                            <Text className="text-[16px] font-medium text-blue_gray-900_01 hover:text-green-a700 transition duration-200">
+                                Sản phẩm
+                            </Text>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <Text className="text-[16px] font-medium text-blue_gray-900_01">Liên hệ</Text>
+                            <Text className="text-[16px] font-medium text-blue_gray-900_01 hover:text-green-a700 transition duration-200">
+                                Liên hệ
+                            </Text>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <Text className="text-[16px] font-medium text-blue_gray-900_01">Bài viết</Text>
+                            <Text className="text-[16px] font-medium text-blue_gray-900_01 hover:text-green-a700 transition duration-200">
+                                Bài viết
+                            </Text>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-    )
-}
+    );
+};
+
 export default NavBar;
