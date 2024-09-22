@@ -57,13 +57,9 @@ export default function Header2({ ...props }) {
                   <div className="h-[20px] w-px bg-gray-200" />
                   <div className="flex items-center gap-4 self-end">
                     <Img src="images/img_facebook.svg" alt="Facebook Icon" className="h-[12px]" />
-                    <Img src="images/img_facebook.svg" alt="Instagram Icon" className="h-[12px]" />
-                    <Img src="images/img_facebook.svg" alt="Twitter Icon" className="h-[12px]" />
-                    <Img
-                      src="images/img_facebook_blue_gray_900_01_1.png"
-                      alt="Youtube Icon"
-                      className="h-[10px] object-cover"
-                    />
+                    <Img src="images/img_intagram.svg" alt="Instagram Icon" className="h-[12px]" />
+                    <Img src="images/img_twitter.svg" alt="Twitter Icon" className="h-[12px]" />
+                    
                   </div>
                 </div>
               </div>

@@ -145,9 +145,9 @@ export default function Footer5({ ...props }) {
                 </Heading>
                 <div className="mt-5 flex gap-[18px]">
                   <Img src="images/img_facebook.svg" alt="Facebook Icon One" className="h-[16px]" />
-                  <Img src="images/img_facebook.svg" alt="Facebook Icon Two" className="h-[16px]" />
-                  <Img src="images/img_facebook.svg" alt="Facebook Icon Three" className="h-[16px]" />
-                  <Img src="images/img_facebook.svg" alt="Facebook Icon Four" className="h-[16px]" />
+                  <Img src="images/img_intagram.svg" alt="Facebook Icon Two" className="h-[16px]" />
+                  <Img src="images/img_twitter.svg" alt="Facebook Icon Three" className="h-[16px]" />
+                  
                 </div>
                 <Heading
                   size="text2xl"
@@ -169,37 +169,9 @@ export default function Footer5({ ...props }) {
                 as="p"
                 className="w-[18%] self-center text-[14px] font-normal leading-10 text-blue_gray-900_01 md:w-full"
               >
-                © 2024 EZShop. All Rights Reserved
+                © 2024 EZShop
               </Text>
-              <div className="mt-2 flex w-[72%] justify-between gap-5 md:w-full md:flex-col">
-                <Text as="p" className="self-end text-[14px] font-normal text-blue_gray-900_01 md:self-auto">
-                  Quyền riêng tư · Điều khoản · Sơ đồ trang web
-                </Text>
-                <div className="flex w-[36%] items-center justify-center md:w-full">
-                  <a href="#">
-                    <Text as="p" className="text-[14px] font-normal text-blue_gray-900_01">
-                      Tiền tệ:
-                    </Text>
-                  </a>
-                  <div className="ml-4 flex w-[18%] justify-center">
-                    <a href="#">
-                      <div className="flex w-full items-center justify-center">
-                        <Text as="p" className="text-[14px] font-normal text-blue_gray-900_01">
-                          VNĐ
-                        </Text>
-                        <Img src="images/img_vector_color_text_dark.svg" alt="Currency Icon" className="h-[5px]" />
-                      </div>
-                    </a>
-                  </div>
-                  <Text as="p" className="ml-8 text-[14px] font-normal text-blue_gray-900_01">
-                    Ngôn ngữ:
-                  </Text>
-                  <Text as="p" className="text-[14px] font-normal text-blue_gray-900_01">
-                    Tiếng Việt
-                  </Text>
-                  <Img src="images/img_vector_color_text_dark.svg" alt="Language Icon" className="h-[5px]" />
-                </div>
-              </div>
+           
             </div>
           </div>
         </div>
