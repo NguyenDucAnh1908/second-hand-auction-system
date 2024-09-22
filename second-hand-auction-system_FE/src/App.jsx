@@ -1,6 +1,4 @@
 import React from "react";
-//import Routes from "./Routes";
-//import { BrowserRouter as Router } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import Home from "pages/Home";
 import NotFound from "pages/NotFound";
@@ -13,16 +11,7 @@ import Layout from "./components/layout";
 import CustomerTransactionHistoryPagePage from "pages/CustomerTransactionHistoryPage";
 import TestAPI from "pages/TestAPI.jsx";
 import ProfileDetailPage from "pages/ProfileDetail";
-
-// function App() {
-//   return (
-//     <Router>
-//       <Routes />
-//     </Router>
-//   );
-// }
-
-// export default App;
+import DepositMoneyPage from "pages/DepositMoney";
 
 function App() {
   return (
@@ -37,6 +26,7 @@ function App() {
         <Route path="HistoryPage" index element={<CustomerTransactionHistoryPagePage />} />
         <Route path="Test" index element={<TestAPI />} />
         <Route path="ProfileDetail" index element={<ProfileDetailPage />} />
+        <Route path="DepositMoney" index element={<DepositMoneyPage />} />
       </Route>
     </Routes>
   );

@@ -17,7 +17,7 @@ const ProfileCard = ({ imageSrc, name, balance }) => {
                 </Heading>
             </div>
             <Heading size="headingxl" as="h2" className="text-[20px] font-semibold text-red-500">
-                Số dư: 200,000,000đ
+                Số dư: 20,000,000đ
             </Heading>
         </div>
     );

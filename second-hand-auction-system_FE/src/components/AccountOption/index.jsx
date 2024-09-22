@@ -28,17 +28,17 @@ const AccountOptions = () => {
             text: "Lịch sử giao dịch"
         },
         {
-            imgSrc: "images/img_lichsu.svg",
+            imgSrc: "images/img_auction.svg",
             alt: "Auction Image",
             text: "Sản phẩm đã đấu giá"
         },
         {
-            imgSrc: "images/img_lichsu.svg",
+            imgSrc: "images/img_deposit.svg",
             alt: "Deposit Image",
             text: "Nạp tiền"
         },
         {
-            imgSrc: "images/img_lichsu.svg",
+            imgSrc: "images/img_logout.svg",
             alt: "Logout Image",
             text: "Đăng xuất"
         }
