@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'antd';
+import {Button} from 'antd';
 
 const AccountOptions = () => {
     const options = [
@@ -53,16 +53,8 @@ const AccountOptions = () => {
         }
     ];
 
-    
+
     return (
-        // <div className="flex w-full flex-col gap-[22px]">
-        //     {options.map((option, index) => (
-        //         <div key={index} className="flex items-center gap-[10px]">
-        //             <img src={option.imgSrc} alt={option.alt} className="h-[20px] w-[20px]" />
-        //             <p className="text-[15px] font-normal text-blue_gray-900_01">{option.text}</p>
-        //         </div>
-        //     ))}
-        // </div>
         <div className="flex w-full flex-col gap-[22px]">
             {options.map((option, index) => (
                 <Button
@@ -83,8 +75,6 @@ const AccountOptions = () => {
                 </Button>
             ))}
         </div>
-
-
     );
 };
 

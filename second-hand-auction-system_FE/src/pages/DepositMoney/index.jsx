@@ -52,16 +52,16 @@ export default function DepositMoneyPage() {
                                 as="h3"
                                 className="text-[30px] font-semibold uppercase text-blue_gray-900_01 md:text-[28px] sm:text-[26px]"
                             >
-                                Chuyển tiền
+                                Nạp Tiền
                             </Heading>
-                            <TabList className="mx-1.5 flex flex-wrap gap-[68px] self-stretch px-5 md:mx-0 md:gap-5">
-                                <Tab className="bg-yellow-300 text-[16px] font-medium text-blue_gray-900_01">
-                                    Nạp tiền
-                                </Tab>
+                            {/*<TabList className="mx-1.5 flex flex-wrap gap-[68px] self-stretch px-5 md:mx-0 md:gap-5">*/}
+                            {/*    <Tab className="bg-yellow-300 text-[16px] font-medium text-blue_gray-900_01">*/}
+                            {/*        Nạp tiền*/}
+                            {/*    </Tab>*/}
 
-                                <Tab className="text-[16px] font-medium text-blue_gray-900_01">Rút tiền</Tab>
-                                <Tab className="text-[16px] font-medium text-blue_gray-900_01">Lịch sử giao dịch</Tab>
-                            </TabList>
+                            {/*    <Tab className="text-[16px] font-medium text-blue_gray-900_01">Rút tiền</Tab>*/}
+                            {/*    <Tab className="text-[16px] font-medium text-blue_gray-900_01">Lịch sử giao dịch</Tab>*/}
+                            {/*</TabList>*/}
                             {[...Array(3)].map((_, index) => (
                                 <TabPanel key={`tab-panel${index}`} className="absolute mx-1.5 self-stretch md:mx-0">
                                     <div className="w-full self-stretch">
@@ -121,17 +121,14 @@ export default function DepositMoneyPage() {
                                                 />
                                             </div>
                                             <div className="mt-14 flex items-center gap-[33px]">
-                                                <Button
-                                                    size="lg"
-                                                    shape="round"
-                                                    className="min-w-[114px] rounded-md border border-solid border-green-a700 px-[23px] sm:px-5 bg-green-500 text-white"
-                                                >
+                                                <button type="button"
+                                                        className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
                                                     Nạp tiền
-                                                </Button>
-
-                                                <Heading as="p" className="text-[16px] font-normal text-blue_gray-600">
+                                                </button>
+                                                <button type="button"
+                                                        className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
                                                     Hủy bỏ
-                                                </Heading>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>

@@ -12,6 +12,7 @@ import CustomerTransactionHistoryPagePage from "pages/CustomerTransactionHistory
 import TestAPI from "pages/TestAPI.jsx";
 import ProfileDetailPage from "pages/ProfileDetail";
 import DepositMoneyPage from "pages/DepositMoney";
+import TestComponent from "./components/TestComponent.jsx";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="Test" index element={<TestAPI />} />
         <Route path="ProfileDetail" index element={<ProfileDetailPage />} />
         <Route path="DepositMoney" index element={<DepositMoneyPage />} />
+        <Route path="TestComponent" index element={<TestComponent />} />
       </Route>
     </Routes>
   );
