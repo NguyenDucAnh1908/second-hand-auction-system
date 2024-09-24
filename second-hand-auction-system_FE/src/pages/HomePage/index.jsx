@@ -223,7 +223,7 @@ export default function HomePagePage() {
                 <Heading size="headingxl" as="h3" className="text-[16px] font-semibold text-blue_gray-600_01">
                   Top 10 Điện tử Thời trang Gia dụng Tất cả
                 </Heading>
-                <div className="h-[2px] w-[48px] bg-blue_gray-900_01" />
+                {/*<div className="h-[2px] w-[48px] bg-blue_gray-900_01" />*/}
               </div>
             </div>
             <div className="mr-3.5 md:mr-0">
@@ -240,39 +240,53 @@ export default function HomePagePage() {
                     }}
                     ref={sliderRef}
                     items={[...Array(3)].map(() => (
-                      <React.Fragment key={Math.random()}>
-                        <div className="flex gap-8 md:flex-col">
-                          <div className="flex w-full gap-8 md:flex-col">
-                            <ProductDetails4 className="w-full border border-solid border-gray-200 bg-bg-white" />
-                            <ProductDetails4
-                              productImage="images/img_image_30_3.png"
-                              productDescription="Áo nỉ chần bông màu xám có dây Nike"
-                              className="w-full border border-solid border-gray-200 bg-bg-white"
-                            />
+                        <React.Fragment key={Math.random()}>
+                          <div className="flex gap-8 md:flex-col">
+                            <div className="flex w-full gap-8 md:flex-col">
+                              <ProductDetails4 className="w-full border border-solid border-gray-200 bg-bg-white"/>
+                            </div>
+                            <div className="flex w-full gap-8 md:flex-col">
+                              <ProductDetails4 className="w-full border border-solid border-gray-200 bg-bg-white"/>
+                            </div>
+                            <div className="flex w-full gap-8 md:flex-col">
+                              <ProductDetails4 className="w-full border border-solid border-gray-200 bg-bg-white"/>
+                            </div>
+                            <div className="flex w-full gap-8 md:flex-col">
+                              <ProductDetails4 className="w-full border border-solid border-gray-200 bg-bg-white"/>
+                            </div>
                           </div>
-                          <div className="flex w-full gap-[30px] md:flex-col">
-                            <ProductDetails4
-                              productImage="images/img_image_30_4.png"
-                              productDescription="Khoác gió chống nắng thời trang Adidas"
-                              className="w-full border border-solid border-gray-200 bg-bg-white"
-                            />
-                            <ProductDetails4
-                              productImage="images/img_image_30_5.png"
-                              productDescription="Áo khoác unisex màu trắng tập gym Adidas"
-                              className="w-full border border-solid border-gray-200 bg-bg-white"
-                            />
-                          </div>
-                        </div>
-                      </React.Fragment>
-                    ))}
-                  />
+                          {/*<div className="flex gap-8 md:flex-col">*/}
+                          {/*  <div className="flex w-full gap-8 md:flex-col">*/}
+                          {/*    <ProductDetails4 className="w-full border border-solid border-gray-200 bg-bg-white"/>*/}
+                            {/*    <ProductDetails4*/}
+                            {/*        productImage="images/img_image_30_3.png"*/}
+                            {/*        productDescription="Áo nỉ chần bông màu xám có dây Nike"*/}
+                            {/*        className="w-full border border-solid border-gray-200 bg-bg-white"*/}
+                            {/*    />*/}
+                            {/*  </div>*/}
+                            {/*  <div className="flex w-full gap-[30px] md:flex-col">*/}
+                            {/*    <ProductDetails4*/}
+                            {/*        productImage="images/img_image_30_4.png"*/}
+                            {/*        productDescription="Khoác gió chống nắng thời trang Adidas"*/}
+                            {/*        className="w-full border border-solid border-gray-200 bg-bg-white"*/}
+                            {/*    />*/}
+                            {/*    <ProductDetails4*/}
+                            {/*        productImage="images/img_image_30_5.png"*/}
+                            {/*        productDescription="Áo khoác unisex màu trắng tập gym Adidas"*/}
+                            {/*        className="w-full border border-solid border-gray-200 bg-bg-white"*/}
+                            {/*    />*/}
+                            {/*  </div>*/}
+                            {/*</div>*/}
+                        </React.Fragment>
+                      ))}
+                    />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 top-0 m-auto flex h-max flex-1 justify-between gap-5">
                   <Button
-                    onClick={() => {
-                      sliderRef?.current?.slidePrev();
-                    }}
-                    className="ml-2.5 w-[44px] rounded-[22px] border border-solid border-gray-200 px-3.5"
+                      onClick={() => {
+                        sliderRef?.current?.slidePrev();
+                      }}
+                      className="ml-2.5 w-[44px] rounded-[22px] border border-solid border-gray-200 px-3.5"
                   >
                     <Img src="images/img_arrow_left_blue_gray_900.svg" />
                   </Button>

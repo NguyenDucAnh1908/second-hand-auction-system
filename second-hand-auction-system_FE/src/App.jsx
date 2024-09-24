@@ -25,10 +25,10 @@ function App() {
         <Route path="Login" index element={<Login />} />
         <Route path="Register" index element={<Register />} />
         <Route path="HistoryPage" index element={<CustomerTransactionHistoryPagePage />} />
-        <Route path="Test" index element={<TestAPI />} />
         <Route path="ProfileDetail" index element={<ProfileDetailPage />} />
         <Route path="DepositMoney" index element={<DepositMoneyPage />} />
         <Route path="TestComponent" index element={<TestComponent />} />
+        <Route path="Test" index element={<TestAPI />} />
       </Route>
     </Routes>
   );

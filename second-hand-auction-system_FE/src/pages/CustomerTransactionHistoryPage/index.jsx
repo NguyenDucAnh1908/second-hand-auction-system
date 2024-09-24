@@ -65,13 +65,13 @@ export default function CustomerTransactionHistoryPagePage() {
                                         >
                                             Chuyển tiền
                                         </Heading>
-                                        <TabList className="flex flex-wrap gap-16 self-stretch px-3 md:gap-5">
-                                            <Tab className="bg-yellow-300 text-[16px] font-medium text-blue_gray-900_01">
-                                                Lịch sử giao dịch
-                                            </Tab>
-                                            <Tab className="text-[16px] font-medium text-blue_gray-900_01">Rút tiền</Tab>
-                                            <Tab className="text-[16px] font-medium text-blue_gray-900_01">Nạp tiền</Tab>
-                                        </TabList>
+                                        {/*<TabList className="flex flex-wrap gap-16 self-stretch px-3 md:gap-5">*/}
+                                        {/*    <Tab className="bg-yellow-300 text-[16px] font-medium text-blue_gray-900_01">*/}
+                                        {/*        Lịch sử giao dịch*/}
+                                        {/*    </Tab>*/}
+                                        {/*    <Tab className="text-[16px] font-medium text-blue_gray-900_01">Rút tiền</Tab>*/}
+                                        {/*    <Tab className="text-[16px] font-medium text-blue_gray-900_01">Nạp tiền</Tab>*/}
+                                        {/*</TabList>*/}
 
                                         {/* table data */}
 

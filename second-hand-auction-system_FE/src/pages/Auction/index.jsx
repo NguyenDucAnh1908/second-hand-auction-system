@@ -25,6 +25,7 @@ import {
   Accordion,
   AccordionItem,
 } from "react-accessible-accordion";
+import { Flex, Rate } from 'antd';
 
 const accordionData = [
   {
@@ -201,14 +202,18 @@ export default function AuctionPage() {
                       4.9
                     </Heading>
                     <div className="flex w-[64%] flex-col items-start gap-3.5">
-                      <RatingBar
-                        value={5}
-                        isEditable={true}
-                        color="#f5c34b"
-                        activeColor="#f5c34b"
-                        size={18}
-                        className="flex gap-2.5"
-                      />
+                      {/*<RatingBar*/}
+                      {/*  value={5}*/}
+                      {/*  isEditable={true}*/}
+                      {/*  color="#f5c34b"*/}
+                      {/*  activeColor="#f5c34b"*/}
+                      {/*  size={18}*/}
+                      {/*  className="flex gap-2.5"*/}
+                      {/*/>*/}
+                      <Flex gap="middle">
+                        <Rate disabled defaultValue={2} />
+                        {/*<span>allowClear: true</span>*/}
+                      </Flex>
                       <Text
                         size="textlg"
                         as="p"

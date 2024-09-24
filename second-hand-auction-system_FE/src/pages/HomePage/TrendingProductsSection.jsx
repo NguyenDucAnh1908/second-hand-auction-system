@@ -27,7 +27,7 @@ export default function TrendingProductsSection() {
               Xu hướng trên eBay
             </Heading>
             <div className="flex w-[6%] flex-col items-start justify-center gap-1">
-              <Text size="textlg" as="p" className="text-[15px] font-medium text-gray-900_01">
+              <Text size="textlg" as="p" className="text-[11px] font-medium text-gray-900_01">
                 Xem tất cả
               </Text>
               <div className="h-[2px] w-[32px] bg-gray-900_01" />
