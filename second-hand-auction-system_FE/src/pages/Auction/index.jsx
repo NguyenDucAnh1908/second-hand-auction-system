@@ -27,6 +27,7 @@ import {
 } from "react-accessible-accordion";
 import { Flex, Rate } from 'antd';
 
+
 const accordionData = [
   {
     detailsTitle: "Thông Tin Chi Tiết",
@@ -56,8 +57,9 @@ export default function AuctionPage() {
         />
       </Helmet>
       <div className="flex w-full flex-col items-center bg-bg-white">
-        {/* <Header21 /> */}
+       
         <Header2 />
+       
         {/* auction section */}
         <AuctionSection />
         <div className="container-xs mt-[70px] flex flex-col gap-[114px] md:gap-[85px] md:px-5 sm:gap-[57px]">
