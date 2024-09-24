@@ -43,18 +43,6 @@ export default function ProductDetails({
             <a href="#" className="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white">73
               reviews</a>
           </div>
-
-          {/*<RatingBar*/}
-          {/*  value={1}*/}
-          {/*  isEditable={true}*/}
-          {/*  color="#f5c34b"*/}
-          {/*  activeColor="#f5c34b"*/}
-          {/*  size={8}*/}
-          {/*  className="flex gap-2.5"*/}
-          {/*/>*/}
-          {/*<Text size="textxs" as="p" className="self-center text-[12px] font-normal text-blue_gray-600_01">*/}
-          {/*  {reviewCount}*/}
-          {/*</Text>*/}
         </div>
         <div className="flex flex-wrap items-start gap-2.5 self-stretch">
           <Heading

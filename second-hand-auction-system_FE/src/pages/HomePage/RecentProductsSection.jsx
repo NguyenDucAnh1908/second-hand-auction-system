@@ -1,6 +1,7 @@
 import { Button, Img, Slider, Heading } from "../../components";
 import ProductDetails4 from "../../components/ProductDetails4";
 import React from "react";
+import ProductDetails31 from "../../components/ProductDetails31/index.jsx";
 
 export default function RecentProductsSection() {
   const [sliderState, setSliderState] = React.useState(0);
@@ -33,9 +34,9 @@ export default function RecentProductsSection() {
                 items={[...Array(12)].map(() => (
                   <React.Fragment key={Math.random()}>
                     <div className="px-4">
-                      <ProductDetails4
-                        productDescription="Áo hoodie Nike thấm hút mồ hôi cho ngày đông lạnh "
-                        originalPrice="128.000đ"
+                      <ProductDetails31
+                        // productDescription="Áo hoodie Nike thấm hút mồ hôi cho ngày đông lạnh "
+                        // originalPrice="128.000đ"
                         className="border border-solid border-gray-200 bg-bg-white"
                       />
                     </div>

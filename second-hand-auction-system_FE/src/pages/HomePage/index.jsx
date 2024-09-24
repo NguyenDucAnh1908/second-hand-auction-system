@@ -13,6 +13,7 @@ import RecentlyViewedSection from "./RecentlyViewedSection";
 import TrendingProductsSection from "./TrendingProductsSection";
 import TrustedBrandsSection from "./TrustedBrandsSection";
 import React, { Suspense } from "react";
+import ProductDetails31 from "../../components/ProductDetails31/index.jsx";
 
 const fashionItemsList = [
   {
@@ -243,16 +244,16 @@ export default function HomePagePage() {
                         <React.Fragment key={Math.random()}>
                           <div className="flex gap-8 md:flex-col">
                             <div className="flex w-full gap-8 md:flex-col">
-                              <ProductDetails4 className="w-full border border-solid border-gray-200 bg-bg-white"/>
+                              <ProductDetails31 className="w-full border border-solid border-gray-200 bg-bg-white"/>
                             </div>
                             <div className="flex w-full gap-8 md:flex-col">
-                              <ProductDetails4 className="w-full border border-solid border-gray-200 bg-bg-white"/>
+                              <ProductDetails31 className="w-full border border-solid border-gray-200 bg-bg-white"/>
                             </div>
                             <div className="flex w-full gap-8 md:flex-col">
-                              <ProductDetails4 className="w-full border border-solid border-gray-200 bg-bg-white"/>
+                              <ProductDetails31 className="w-full border border-solid border-gray-200 bg-bg-white"/>
                             </div>
                             <div className="flex w-full gap-8 md:flex-col">
-                              <ProductDetails4 className="w-full border border-solid border-gray-200 bg-bg-white"/>
+                              <ProductDetails31 className="w-full border border-solid border-gray-200 bg-bg-white"/>
                             </div>
                           </div>
                           {/*<div className="flex gap-8 md:flex-col">*/}
@@ -399,7 +400,7 @@ export default function HomePagePage() {
           <RecentProductsSection />
 
           {/* trusted brands section */}
-          <TrustedBrandsSection />
+          {/*<TrustedBrandsSection />*/}
 
           {/* fashion promotion section */}
           <FashionPromotionSection />

@@ -12,6 +12,7 @@ const partnerLogosList = [
 ];
 
 export default function TrustedBrandsSection() {
+
   return (
     <>
       {/* trusted brands section */}
