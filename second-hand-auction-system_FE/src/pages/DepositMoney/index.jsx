@@ -28,7 +28,7 @@ export default function DepositMoneyPage() {
                 <div className="mx-[76px] mt-[30px] md:mx-0">
                     <div className="flex items-center gap-1 md:flex-col">
                         <div className="mb-[22px] flex w-[24%] flex-col gap-[46px] md:w-full md:px-5">
-                            <div className="flex flex-col items-center -mt-[140px] -ml-[50px]">
+                            <div className="flex flex-col items-center  -ml-[50px]">
 
                                 {/* User name and Wallet amount */}
                                 <ProfileCard />
