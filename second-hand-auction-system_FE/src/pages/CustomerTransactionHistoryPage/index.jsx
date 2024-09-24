@@ -205,7 +205,7 @@ export default function CustomerTransactionHistoryPagePage() {
                                                 </div>
                                             </TabPanel>
                                         ))}
-                                        <Pagination className="ml-[290px]"/>
+                                        <Pagination className="ml-[290px]" />
 
 
 

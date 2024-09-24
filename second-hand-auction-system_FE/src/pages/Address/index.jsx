@@ -161,7 +161,9 @@ export default function AddressPage() {
                             </div>
                         </div>
                     </div>
-                    <Footer5 className="mt-[34px] h-[388px] bg-[url(/images/img_group_19979.png)] bg-cover bg-no-repeat md:h-auto" />
+                    <div className="mt-[194px] self-stretch">
+                        <Footer5 className="mt-[34px] h-[388px] bg-[url(/images/img_group_19979.png)] bg-cover bg-no-repeat md:h-auto" />
+                    </div>
                 </div>
             </div>
         </>
