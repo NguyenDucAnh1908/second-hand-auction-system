@@ -28,16 +28,17 @@ export default function AuctionSection() {
             <Modal
                 title="Đặt Giá Thầu"
                 open={isModalOpen}
-                onOk={handleOk}
-                onCancel={handleCancel}
-                centered // Thêm thuộc tính này để căn giữa modal
-                bodyStyle={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} // Căn giữa nội dung bên trong modal
+                onCancel={handleCancel} // Vẫn giữ onCancel để đóng modal khi người dùng nhấn ra ngoài modal
+                centered
+                bodyStyle={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                footer={null} // Xóa các nút OK và Cancel
             >
                 <div style={{ width: '100%', textAlign: 'center' }}>
                     {/* Render the BidForm component inside the modal */}
                     <BidForm />
                 </div>
             </Modal>
+
             {/* auction section */}
             <div className="mt-4 flex items-center gap-[50px] self-stretch px-[22px] md:flex-col sm:px-5">
                 <div className="flex flex-1 items-start justify-end md:flex-col md:self-stretch">

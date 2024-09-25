@@ -27,12 +27,12 @@ export default function BidForm() {
               />
               <Text
                 as="p"
-                className="text-left text-[12px] font-normal leading-[22px] text-red-900" 
+                className="text-left text-[12px] font-normal leading-[22px] text-red-900"
               >
                 Bạn đã bị trả giá cao hơn. Bạn vẫn có thể thắng, hãy thử trả giá lại.
               </Text>
             </div>
-            <Text as="p" className="mt-5 text-left text-[14px] text-black-900"> 
+            <Text as="p" className="mt-5 text-left text-[14px] text-black-900">
               <span className="font-bold text-[18px]">Đặt giá thầu của bạn</span>
               <br />
               Hãy cân nhắc trả giá cao nhất mà bạn sẵn sàng trả. Chúng tôi sẽ trả giá vừa đủ để giữ bạn ở vị trí dẫn đầu.
@@ -49,22 +49,26 @@ export default function BidForm() {
                   500.00 VND
                 </Button>
               </div>
-              <div className="flex items-center gap-2">
-                <Input
-                  shape="round"
-                  name="Bid Input"
-                  placeholder={`Nhập giá thầu`}
-                  className="rounded-lg border-[0.5px] px-3 flex-grow"
-                />
-                <Button shape="round" className="min-w-[80px] rounded-lg border px-[10px] !text-gray-900 bg-green-500">
-                  Giá thầu
-                </Button>
-              </div>
+                <div className="flex items-center gap-2">
+                    <Input
+                        shape="round"
+                        name="Bid Input"
+                        placeholder={`Nhập giá thầu`}
+                        className="rounded-lg border-[0.5px] px-3 flex-grow"
+                    />
+                    {/*<Button shape="round" className="min-w-[80px] rounded-lg border px-[10px] !text-gray-900 bg-green-500">*/}
+                    {/*  Giá thầu*/}
+                    {/*</Button>*/}
+                    <button type="button"
+                            className="text-green-800 hover:text-white border border-green-500 hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-300 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">Green
+                    </button>
+
+                </div>
             </div>
-            <Text as="p" className="mt-5 text-left text-[12px] text-black-900"> {/* Căn lề trái cho văn bản */}
-              Khi trả giá bạn phải cam kết các chính sách của hệ thống.{" "}
-              <span className="font-bold">Chính sách.</span>
-            </Text>
+              <Text as="p" className="mt-5 text-left text-[12px] text-black-900"> {/* Căn lề trái cho văn bản */}
+                  Khi trả giá bạn phải cam kết các chính sách của hệ thống.{" "}
+                  <span className="font-bold">Chính sách.</span>
+              </Text>
           </div>
         </div>
       </div>
