@@ -1,5 +1,6 @@
 import { Img, Heading } from "../../components";
 import React, { Suspense } from "react";
+import { Carousel } from "antd";
 
 const partnerLogosList = [
   { firstLogo: "images/img_1.png" },
@@ -23,6 +24,7 @@ export default function TrustedBrandsSection() {
           </Heading>
           <div className="flex gap-[68px] self-stretch md:flex-col">
             <Suspense fallback={<div>Loading feed...</div>}>
+
               {partnerLogosList.map((d, index) => (
                 <Img
                   key={"partnersLogos" + index}

@@ -1,6 +1,7 @@
 import React from "react";
 import {useGetUsersQuery} from "../services/user.service.js";
 import { Link } from "react-router-dom";
+import FooterBK from "../components/FooterBK/index.jsx";
 
 const TestAPI = () => {
     const {
@@ -16,6 +17,7 @@ const TestAPI = () => {
     if (isLoading) {
         // eslint-disable-next-line react/no-unescaped-entities
         content = <p>"Loading..."</p>;
+
     } else if (isSuccess) {
         content = (
             <section className="users">
@@ -26,9 +28,10 @@ const TestAPI = () => {
                     })}
                 </ul>
                 <Link to="/welcome">Back to Welcome</Link>
+
             </section>
 
-            
+
         );
     } else if (isError) {
         content = <p>{JSON.stringify(error)}</p>;

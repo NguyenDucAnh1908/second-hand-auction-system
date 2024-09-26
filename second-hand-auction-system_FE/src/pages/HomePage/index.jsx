@@ -14,6 +14,7 @@ import TrendingProductsSection from "./TrendingProductsSection";
 import TrustedBrandsSection from "./TrustedBrandsSection";
 import React, { Suspense } from "react";
 import ProductDetails31 from "../../components/ProductDetails31/index.jsx";
+import FooterBK from "../../components/FooterBK/index.jsx";
 
 const fashionItemsList = [
   {
@@ -400,27 +401,18 @@ export default function HomePagePage() {
           <RecentProductsSection />
 
           {/* trusted brands section */}
+          <RecentProductsSection />
           {/*<TrustedBrandsSection />*/}
 
           {/* fashion promotion section */}
-          <FashionPromotionSection />
-          <div className="mt-[194px] self-stretch">
-            <Footer5 className="mt-[34px] h-[388px] bg-[url(/public/images/img_group_19979.png)] bg-cover bg-no-repeat md:h-auto" />
+          <FeaturedProductsSection />
+          {/*<FashionPromotionSection />*/}
+          <div className="mt-[19px] self-stretch">
+            {/*<Footer5 className="mt-[34px] h-[410px] bg-[url(/public/images/img_group_19979.png)] bg-cover bg-no-repeat md:h-auto" />*/}
+            <FooterBK />
           </div>
         </div>
       </div>
     </>
   );
 }
-
-                 
-
-
-
-
-
-
-
-
-
-
