@@ -3,7 +3,7 @@ import React from "react";
 
 export default function DashboardAdminOne({
   tngthunhp = "Tổng Thu Nhập",
-  snphmmi = "Sản phẩm mới",
+  // snphmmi = "Sản phẩm mới",
   p59021100,
   p365tr256 = "365TR.256",
   ...props
@@ -22,14 +22,14 @@ export default function DashboardAdminOne({
       </Heading>
       <div className="mx-auto flex flex-1 flex-col items-end">
         <div className="relative z-[2] mr-[18px] flex flex-col items-center rounded-[16px] bg-gray-100_01 px-2.5 py-5">
-          <Img src="images/img_sort_green_a700.svg" alt="Sort Icon" className="h-[40px]" />
+          <Img src="images/img_wallet.svg" alt="Sort Icon" className="h-[40px]" />
         </div>
         <Text
           size="texts"
           as="p"
           className="relative mt-[-16px] w-[36%] text-[14px] font-normal leading-[17px] text-blue_gray-600"
         >
-          {snphmmi}
+          {/* {snphmmi} */}
         </Text>
       </div>
       <Text
@@ -37,10 +37,10 @@ export default function DashboardAdminOne({
         as="p"
         className="absolute bottom-1/4 left-[21.15px] m-auto text-[14px] font-normal text-green-a700"
       >
-        <span>59.021.100</span>
+        {/* <span>59.021.100</span>
         <a href="#" className="inline underline">
           đ
-        </a>
+        </a> */}
       </Text>
       <Heading
         size="headinglg"
