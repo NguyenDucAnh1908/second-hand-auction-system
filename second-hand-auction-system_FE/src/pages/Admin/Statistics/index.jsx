@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import Sidebar1 from "../../../components/Sidebar1";
+import SidebarAdmin from "../../../components/SidebarAdmin";
 import HeaderAdmin from "../../../components/HeadeAdmin";
 import IncomeAndOrdersSection from "./IncomeAndOrdersSection";
 import IncomeStatisticsSection from "./IncomeStatisticsSection";
@@ -26,7 +26,7 @@ export default function StatisticsAdmin() {
         <div className="mb-1 mr-[66px] flex flex-col gap-[42px] md:mr-0">
           <HeaderAdmin toggleSidebar={toggleSidebar} /> {/* Truyền hàm toggleSidebar xuống HeaderAdmin */}
           <div className="flex items-start">
-            {isSidebarVisible && <Sidebar1 />} {/* Hiển thị Sidebar nếu isSidebarVisible là true */}
+            {isSidebarVisible && <SidebarAdmin />} {/* Hiển thị Sidebar nếu isSidebarVisible là true */}
             <div className="flex flex-1 flex-col gap-[38px] self-center">
               <div className="flex flex-col gap-4">
                 {/* income and orders section */}

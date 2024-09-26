@@ -1,8 +1,8 @@
-import { Img } from "./..";
+import { Img } from "..";
 import React, { useState } from "react";
 import { MenuItem, Menu, Sidebar } from "react-pro-sidebar";
 
-export default function Sidebar1({ ...props }) {
+export default function SidebarAdmin({ ...props }) {
   const [collapsed, setCollapsed] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0); // State để theo dõi mục đang được chọn
 
