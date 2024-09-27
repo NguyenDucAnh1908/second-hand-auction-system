@@ -9,8 +9,8 @@ export default function RecommendedProductsSection() {
   return (
     <>
       {/* recommended products section */}
-      <div className="mt-[198px] flex flex-col items-center self-stretch">
-        <div className="container-xs flex flex-col items-center gap-[72px] md:gap-[54px] md:px-5 sm:gap-9">
+      <div className="mt-[50px] flex flex-col items-center self-stretch">
+        <div className="container-xs flex flex-col items-center gap-[20px] md:gap-[54px] md:px-5 sm:gap-9">
           <Heading
             size="text7xl"
             as="h2"
