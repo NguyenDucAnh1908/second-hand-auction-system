@@ -230,8 +230,8 @@ export default function AuctionPage() {
 
                         <div className="mb-5  flex items-start gap-[30px] self-stretch md:flex-col">
                             <div
-                                className="flex w-[32%] flex-col items-start gap-[110px] md:w-full md:gap-[82px] sm:gap-[55px]">
-                                <div className="flex flex-col gap-8 self-stretch">
+                                className="flex w-[40%] flex-col items-start gap-[110px] md:w-full md:gap-[82px] sm:gap-[55px]">
+                                <div className="flex flex-col gap-2 self-stretch">
                                 <div className="flex items-center justify-between gap-5">
                                         <Heading
                                             size="text8xl"
@@ -262,69 +262,67 @@ export default function AuctionPage() {
                                             </Text>
                                         </div>
                                     </div>
+
                                     <div className="flex flex-col gap-[46px]">
-                                        <div className="flex items-start justify-center gap-[26px] sm:flex-col">
-                                            <Heading
-                                                as="p"
-                                                className="font-jost text-[16px] font-normal text-blue_gray-900_01"
-                                            >
-                                                5 sao
-                                            </Heading>
-                                            <div className="flex flex-1 flex-col items-end self-center sm:self-stretch">
-                                                <Heading
-                                                    as="p"
-                                                    className="font-jost text-[16px] font-normal text-blue_gray-900_01"
-                                                >
-                                                    89%
-                                                </Heading>
-                                                <div
-                                                    className="relative mt-[-2px] flex self-stretch rounded-md bg-gray-100">
-                                                    <div className="h-[12px] w-[70%] rounded-md bg-orange-300"/>
-                                                </div>
+                                        <p className="text-sm font-medium text-gray-500 dark:text-gray-400">1,745 global
+                                            ratings</p>
+                                        <div className="flex items-center mt-0">
+                                            <a href="#"
+                                               className="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline flex-shrink-0">5
+                                                star</a>
+                                            <div
+                                                className="w-full h-5 mx-2 bg-gray-200 rounded dark:bg-gray-700">  {/* Giảm khoảng cách ngang */}
+                                                <div className="h-5 bg-yellow-300 rounded" style={{width: '70%'}}></div>
                                             </div>
+                                            <span
+                                                className="text-sm font-medium text-gray-500 dark:text-gray-400 flex-shrink-0">70%</span>
                                         </div>
-                                        <div className="flex items-start justify-center gap-[26px] sm:flex-col">
-                                            <Heading
-                                                as="p"
-                                                className="font-jost text-[16px] font-normal text-blue_gray-900_01"
-                                            >
-                                                4 sao
-                                            </Heading>
-                                            <div className="flex flex-1 flex-col items-end self-center sm:self-stretch">
-                                                <Heading
-                                                    as="p"
-                                                    className="font-jost text-[16px] font-normal text-blue_gray-900_01"
-                                                >
-                                                    4%
-                                                </Heading>
-                                                <div
-                                                    className="relative mt-[-2px] h-[12px] self-stretch rounded-md bg-gray-100">
-                                                    <div
-                                                        style={{width: "70%"}}
-                                                        className="absolute h-full rounded-md bg-orange-300"
-                                                    />
-                                                </div>
+                                        <div className="flex items-center mt-4">
+                                            <a href="#"
+                                               className="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline flex-shrink-0">4
+                                                star</a>
+                                            <div
+                                                className="w-full h-5 mx-2 bg-gray-200 rounded dark:bg-gray-700">  {/* Giảm khoảng cách ngang */}
+                                                <div className="h-5 bg-yellow-300 rounded" style={{width: '17%'}}></div>
                                             </div>
+                                            <span
+                                                className="text-sm font-medium text-gray-500 dark:text-gray-400 flex-shrink-0">17%</span>
                                         </div>
-                                        <div className="flex flex-col gap-[46px]">
-                                            <UserProfile/>
-                                            <UserProfile
-                                                saoCounterText="2 sao"
-                                                threePercentText="1%"
-                                            />
+
+                                        <div className="flex items-center mt-4">
+                                            <a href="#"
+                                               className="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline flex-shrink-0">3
+                                                star</a>
+                                            <div className="w-full h-5 mx-2 bg-gray-200 rounded dark:bg-gray-700">
+                                                <div className="h-5 bg-yellow-300 rounded" style={{width: '8%'}}></div>
+                                            </div>
+                                            <span
+                                                className="text-sm font-medium text-gray-500 dark:text-gray-400 flex-shrink-0">8%</span>
                                         </div>
-                                        <UserStatistics/>
+
+                                        <div className="flex items-center mt-4">
+                                            <a href="#"
+                                               className="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline flex-shrink-0">2
+                                                star</a>
+                                            <div className="w-full h-5 mx-2 bg-gray-200 rounded dark:bg-gray-700">
+                                                <div className="h-5 bg-yellow-300 rounded" style={{width: '4%'}}></div>
+                                            </div>
+                                            <span
+                                                className="text-sm font-medium text-gray-500 dark:text-gray-400 flex-shrink-0">4%</span>
+                                        </div>
+
+                                        <div className="flex items-center mt-4">
+                                            <a href="#"
+                                               className="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline flex-shrink-0">1
+                                                star</a>
+                                            <div className="w-full h-5 mx-2 bg-gray-200 rounded dark:bg-gray-700">
+                                                <div className="h-5 bg-yellow-300 rounded" style={{width: '1%'}}></div>
+                                            </div>
+                                            <span
+                                                className="text-sm font-medium text-gray-500 dark:text-gray-400 flex-shrink-0">1%</span>
+                                        </div>
                                     </div>
                                 </div>
-                                {/*<Button*/}
-                                {/*    color="green_A700"*/}
-                                {/*    size="3xl"*/}
-                                {/*    variant="outline"*/}
-                                {/*    shape="round"*/}
-                                {/*    className="min-w-[154px] rounded-md !border-2 pl-8 pr-[18px] font-medium sm:pl-5"*/}
-                                {/*>*/}
-                                {/*    Viết đánh giá*/}
-                                {/*</Button>*/}
                             </div>
                             <div className="mt-[18px] flex flex-1 flex-col gap-9 self-center md:self-stretch">
                                 <div className="ml-1 flex flex-col items-start gap-[50px] md:ml-0">
@@ -451,8 +449,6 @@ export default function AuctionPage() {
                 {/* recommended products section */}
                 <RecommendedProductsSection/>
                 <div className="mt-[50px] self-stretch">
-                    {/*<Footer5*/}
-                    {/*    className="mt-[34px] h-[388px] bg-[url(/public/images/img_group_19979.png)] bg-cover bg-no-repeat md:h-auto"/>*/}
                     <FooterBK />
                 </div>
             </div>
