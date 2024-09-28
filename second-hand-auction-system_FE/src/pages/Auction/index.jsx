@@ -327,15 +327,25 @@ export default function AuctionPage() {
                             <div className="mt-[18px] flex flex-1 flex-col gap-9 self-center md:self-stretch">
                                 <div className="ml-1 flex flex-col items-start gap-[50px] md:ml-0">
                                     <div className="flex flex-col gap-1.5 self-stretch">
+                                        {/*<Heading*/}
+                                        {/*    size="text2xl"*/}
+                                        {/*    as="p"*/}
+                                        {/*    className="w-[32%] text-[18px] font-medium leading-[22px] text-blue_gray-900_01 md:w-full"*/}
+                                        {/*>*/}
+                                        {/*    39 Đánh giá sản phẩm người bán*/}
+                                        {/*</Heading>*/}
                                         <Heading
                                             size="text2xl"
                                             as="p"
-                                            className="w-[32%] text-[18px] font-medium leading-[22px] text-blue_gray-900_01 md:w-full"
+                                            className="text-[18px] font-medium leading-[22px] text-blue_gray-900_01"
+                                            style={{ margin: 0, padding: 0 }}
                                         >
                                             39 Đánh giá sản phẩm người bán
                                         </Heading>
+
+
                                         <article>
-                                            <div className="flex items-center mb-4">
+                                            <div className="flex items-center my-6">
                                                 <img className="w-10 h-10 me-4 rounded-full"
                                                      src="/docs/images/people/profile-picture-5.jpg" alt=""/>
                                                 <div className="font-medium dark:text-white">
