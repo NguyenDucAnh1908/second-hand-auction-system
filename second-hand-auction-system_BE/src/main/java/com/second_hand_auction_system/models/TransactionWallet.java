@@ -1,5 +1,7 @@
 package com.second_hand_auction_system.models;
 
+import com.second_hand_auction_system.utils.TransactionStatus;
+import com.second_hand_auction_system.utils.TransactionType;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -10,7 +12,7 @@ import lombok.*;
 @Setter
 @Builder
 @Table(name = "transaction_wallet")
-public class TransactionWallet extends BaseEntity{
+public class TransactionWallet extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int transactionWalletId;
@@ -24,11 +26,14 @@ public class TransactionWallet extends BaseEntity{
     @Column(name = "commission_rate")
     private int commissionRate;
 
-    @Column(name = "transaction_type")
-    private String transactionType;
+    @Enumerated(EnumType.STRING)
+    private TransactionType transactionType;
 
-    @Column(name = "status")
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private TransactionStatus transactionStatus;
+
+    @Column(name = "image")
+    private String image;
 
 
 }

@@ -9,12 +9,12 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-@Table(name = "size")
-public class Size extends BaseEntity{
+@Table(name = "wallet_system")
+public class WalletSystem extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int sizeId;
+    private int walletAdminId;
 
-    @Column(name = "size_name")
-    private String sizeName;
+    @Column(name = "balance")
+    private double balance;
 }

@@ -1,5 +1,6 @@
 package com.second_hand_auction_system.models;
 
+import com.second_hand_auction_system.utils.AuctionStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -39,8 +40,11 @@ public class Auction extends BaseEntity{
     @Column(name = "ship_type")
     private String shipType;
 
-    @Column(name = "auction_status")
-    private String auctionStatus;
+    @Column(name = "comment")
+    private String comment;
+
+    @Enumerated(EnumType.STRING)
+    private AuctionStatus status;
 
     @Column(name = "approve_by")
     private String approveBy;
@@ -50,4 +54,8 @@ public class Auction extends BaseEntity{
 
     @Column(name = "create_by")
     private String createBy;
+
+    @OneToOne
+    @JoinColumn(name = "item_id")
+    private Item item;
 }

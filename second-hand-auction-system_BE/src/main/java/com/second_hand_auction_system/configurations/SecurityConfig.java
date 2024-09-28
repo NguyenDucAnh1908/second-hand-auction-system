@@ -23,7 +23,8 @@ import static org.springframework.http.HttpMethod.GET;
 public class SecurityConfig {
     private final AuthenticationProvider authenticationProvider;
     private final JwtFilter jwtFilter;
-    private final LoginGoogle loginGoogle;
+    private final LoginGoogleSuccess loginGoogleSuccess;
+    private final LoginGoogleFailure loginGoogleFailure;
     private final LogoutHandler logoutHandler;
 
     private static final String[] WHILE_LIST = {
@@ -45,8 +46,10 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
-
-
+                .oauth2Login(oauth2 -> oauth2
+                        .successHandler(loginGoogleSuccess)
+                        .failureHandler(loginGoogleFailure)
+                )
                 .logout(logout -> logout
                         .logoutUrl("/api/v1/auth/logout")
                         .addLogoutHandler(logoutHandler)

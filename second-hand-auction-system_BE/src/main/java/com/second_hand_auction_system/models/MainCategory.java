@@ -10,7 +10,7 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-@Table(name = "mainCategory")
+@Table(name = "main_Category")
 public class MainCategory extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

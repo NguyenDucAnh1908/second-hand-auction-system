@@ -21,8 +21,8 @@ public class Address extends BaseEntity {
     @Column(name = "distric_name")
     private String distric_name;
 
-    @Column(name = "first_name")
-    private String first_name;
+    @Column(name = "address_name")
+    private String address_name;
 
     @Column(name = "default_address")
     private String default_address;

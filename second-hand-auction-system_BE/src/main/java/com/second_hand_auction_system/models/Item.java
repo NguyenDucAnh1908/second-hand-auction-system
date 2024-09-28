@@ -1,5 +1,6 @@
 package com.second_hand_auction_system.models;
 
+import com.second_hand_auction_system.utils.ItemStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -27,13 +28,35 @@ public class Item extends BaseEntity{
     @Column(name = "item_condition")
     private String itemCondition;
 
-    @Column(name = "status")
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private ItemStatus itemStatus;
+
+    @Column(name = "brand_name")
+    private String brandName;
+
+    @Lob
+    @Column(name = "document")
+    private byte[] fileData;
 
     @Column(name = "thumbnail")
     private String thumbnail;
 
-    
+    @Column(name = "createBy")
+    private String createBy;
 
+    @Column(name = "updateBy")
+    private String updateBy;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @OneToOne(mappedBy = "item",cascade = CascadeType.ALL)
+    private FeedBack feedBack;
+
+    @OneToOne(mappedBy = "item",cascade = CascadeType.ALL)
+    private Auction auction;
+
+    @OneToOne(mappedBy = "item",cascade = CascadeType.ALL)
+    private ItemSpecific itemSpecific;
 }

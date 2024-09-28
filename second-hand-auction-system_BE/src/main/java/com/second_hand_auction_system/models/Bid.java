@@ -26,4 +26,12 @@ public class Bid extends BaseEntity{
 
     @Column(name = "win_bid")
     private boolean winBid;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "auction_id")
+    private Auction auction;
 }

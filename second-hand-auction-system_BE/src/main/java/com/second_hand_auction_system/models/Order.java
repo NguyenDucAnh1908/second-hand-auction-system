@@ -1,5 +1,8 @@
 package com.second_hand_auction_system.models;
 
+import com.second_hand_auction_system.utils.OrderStatus;
+import com.second_hand_auction_system.utils.PaymentMethod;
+import com.second_hand_auction_system.utils.PaymentStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -9,7 +12,7 @@ import lombok.*;
 @Setter
 @Builder
 @Table(name = "order")
-public class Order extends BaseEntity{
+public class Order extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int orderId;
@@ -26,14 +29,11 @@ public class Order extends BaseEntity{
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @Column(name = "status")
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status;
 
-    @Column(name = "payment_method")
-    private String paymentMethod;
-
-    @Column(name = "payment_status")
-    private String paymentStatus;
+    @Enumerated(EnumType.STRING)
+    private PaymentMethod paymentMethod;
 
     @Column(name = "shipping_method")
     private String shippingMethod;

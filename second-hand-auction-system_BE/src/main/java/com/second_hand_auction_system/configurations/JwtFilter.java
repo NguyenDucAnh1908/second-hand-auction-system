@@ -38,16 +38,18 @@ public class JwtFilter extends OncePerRequestFilter {
         final String authHeader = request.getHeader("Authorization");
         logger.info("authHeader value: " + authHeader);
 
-        String email;
-        String token;
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
-            token = authHeader.substring(7);
-            email = jwtService.extractUserEmail(token);
+            String token = authHeader.substring(7);
+            String email = jwtService.extractUserEmail(token);
+
             if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                 logger.info("Email: " + email);
-                UserDetails userDetails = this.userDetailsService.loadUserByUsername(email);
-                var validToken = tokenRepository.findByToken(token)
-                        .map(t -> !t.isExpired() && !t.isRevoked()).orElse(false);
+                UserDetails userDetails = userDetailsService.loadUserByUsername(email);
+
+                boolean validToken = tokenRepository.findByToken(token)
+                        .map(t -> !t.isExpired() && !t.isRevoked())
+                        .orElse(false);
+
                 if (jwtService.isTokenValid(token, userDetails) && validToken) {
                     UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
                             userDetails,
@@ -55,14 +57,15 @@ public class JwtFilter extends OncePerRequestFilter {
                             userDetails.getAuthorities()
                     );
                     authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                    logger.info("The information inside authToken details: " + authToken.getDetails());
+                    logger.info("Authentication token details: " + authToken.getDetails());
                     SecurityContextHolder.getContext().setAuthentication(authToken);
+                } else {
+                    logger.warn("Invalid token: " + token);
                 }
             }
         }
         filterChain.doFilter(request, response);
     }
-
-
-
 }
+
+

@@ -9,7 +9,7 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-@Table(name = "subcategory")
+@Table(name = "sub_category")
 public class SubCategory extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
