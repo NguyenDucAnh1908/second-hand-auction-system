@@ -26,7 +26,7 @@ export default function ProductPage() {
           <Header2 />
           <div className="container-xs md:px-5">
             <div className="mr-2.5 flex items-center gap-8 md:mr-0 md:flex-col">
-              <div className="flex w-[22%] flex-col gap-3.5 md:w-full">
+              <div className="flex w-[25%] flex-col gap-3.5 md:w-full -mt-[800px]">
                 <div className="flex flex-col items-start gap-6">
                   <div className="flex items-center justify-between gap-5 self-stretch">
                     <Heading size="text2xl" as="h1" className="text-[18px] font-medium text-blue_gray-900_01">
@@ -266,106 +266,13 @@ Renewed"
                   </div>
                 </div>
               </div>
-              <div className="flex w-[75%] flex-col gap-4 md:w-full">
-                <div className="rounded-md bg-gray-100_01">
-                  <div className="mt-2">
-                    <div className="flex items-start justify-center md:flex-col">
-                      <div className="relative z-[1] mt-[76px] flex flex-1 flex-col items-center gap-2.5 md:self-stretch">
-                        <Heading
-                          size="heading5xl"
-                          as="h6"
-                          className="w-[98%] text-[48px] font-semibold uppercase leading-[60px] text-blue_gray-900_01 md:w-full md:text-[44px] sm:text-[38px]"
-                        >
-                          GIẢM GIÁ 500K CHO THỜI TRANG Đôi
-                        </Heading>
-                        <div className="flex flex-col items-start gap-5 self-stretch">
-                          <Heading
-                            as="p"
-                            className="ml-1.5 w-[88%] text-[16px] font-normal leading-7 text-blue_gray-600_01 md:ml-0 md:w-full"
-                          >
-                            Tất cả các loại sản phẩm ở một nơi. Bắt đầu từ $1. Nhận tiền hoàn lại và ưu đãi
-                          </Heading>
-                          <Button
-                            color="green_A700"
-                            size="3xl"
-                            shape="round"
-                            className="min-w-[190px] rounded-md px-[34px] !text-gray-100_01 sm:px-5"
-                          >
-                            Khám phá ngay
-                          </Button>
-                        </div>
-                      </div>
-                      <div className="relative ml-[-70px] flex items-center self-center md:ml-0 sm:flex-col">
-                        <Img
-                          src="images/img_model_man_536x292.png"
-                          alt="Man Model Image"
-                          className="h-[536px] w-[50%] rounded-md object-contain sm:w-full"
-                        />
-                        <Img
-                          src="images/img_model_women_526x282.png"
-                          alt="Woman Model Image"
-                          className="relative ml-[-130px] h-[526px] w-[48%] rounded-md object-contain sm:ml-0 sm:w-full"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="ml-1.5 mr-10 flex flex-col items-start gap-[38px] md:mx-0">
-                  <Heading
-                    size="text7xl"
-                    as="p"
-                    className="ml-3 text-[28px] font-medium text-blue_gray-900_01 md:ml-0 md:text-[26px] sm:text-[24px]"
-                  >
-                    Sản phẩm đang đấu giá
-                  </Heading>
-                  <div className="relative h-[450px] content-center self-stretch md:h-auto">
-                    <div className="mx-auto flex w-full md:flex-col">
-                      <Slider
-                        autoPlay
-                        autoPlayInterval={2000}
-                        responsive={{ 0: { items: 1 }, 551: { items: 2 }, 1051: { items: 4 } }}
-                        disableDotsControls
-                        activeIndex={sliderState}
-                        onSlideChanged={(e) => {
-                          setSliderState(e?.item);
-                        }}
-                        ref={sliderRef}
-                        items={[...Array(12)].map(() => (
-                          <React.Fragment key={Math.random()}>
-                            <ProductDetails4
-                              originalPrice="128.000đ"
-                              className="border border-solid border-gray-200 bg-bg-white"
-                            />
-                          </React.Fragment>
-                        ))}
-                      />
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 top-0 m-auto flex h-max flex-1 justify-between gap-5">
-                      <Button
-                        onClick={() => {
-                          sliderRef?.current?.slidePrev();
-                        }}
-                        className="w-[38px] rounded-[18px] border border-solid border-gray-200 px-3"
-                      >
-                        <Img src="images/img_arrow_left_blue_gray_900.svg" />
-                      </Button>
-                      <Button
-                        onClick={() => {
-                          sliderRef?.current?.slideNext();
-                        }}
-                        className="w-[38px] rounded-[18px] border border-solid border-blue_gray-900 px-3"
-                      >
-                        <Img src="images/img_arrow_right_blue_gray_900_1.svg" />
-                      </Button>
-                    </div>
-                  </div>
-                </div>
+              <div className="flex w-[75%] flex-col gap-6.5 md:w-full -mt-[60px]">
+                <ProductSection />
               </div>
             </div>
           </div>
 
-          {/* product section */}
-          <ProductSection />
+         
           <div className="mt-[194px] self-stretch">
             <FooterBK className="mt-[34px] h-[388px] bg-[url(/public/images/img_group_19979.png)] bg-cover bg-no-repeat md:h-auto" />
           </div>

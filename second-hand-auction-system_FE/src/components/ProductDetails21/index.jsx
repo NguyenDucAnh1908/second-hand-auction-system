@@ -49,9 +49,7 @@ export default function ProductDetails21({
               đ
             </a>
           </Heading>
-          <Text as="p" className="self-start text-[14px] font-normal capitalize text-blue_gray-600_01 line-through">
-            {originalPrice}
-          </Text>
+        
         </div>
       </div>
     </div>
