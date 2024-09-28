@@ -4,7 +4,8 @@ import React from "react";
 import ProfileCard from "../../components/ProfileCard";
 import AccountOptions from "../../components/AccountOption";
 import Header2 from "../../components/Header2";
-import Footer5 from "../../components/Footer5";
+import FooterBK from "../../components/FooterBK";
+
 
 const dropDownOptions = [
     { label: "Option1", value: "option1" },
@@ -122,7 +123,7 @@ export default function CreateAddressPage() {
                         </div>
                     </div>
                     <div className="mt-[194px] self-stretch">
-                        <Footer5 className="mt-[34px] h-[388px] bg-[url(/images/img_group_19979.png)] bg-cover bg-no-repeat md:h-auto" />
+                        <FooterBK  className="mt-[34px] h-[388px] bg-[url(/images/img_group_19979.png)] bg-cover bg-no-repeat md:h-auto" />
                     </div>
                 </div>
             </div>

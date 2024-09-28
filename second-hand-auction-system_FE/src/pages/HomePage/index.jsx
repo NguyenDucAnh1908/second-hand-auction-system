@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet";
 import { Text, Heading, Img, Button, Slider } from "../../components";
-import Footer5 from "../../components/Footer5";
 import Header2 from "../../components/Header2";
 import ProductDetails from "../../components/ProductDetails";
 import ProductDetails11 from "../../components/ProductDetails11";

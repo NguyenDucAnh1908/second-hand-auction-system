@@ -18,7 +18,6 @@ import RecommendedProductsSection from "./RecommendedProductsSection";
 import React, {Suspense, useState} from "react";
 import { Avatar } from 'antd';
 import { AntDesignOutlined } from '@ant-design/icons';
-import Footer5 from "../../components/Footer5";
 import {
     AccordionItemPanel,
     AccordionItemHeading,

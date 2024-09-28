@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import { Heading, Button, Input, SelectBox, Img, Text } from "../../components";
 import Header2 from "../../components/Header2";
-import Footer5 from "../../components/Footer5";
+import FooterBK from "../../components/FooterBK";
 import React from "react";
 import { TabPanel, TabList, Tab, Tabs } from "react-tabs";
 import ProfileCard from "../../components/ProfileCard";
@@ -138,7 +138,7 @@ export default function DepositMoneyPage() {
                     </div>
                 </div>
                 <div className="mt-[194px] self-stretch">
-                    <Footer5 className="mt-[34px] h-[388px] bg-[url(/images/img_group_19979.png)] bg-cover bg-no-repeat md:h-auto" />
+                    <FooterBK className="mt-[34px] h-[388px] bg-[url(/images/img_group_19979.png)] bg-cover bg-no-repeat md:h-auto" />
                 </div>
             </div>
         </>

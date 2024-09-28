@@ -5,7 +5,7 @@ import NumberRow from "../../components/NumberRow";
 import React from "react";
 import { TabPanel, TabList, Tab, Tabs } from "react-tabs";
 import Header2 from "../../components/Header2";
-import Footer5 from "../../components/Footer5";
+import FooterBK from "../../components/FooterBK/index.jsx";
 import ProfileCard from "../../components/ProfileCard";
 import AccountOptions from "../../components/AccountOption";
 import Pagination from "../../components/Pagination";
@@ -221,7 +221,7 @@ export default function CustomerTransactionHistoryPagePage() {
                     </div>
                 </div>
                 <div className="mt-[194px] self-stretch">
-                    <Footer5 className="mt-[34px] h-[388px] bg-[url(/images/img_group_19979.png)] bg-cover bg-no-repeat md:h-auto" />
+                    <FooterBK className="mt-[34px] h-[388px] bg-[url(/images/img_group_19979.png)] bg-cover bg-no-repeat md:h-auto" />
                 </div>
             </div>
         </>

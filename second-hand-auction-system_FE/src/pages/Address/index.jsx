@@ -4,10 +4,11 @@ import {CloseSVG} from "../../components/Input/close.jsx";
 import UserAddressProfile from "../../components/UserAddressProfile";
 import Header2 from "../../components/Header2";
 import React, {Suspense, useState } from "react";
-import Footer5 from "../../components/Footer5";
 import ProfileCard from "../../components/ProfileCard";
 import AccountOptions from "../../components/AccountOption";
 import {Button, Modal, message, Popconfirm } from 'antd';
+import FooterBK from "../../components/FooterBK/index.jsx";
+
 
 const addressList = [
     {
@@ -284,8 +285,7 @@ export default function AddressPage() {
                         </div>
                     </div>
                     <div className="mt-[194px] self-stretch">
-                        <Footer5
-                            className="mt-[34px] h-[388px] bg-[url(/images/img_group_19979.png)] bg-cover bg-no-repeat md:h-auto"/>
+                    <FooterBK  className="mt-[34px] h-[388px] bg-[url(/images/img_group_19979.png)] bg-cover bg-no-repeat md:h-auto" />
                     </div>
                 </div>
             </div>

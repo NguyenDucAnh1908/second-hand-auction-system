@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import Footer5 from "../../components/Footer5";
+import FooterBK from "../../components/FooterBK";
 import RegisterSection from "./RegisterSection";
 import React from "react";
 
@@ -17,7 +17,7 @@ export default function RegisterPage() {
         {/* register section */}
         <RegisterSection />
         <div className="mt-[194px] self-stretch">
-            <Footer5 className="mt-[34px] h-[388px] bg-[url(/public/images/img_group_19979.png)] bg-cover bg-no-repeat md:h-auto" />
+            <FooterBK className="mt-[34px] h-[388px] bg-[url(/public/images/img_group_19979.png)] bg-cover bg-no-repeat md:h-auto" />
           </div>
       </div>
     </>
