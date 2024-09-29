@@ -1,5 +1,5 @@
-import { CloseSVG } from "../Input/close.jsx";
-import { Text, SelectBox, Img, Button, Input } from "./..";
+import { CloseSVG } from "../InputDH/close.jsx";
+import { Text, SelectBox, Img, ButtonDH, InputDH } from "./..";
 import NavBar from "../NavBar/index.jsx"
 import React from "react";
 
@@ -74,7 +74,7 @@ export default function Header2({ ...props }) {
                 className="h-[32px] w-[92px] self-end object-contain md:self-auto"
               />
               <div className="flex w-[86%] items-center justify-between gap-5 md:w-full md:flex-col">
-              <Input
+              <InputDH
                   name="Search Box"
                   placeholder={`Tìm kiếm`}
                   value={searchBarValue}
@@ -108,9 +108,9 @@ export default function Header2({ ...props }) {
                   </div>
                   <div className="flex flex-1 items-center justify-center gap-3.5 sm:self-stretch">
                     <a href="#">
-                      <Button className="h-[48px] w-[50px] rounded-md bg-green-a700_11 p-2.5">
+                      <ButtonDH className="h-[48px] w-[50px] rounded-md bg-green-a700_11 p-2.5">
                         <Img src="images/img_profile_1.svg" />
-                      </Button>
+                      </ButtonDH>
                     </a>
                     <Text className="font-bevietnampro text-[14px] font-bold leading-[22px] text-blue_gray-900_01">
                       <span className="text-[13px] font-normal">

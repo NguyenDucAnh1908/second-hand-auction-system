@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import { Img, Text, Button, TextArea, Heading, SelectBox } from "../../components";
+import { Img, Text, ButtonDH, TextArea, Heading, SelectBox } from "../../components";
 import React from "react";
 import ProfileCard from "../../components/ProfileCard";
 import AccountOptions from "../../components/AccountOption";
@@ -111,12 +111,12 @@ export default function CreateAddressPage() {
                                             className="relative z-[1] mr-6 mt-1.5 self-stretch rounded-md !border !border-gray-300 px-4 text-gray-600 md:mr-0 sm:py-5"
                                         />
                                         <div className="relative mx-[22px] mt-[-80px] h-px self-stretch bg-gray-100 md:mx-0" />
-                                        <Button
+                                        <ButtonDH
                                             shape="round"
                                             className="mb-3.5 mt-[168px] min-w-[172px] bg-green-500 rounded-md border border-solid border-green-a700 px-[33px] font-medium sm:px-5"
                                         >
                                             Lưu{" "}
-                                        </Button>
+                                        </ButtonDH>
                                     </div>
                                 </div>
                             </div>

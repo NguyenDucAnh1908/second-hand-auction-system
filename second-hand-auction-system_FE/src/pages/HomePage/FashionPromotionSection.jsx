@@ -1,4 +1,4 @@
-import { Button, Input, Heading, Img } from "../../components";
+import { ButtonDH, InputDH, Heading, Img } from "../../components";
 import React from "react";
 
 export default function FashionPromotionSection() {
@@ -35,7 +35,7 @@ export default function FashionPromotionSection() {
                   </Heading>
                 </div>
                 <div className="relative mt-[-28px] flex gap-2.5 sm:flex-col">
-                  <Input
+                  <InputDH
                     size="lg"
                     shape="round"
                     type="email"
@@ -43,14 +43,14 @@ export default function FashionPromotionSection() {
                     placeholder={`Địa chỉ Email của bạn`}
                     className="w-[38%] rounded-md px-[22px] sm:w-full sm:px-5"
                   />
-                  <Button
+                  <ButtonDH
                     color="green_400"
                     size="4xl"
                     shape="round"
                     className="min-w-[130px] rounded-md border border-solid border-green-400 px-[33px] sm:px-5"
                   >
                     Gửi ngay
-                  </Button>
+                  </ButtonDH>
                 </div>
               </div>
             </div>

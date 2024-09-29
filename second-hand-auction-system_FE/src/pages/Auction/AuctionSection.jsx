@@ -1,4 +1,4 @@
-import { Text, Img, Heading, Button } from "../../components";
+import { Text, Img, Heading, ButtonDH } from "../../components";
 import UserProfileImage from "../../components/UserProfileImage";
 import React, { Suspense, useState } from "react";
 import { Modal } from 'antd';
@@ -152,15 +152,15 @@ export default function AuctionSection() {
                         <span className="font-bold">Thời gian phiên đấu giá:</span> 2015-09-01 09:12:11
                     </Text>
                     <div className="ml-1.5 mt-[18px] flex flex-col gap-3 self-stretch md:ml-0">
-                        <Button
+                        <ButtonDH
                             onClick={showModal}
                             color="green_A700"
                             size="xl"
                             className="self-stretch rounded-[26px] border border-solid border-green-a700 px-[33px] !text-gray-100_01 sm:px-5"
                         >
                             Đặt giá thầu
-                        </Button>
-                        <Button
+                        </ButtonDH>
+                        <ButtonDH
                             color="green_50"
                             size="xl"
                             leftIcon={
@@ -171,7 +171,7 @@ export default function AuctionSection() {
                             className="gap-[34px] self-stretch rounded-[24px] border border-solid border-green-a700 px-[33px] sm:px-5"
                         >
                             Danh sách đấu giá{" "}
-                        </Button>
+                        </ButtonDH>
                     </div>
 
                     <Heading

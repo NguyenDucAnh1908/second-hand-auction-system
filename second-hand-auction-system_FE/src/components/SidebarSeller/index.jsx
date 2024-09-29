@@ -1,11 +1,10 @@
-import { Img } from "..";
+import { Heading, Img } from "./..";
 import React, { useState } from "react";
 import { MenuItem, Menu, Sidebar } from "react-pro-sidebar";
 
-export default function SidebarAdmin({ ...props }) {
+export default function SidebarSeller({ ...props }) {
   const [collapsed, setCollapsed] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0); 
-
   const handleMenuItemClick = (index) => {
     setActiveIndex(index); 
   };
@@ -37,7 +36,7 @@ export default function SidebarAdmin({ ...props }) {
         >
           <div className="flex items-center">
             <Img src="images/img_growth_1.svg" alt="Dashboard Icon" className="h-[20px] w-[22px]" />
-            <span className="ml-2">Bảng quản lý</span> 
+            <span className="ml-2">của seller</span> 
           </div>
         </MenuItem>
         
@@ -67,7 +66,7 @@ export default function SidebarAdmin({ ...props }) {
         >
           <div className="flex items-center">
             <Img src="images/img_growth_1.svg" alt="Customers Icon" className="h-[20px] w-[22px]" />
-            <span className="ml-2">Khách hàng</span> 
+            <span className="ml-2">Khách hàng</span>
           </div>
         </MenuItem>
         

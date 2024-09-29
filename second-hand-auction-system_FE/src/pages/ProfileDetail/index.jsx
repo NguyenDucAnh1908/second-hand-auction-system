@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import { Img, Text, Button, Heading, SelectBox, Input } from "../../components";
+import { Img, Text, ButtonDH, Heading, SelectBox, InputDH } from "../../components";
 import Header2 from "../../components/Header2";
 import FooterBK from "../../components/FooterBK";
 import React from "react";
@@ -51,7 +51,7 @@ export default function ProfileDetailPage() {
                                                     <Heading as="h5" className="text-[16px] font-medium text-blue_gray-900_01">
                                                         Tên
                                                     </Heading>
-                                                    <Input
+                                                    <InputDH
                                                         shape="round"
                                                         name="Name Field"
                                                         placeholder={`Nhập tên`}
@@ -62,7 +62,7 @@ export default function ProfileDetailPage() {
                                                     <Heading as="h6" className="text-[16px] font-medium text-blue_gray-900_01">
                                                         Email
                                                     </Heading>
-                                                    <Input
+                                                    <InputDH
                                                         shape="round"
                                                         type="email"
                                                         name="Email Field"
@@ -71,12 +71,12 @@ export default function ProfileDetailPage() {
                                                     />
                                                 </div>
                                                 <div className="flex items-center gap-12">
-                                                    <Button
+                                                    <ButtonDH
                                                         shape="round"
                                                         className="min-w-[116px] rounded-md border border-solid border-green-a700 px-[33px] sm:px-5"
                                                     >
                                                         Lưu
-                                                    </Button>
+                                                    </ButtonDH>
                                                     <Text as="p" className="text-[14px] font-normal text-blue_gray-600">
                                                         Hủy bỏ
                                                     </Text>
@@ -87,7 +87,7 @@ export default function ProfileDetailPage() {
                                                     <Heading as="p" className="mt-1 text-[16px] font-medium text-blue_gray-900_01">
                                                         Họ
                                                     </Heading>
-                                                    <Input
+                                                    <InputDH
                                                         shape="round"
                                                         name="Surname Field"
                                                         placeholder={`Nhập họ`}
@@ -98,7 +98,7 @@ export default function ProfileDetailPage() {
                                                     <Heading as="p" className="text-[16px] font-medium text-blue_gray-900_01">
                                                         Số điện thoại
                                                     </Heading>
-                                                    <Input
+                                                    <InputDH
                                                         shape="round"
                                                         name="Phone Field"
                                                         placeholder={`Nhập số điện thoại`}
@@ -116,7 +116,7 @@ export default function ProfileDetailPage() {
                                                 <Heading as="p" className="text-[16px] font-medium text-blue_gray-900_01">
                                                     Mật khẩu gần đây
                                                 </Heading>
-                                                <Input
+                                                <InputDH
                                                     shape="round"
                                                     type="text"
                                                     name="Current Password Field"
@@ -128,7 +128,7 @@ export default function ProfileDetailPage() {
                                                 <Heading as="p" className="text-[16px] font-medium text-blue_gray-900_01">
                                                     Mật khẩu mới
                                                 </Heading>
-                                                <Input
+                                                <InputDH
                                                     shape="round"
                                                     type="text"
                                                     name="New Password Field"
@@ -140,7 +140,7 @@ export default function ProfileDetailPage() {
                                                 <Heading as="p" className="text-[16px] font-medium text-blue_gray-900_01">
                                                     Xác nhận mật khẩu mới
                                                 </Heading>
-                                                <Input
+                                                <InputDH
                                                     shape="round"
                                                     type="text"
                                                     name="Confirm Password Field"
@@ -150,13 +150,13 @@ export default function ProfileDetailPage() {
                                             </div>
                                         </div>
                                         <div className="flex items-center gap-[42px]">
-                                            <Button
+                                            <ButtonDH
                                                 size="2xl"
                                                 shape="round"
                                                 className="min-w-[112px] rounded-md border border-solid border-green-a700 px-[33px] sm:px-5"
                                             >
                                                 Lưu
-                                            </Button>
+                                            </ButtonDH>
                                             <Heading as="p" className="text-[16px] font-normal text-blue_gray-600">
                                                 Hủy bỏ
                                             </Heading>
@@ -195,13 +195,13 @@ export default function ProfileDetailPage() {
                                         </div>
                                     </div>
                                     <div className="mb-[104px] flex items-center gap-14">
-                                        <Button
+                                        <ButtonDH
                                             size="2xl"
                                             shape="round"
                                             className="min-w-[112px] rounded-md border border-solid border-green-a700 px-[33px] sm:px-5"
                                         >
                                             Lưu
-                                        </Button>
+                                        </ButtonDH>
                                         <Heading as="p" className="text-[16px] font-normal text-blue_gray-600">
                                             Hủy bỏ
                                         </Heading>

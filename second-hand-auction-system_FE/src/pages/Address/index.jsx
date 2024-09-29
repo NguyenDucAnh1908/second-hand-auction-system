@@ -1,6 +1,6 @@
 import {Helmet} from "react-helmet";
-import { Input, Img, Heading} from "../../components";
-import {CloseSVG} from "../../components/Input/close.jsx";
+import { InputDH, Img, Heading, ButtonDH} from "../../components";
+import {CloseSVG} from "../../components/InputDH/close.jsx";
 import UserAddressProfile from "../../components/UserAddressProfile";
 import Header2 from "../../components/Header2";
 import React, {Suspense, useState } from "react";
@@ -163,7 +163,7 @@ export default function AddressPage() {
                                 <div
                                     className="absolute bottom-px left-0 right-0 m-auto flex flex-1 flex-col gap-10 rounded-[14px] bg-bg-white px-3.5 py-[26px] shadow-sm sm:py-5">
                                     <div className="ml-3 flex items-center justify-between gap-5 md:ml-0 md:flex-col">
-                                        <Input
+                                        <InputDH
                                             shape="round"
                                             name="Search Field"
                                             placeholder={`Tìm kiếm`}
@@ -212,7 +212,7 @@ export default function AddressPage() {
                                             {/*            key={"addressesList" + index}*/}
                                             {/*        >*/}
                                             {/*            <div className="flex items-center">*/}
-                                            {/*                <input*/}
+                                            {/*                <InputDH*/}
                                             {/*                    type="radio" // Thay đổi thành radio để chỉ cho phép chọn một*/}
                                             {/*                    name="addressSelection" // Đặt tên giống nhau để nhóm lại*/}
                                             {/*                    id={`addressRadio${index}`}*/}
@@ -248,7 +248,7 @@ export default function AddressPage() {
                                                                 okText="Yes"
                                                                 cancelText="No"
                                                             >
-                                                            <input
+                                                            <InputDH
                                                                 type="radio" // Chỉ cho phép chọn một
                                                                 name="addressSelection" // Đặt tên giống nhau để nhóm lại
                                                                 id={`addressRadio${index}`}

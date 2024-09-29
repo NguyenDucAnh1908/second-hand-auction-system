@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import { Heading, Button, Input, SelectBox, Img, Text } from "../../components";
+import { Heading, ButtonDH, InputDH, SelectBox, Img, Text } from "../../components";
 import Header2 from "../../components/Header2";
 import FooterBK from "../../components/FooterBK";
 import React from "react";
@@ -91,9 +91,9 @@ export default function DepositMoneyPage() {
                                                 <Heading as="h5" className="mt-1 text-[16px] font-medium text-blue_gray-900_01">
                                                     Tên ngân hàng
                                                 </Heading>
-                                                <Input
+                                                <InputDH
                                                     shape="round"
-                                                    name="Bank Name Input"
+                                                    name="Bank Name InputDH"
                                                     placeholder={`Bank`}
                                                     className="w-[48%] rounded-md border border-gray-200 px-4"
                                                 />
@@ -102,9 +102,9 @@ export default function DepositMoneyPage() {
                                                 <Heading as="h6" className="text-[16px] font-medium text-blue_gray-900_01">
                                                     Số tiền nạp
                                                 </Heading>
-                                                <Input
+                                                <InputDH
                                                     shape="round"
-                                                    name="Amount Input"
+                                                    name="Amount InputDH"
                                                     placeholder={`VNĐ`}
                                                     className="w-[48%] rounded-md border border-gray-200 px-4"
                                                 />
@@ -113,9 +113,9 @@ export default function DepositMoneyPage() {
                                                 <Heading as="p" className="text-[16px] font-medium text-blue_gray-900_01">
                                                     Ghi chú
                                                 </Heading>
-                                                <Input
+                                                <InputDH
                                                     shape="round"
-                                                    name="Note Input"
+                                                    name="Note InputDH"
                                                     placeholder={`ghi chú`}
                                                     className="w-[48%] rounded-md border border-gray-200 px-3.5"
                                                 />

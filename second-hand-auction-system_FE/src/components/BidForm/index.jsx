@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import { Text, Button, Input, Img } from "./..";
+import { Text, ButtonDH, InputDH, Img } from "./..";
 import React from "react";
 
 export default function BidForm() {
@@ -39,29 +39,29 @@ export default function BidForm() {
             </Text>
             <div className="mt-5 flex flex-col gap-2">
               <div className="flex justify-between">
-                <Button shape="round" className="w-full rounded-lg border px-[10px] !text-gray-900_01 bg-green-500">
+                <ButtonDH shape="round" className="w-full rounded-lg border px-[10px] !text-gray-900_01 bg-green-500">
                   300.00 VND
-                </Button>
-                <Button shape="round" className="ml-2 w-full rounded-lg border px-[10px] bg-green-500">
+                </ButtonDH>
+                <ButtonDH shape="round" className="ml-2 w-full rounded-lg border px-[10px] bg-green-500">
                   400.00 VND
-                </Button>
-                <Button shape="round" className="ml-2 w-full rounded-lg border px-[10px] bg-green-500">
+                </ButtonDH>
+                <ButtonDH shape="round" className="ml-2 w-full rounded-lg border px-[10px] bg-green-500">
                   500.00 VND
-                </Button>
+                </ButtonDH>
               </div>
                 <div className="flex items-center gap-2">
-                    <Input
+                    <InputDH
                         shape="round"
-                        name="Bid Input"
+                        name="Bid InputDH"
                         placeholder={`Nhập giá thầu`}
                         className="rounded-lg border-[0.5px] px-3 flex-grow"
                     />
-                    {/*<Button shape="round" className="min-w-[80px] rounded-lg border px-[10px] !text-gray-900 bg-green-500">*/}
+                    {/*<ButtonDH shape="round" className="min-w-[80px] rounded-lg border px-[10px] !text-gray-900 bg-green-500">*/}
                     {/*  Giá thầu*/}
-                    {/*</Button>*/}
-                    <button type="button"
+                    {/*</ButtonDH>*/}
+                    <ButtonDH type="ButtonDH"
                             className="text-green-800 hover:text-white border border-green-500 hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-300 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">Green
-                    </button>
+                    </ButtonDH>
 
                 </div>
             </div>
