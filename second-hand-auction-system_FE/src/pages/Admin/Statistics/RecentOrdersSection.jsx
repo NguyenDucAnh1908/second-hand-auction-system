@@ -1,4 +1,4 @@
-import { Img, Text, Button, Heading} from "../../../components"; 
+import { Img, Text, ButtonDH, Heading} from "../../../components"; 
 import { ReactTable1 } from "../../../components/ReactTable1/index.jsx";
 import { createColumnHelper } from "@tanstack/react-table";
 import React from "react";
@@ -104,9 +104,9 @@ export default function RecentOrdersSection() {
             tableColumnHelper.accessor("statusRow", {
                 cell: (info) => (
                     <div className="ml-[46px] flex flex-1 px-1">
-                        <Button shape="round" className="mb-6 min-w-[96px] rounded-md px-2.5 font-medium">
+                        <ButtonDH shape="round" className="mb-6 min-w-[96px] rounded-md px-2.5 font-medium">
                             {info.getValue()}
-                        </Button>
+                        </ButtonDH>
                     </div>
                 ),
                 header: (info) => (

@@ -1,4 +1,4 @@
-import { Button, Text, Heading, Img } from "./..";
+import { ButtonDH, Text, Heading, Img } from "./..";
 import React from "react";
 
 export default function UserAddressProfile({
@@ -32,22 +32,22 @@ export default function UserAddressProfile({
           {userAddress}
         </Text>
         <div className="mt-[52px] flex justify-between gap-5">
-          <Button
+          <ButtonDH
             variant="outline"
             shape="round"
             color="undefined_undefined"
             className="min-w-[72px] rounded-md !border px-[23px] sm:px-5"
           >
             {editButtonLabel}
-          </Button>
-          <Button
+          </ButtonDH>
+          <ButtonDH
             variant="outline"
             shape="round"
             color="undefined_undefined"
             className="min-w-[72px] rounded-md !border !bg-gradient2 px-[23px] sm:px-5"
           >
             {deleteButtonLabel}
-          </Button>
+          </ButtonDH>
         </div>
       </div>
     </div>

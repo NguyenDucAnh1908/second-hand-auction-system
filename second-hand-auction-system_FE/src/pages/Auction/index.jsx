@@ -1,10 +1,10 @@
 import {Helmet} from "react-helmet";
 import {
-    Button,
+    ButtonDH,
     Img,
     Slider,
     Heading,
-    Input,
+    InputDH,
     TextArea,
     RatingBar,
     Text,
@@ -512,7 +512,7 @@ export default function AuctionPage() {
                                         </article>
 
                                     </div>
-                                    <Button
+                                    <ButtonDH
                                         color="green_A700"
                                         size="xl"
                                         variant="outline"
@@ -520,7 +520,7 @@ export default function AuctionPage() {
                                         className="ml-[218px] min-w-[298px] rounded-md !border-2 px-8 font-medium md:ml-0 sm:px-5"
                                     >
                                         Xem Tất Cả
-                                    </Button>
+                                    </ButtonDH>
                                 </div>
 
                             </div>

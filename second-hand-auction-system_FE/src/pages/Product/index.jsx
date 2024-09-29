@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import { Img, Text, Heading, Button, CheckBox, SeekBar, Input } from "../../components";
+import { Img, Text, Heading, ButtonDH, CheckBox, SeekBar, InputDH } from "../../components";
 import HeaderComponent from "../../components/HeaderComponent";
 import ProductDetails4 from "../../components/ProductDetails4";
 import ProductDetails5 from "../../components/ProductDetails5";
@@ -91,7 +91,7 @@ export default function ProductPage() {
                   </Collapse>
                   <div className="h-px w-[72%] bg-gray-200"/>
                 </div>
-                <Input
+                <InputDH
                     size="sm"
                     shape="round"
                     name="Brand Search"

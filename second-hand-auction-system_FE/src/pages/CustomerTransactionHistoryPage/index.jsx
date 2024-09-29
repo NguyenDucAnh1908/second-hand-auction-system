@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
-import { Img, Text, Button, Heading, SelectBox, Input } from "../../components";
-import { CloseSVG } from "../../components/Input/close.jsx";
+import { Img, Text, ButtonDH, Heading, SelectBox, InputDH } from "../../components";
+import { CloseSVG } from "../../components/InputDH/close.jsx";
 import NumberRow from "../../components/NumberRow";
 import React from "react";
 import { TabPanel, TabList, Tab, Tabs } from "react-tabs";
@@ -127,9 +127,9 @@ export default function CustomerTransactionHistoryPagePage() {
                                                                             </Text>
                                                                         </div>
                                                                         <div className="flex w-full justify-center p-[22px] sm:w-full sm:p-5">
-                                                                            <Button shape="round" className="mb-2 min-w-[96px] rounded-md px-2.5 font-medium">
+                                                                            <ButtonDH shape="round" className="mb-2 min-w-[96px] rounded-md px-2.5 font-medium">
                                                                                 Hoàn thành
-                                                                            </Button>
+                                                                            </ButtonDH>
                                                                         </div>
                                                                         <div className="ml-5 flex w-full items-start justify-between gap-5 py-[26px] sm:ml-0 sm:w-full sm:py-5">
                                                                             <Text
@@ -179,9 +179,9 @@ export default function CustomerTransactionHistoryPagePage() {
                                                                             </Text>
                                                                         </div>
                                                                         <div className="w-full self-center px-[26px] sm:w-full sm:px-5">
-                                                                            <Button shape="round" className="w-full rounded-md px-2.5 font-medium">
+                                                                            <ButtonDH shape="round" className="w-full rounded-md px-2.5 font-medium">
                                                                                 Hoàn thành
-                                                                            </Button>
+                                                                            </ButtonDH>
                                                                         </div>
                                                                         <div className="ml-5 flex w-full items-start justify-between gap-5 sm:ml-0 sm:w-full">
                                                                             <Text

@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import { Text, Heading, Img, Button, Slider } from "../../components";
+import { Text, Heading, Img, ButtonDH, Slider } from "../../components";
 import Header2 from "../../components/Header2";
 import ProductDetails from "../../components/ProductDetails";
 import ProductDetails11 from "../../components/ProductDetails11";
@@ -120,14 +120,14 @@ export default function HomePagePage() {
                         <div className="flex items-start md:flex-col">
                           <div className="mt-[62px] flex w-[30%] flex-col items-start gap-6 md:w-full">
                             <div className="flex flex-col items-start gap-2.5 self-stretch">
-                              <Button
+                              <ButtonDH
                                 color="blue_gray_900_01"
                                 size="xs"
                                 shape="round"
                                 className="min-w-[172px] rounded-md px-3.5 font-medium"
                               >
                                 Khuyến mãi cuối tháng
-                              </Button>
+                              </ButtonDH>
                               <Heading
                                 size="heading5xl"
                                 as="h1"
@@ -146,14 +146,14 @@ export default function HomePagePage() {
                                 Những gì chúng tôi mất hàng giờ để thực hiện sẽ là của bạn để tận hưởng
                               </Heading>
                             </div>
-                            <Button
+                            <ButtonDH
                               color="green_A700"
                               size="xl"
                               shape="round"
                               className="min-w-[176px] rounded-md px-[34px] sm:px-5"
                             >
                               Khám phá ngay
-                            </Button>
+                            </ButtonDH>
                           </div>
                           <div className="relative h-[446px] w-[56%] content-end self-center px-8 md:h-auto md:w-full sm:px-5">
                             <div className="mx-auto h-[360px] flex-1 rounded-[318px] bg-green-a700_19" />
@@ -179,22 +179,22 @@ export default function HomePagePage() {
                   />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 top-0 z-[2] m-auto flex h-max flex-1 justify-between gap-5">
-                  <Button
+                  <ButtonDH
                     onClick={() => {
                       sliderRef1?.current?.slidePrev();
                     }}
                     className="w-[60px] rounded-[24px] px-4 shadow-xs"
                   >
                     <Img src="images/img_arrow_left.svg" />
-                  </Button>
-                  <Button
+                  </ButtonDH>
+                  <ButtonDH
                     onClick={() => {
                       sliderRef1?.current?.slideNext();
                     }}
                     className="mr-1 w-[60px] rounded-[24px] px-4 shadow-xs"
                   >
                     <Img src="images/img_arrow_right_blue_gray_900_1.svg" />
-                  </Button>
+                  </ButtonDH>
                 </div>
               </div>
             </div>
@@ -283,22 +283,22 @@ export default function HomePagePage() {
                     />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 top-0 m-auto flex h-max flex-1 justify-between gap-5">
-                  <Button
+                  <ButtonDH
                       onClick={() => {
                         sliderRef?.current?.slidePrev();
                       }}
                       className="ml-2.5 w-[44px] rounded-[22px] border border-solid border-gray-200 px-3.5"
                   >
                     <Img src="images/img_arrow_left_blue_gray_900.svg" />
-                  </Button>
-                  <Button
+                  </ButtonDH>
+                  <ButtonDH
                     onClick={() => {
                       sliderRef?.current?.slideNext();
                     }}
                     className="w-[44px] rounded-[22px] border border-solid border-blue_gray-900 px-3.5"
                   >
                     <Img src="images/img_arrow_right_blue_gray_900_1.svg" />
-                  </Button>
+                  </ButtonDH>
                 </div>
               </div>
               <div className="mt-[116px] flex flex-col items-start gap-[30px]">

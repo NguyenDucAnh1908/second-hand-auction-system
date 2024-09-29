@@ -1,4 +1,4 @@
-import { Img, Button, Text, Heading } from "../../components";
+import { Img, ButtonDH, Text, Heading } from "../../components";
 import React from "react";
 
 export default function FeaturedProductsSection() {
@@ -28,9 +28,9 @@ export default function FeaturedProductsSection() {
                   Đồng hồ và dây đeo của bạn phải kết hợp hoàn hảo với nhau.
                 </Text>
               </div>
-              <Button color="green_A700" size="xl" shape="round" className="min-w-[176px] rounded-md px-[34px] sm:px-5">
+              <ButtonDH color="green_A700" size="xl" shape="round" className="min-w-[176px] rounded-md px-[34px] sm:px-5">
                 Khám phá ngay
-              </Button>
+              </ButtonDH>
             </div>
           </div>
           <div className="relative mr-60 mt-[-46px] h-[46px] w-[28px] rotate-[4deg] rounded-[50%] bg-light_green-900_99 blur-[40.00px] backdrop-opacity-[0.5] md:mr-0" />

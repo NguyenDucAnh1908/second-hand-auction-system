@@ -1,4 +1,4 @@
-import { Text, Button, Input, Heading, Img } from "../../components";
+import { Text, ButtonDH, InputDH, Heading, Img } from "../../components";
 import React from "react";
 
 export default function RegisterSection() {
@@ -27,7 +27,7 @@ export default function RegisterSection() {
                 <Heading size="headingxl" as="h2" className="text-[16px] font-semibold text-blue_gray-900_01">
                   Tên
                 </Heading>
-                <Input
+                <InputDH
                   shape="round"
                   name="Name Field"
                   placeholder={`Nguyen Van A`}
@@ -38,7 +38,7 @@ export default function RegisterSection() {
                 <Heading size="headingxl" as="h3" className="text-[16px] font-semibold text-blue_gray-900_01">
                   Số điện thoại
                 </Heading>
-                <Input
+                <InputDH
                   shape="round"
                   type="number"
                   name="Phone Field"
@@ -50,7 +50,7 @@ export default function RegisterSection() {
                 <Heading size="headingxl" as="h4" className="text-[16px] font-semibold text-blue_gray-900_01">
                   Email
                 </Heading>
-                <Input
+                <InputDH
                   shape="round"
                   type="email"
                   name="Email Field"
@@ -62,7 +62,7 @@ export default function RegisterSection() {
                 <Heading size="headingxl" as="h5" className="text-[16px] font-semibold text-blue_gray-900_01">
                   Mật khẩu
                 </Heading>
-                <Input
+                <InputDH
                   shape="round"
                   type="password"
                   name="Password Field"
@@ -71,14 +71,14 @@ export default function RegisterSection() {
                 />
               </div>
               <a href="https://www.youtube.com/embed/bv8Fxk0sz7I" target="_blank">
-                <Button
+                <ButtonDH
                   color="green_A700"
                   size="5xl"
                   shape="round"
                   className="self-stretch rounded-md border border-solid border-green-a700 px-[33px] font-semibold shadow-md sm:px-5"
                 >
                   Tạo tài khoản
-                </Button>
+                </ButtonDH>
               </a>
               <a href="https://www.youtube.com/embed/bv8Fxk0sz7I" target="_blank">
                 <Text as="p" className="text-[14px] font-normal text-blue_gray-900_01">

@@ -1,5 +1,5 @@
-import { CloseSVG } from "../Input/close.jsx";
-import { Img, Button, Input } from "./..";
+import { CloseSVG } from "../InputDH/close.jsx";
+import { Img, ButtonDH, InputDH } from "../index.jsx";
 import React from "react";
 
 export default function HeaderAdmin({ toggleSidebar, ...props }) { // Nhận toggleSidebar như một props
@@ -7,18 +7,18 @@ export default function HeaderAdmin({ toggleSidebar, ...props }) { // Nhận tog
 
   return (
     <header {...props} className={`${props.className} flex items-center ml-3 md:ml-0`}>
-      <div className="flex w-full justify-between gap-5 md:flex-col">
+      <div className="flex w-full justify-between gap-5 md:flex-col mt-[17px]">
         <div className="flex items-center w-[40%] md:w-full sm:flex-col">
           {/* Nút 3 chấm */}
-          <Button onClick={toggleSidebar} className="mr-2 p-2 rounded-full">
+          <ButtonDH onClick={toggleSidebar} className="mr-2 p-2 rounded-full">
             <Img src="images/icon_three_dots.svg" alt="Toggle Sidebar" className="h-[20px] w-[20px]" /> {/* Thay đổi đường dẫn đến icon 3 chấm */}
-          </Button>
+          </ButtonDH>
           <Img
             src="images/img_auction.png"
             alt="Logo Image"
             className="mb-1 ml-5 h-[75px] w-[146px] self-end object-contain sm:ml-0 sm:self-auto"
           />
-          <Input
+          <InputDH
             name="Search Field"
             placeholder={`Tìm kiếm`}
             value={searchBarValue}

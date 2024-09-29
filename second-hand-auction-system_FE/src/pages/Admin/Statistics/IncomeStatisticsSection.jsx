@@ -1,4 +1,4 @@
-import { Img, Text, Heading, Input, SelectBox} from "../../../components";
+import { Img, Text, Heading, InputDH, SelectBox} from "../../../components";
 import React from "react";
 
 const dropDownOptions = [
@@ -22,7 +22,7 @@ export default function IncomeStatisticsSection() {
                             Thống kê thu nhập
                         </Heading>
                         <div className="flex flex-1 justify-end sm:self-stretch">
-                            <Input
+                            <InputDH
                                 shape="round"
                                 name="Export Report Edit"
                                 placeholder={`Báo cáo xuất khẩu`}

@@ -22,7 +22,7 @@ const sizes = {
   md: "h-[54px] px-3.5 text-[14px]",
 };
 
-const Input = React.forwardRef(
+const InputDH = React.forwardRef(
   (
     {
       className = "",
@@ -62,7 +62,7 @@ const Input = React.forwardRef(
   },
 );
 
-Input.propTypes = {
+InputDH.propTypes = {
   className: PropTypes.string,
   name: PropTypes.string,
   placeholder: PropTypes.string,
@@ -76,4 +76,4 @@ Input.propTypes = {
   color: PropTypes.oneOf(["bg_white_", "green_A700"]),
 };
 
-export { Input };
+export { InputDH };

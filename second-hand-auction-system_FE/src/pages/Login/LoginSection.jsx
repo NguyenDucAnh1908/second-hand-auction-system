@@ -1,4 +1,4 @@
-import { Img, Button, Text, CheckBox, Input, Heading } from "../../components";
+import { Img, ButtonDH, Text, CheckBox, InputDH, Heading } from "../../components";
 import React from "react";
 import useHook from "./hook/useHook";
 //import { useTranslation } from "react-i18next";
@@ -40,7 +40,7 @@ export default function LoginSection() {
                 >
                   Tài khoản
                 </Heading>
-                <Input
+                <InputDH
                   shape="round"
                   name="Name Field"
                   placeholder={`Nhập tên đầy đủ`}
@@ -60,7 +60,7 @@ export default function LoginSection() {
                 >
                   Mật khẩu
                 </Heading>
-                <Input
+                <InputDH
                   shape="round"
                   type="password"
                   name="Password Field"
@@ -88,7 +88,7 @@ export default function LoginSection() {
                         Quên mật khẩu?
                       </Text>
                     </div>
-                    <Button
+                    <ButtonDH
                       color="green_A700"
                       size="3xl"
                       shape="round"
@@ -96,7 +96,7 @@ export default function LoginSection() {
                       onClick={handleSubmit}
                     >
                       Đăng nhập
-                    </Button>
+                    </ButtonDH>
                   </div>
                 </div>
                 <a
@@ -121,7 +121,7 @@ export default function LoginSection() {
                     hoặc
                   </Text>
                 </div>
-                <Button
+                <ButtonDH
                   size="xs"
                   shape="round"
                   leftIcon={
@@ -134,7 +134,7 @@ export default function LoginSection() {
                   className="mt-[18px] min-w-[208px] rounded-lg border-[0.5px] border-solid border-black-900 px-6 capitalize text-black-900 sm:px-5"
                 >
                   Login with Google
-                </Button>
+                </ButtonDH>
               </div>
             </div>
           </div>

@@ -30,7 +30,7 @@ const sizes = {
   lg: "h-[48px] px-4",
 };
 
-const Button = ({
+const ButtonDH = ({
   children,
   className = "",
   leftIcon,
@@ -53,7 +53,7 @@ const Button = ({
   );
 };
 
-Button.propTypes = {
+ButtonDH.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   leftIcon: PropTypes.node,
@@ -72,7 +72,7 @@ Button.propTypes = {
   ]),
 };
 
-export { Button };
+export { ButtonDH };
 
 
 
