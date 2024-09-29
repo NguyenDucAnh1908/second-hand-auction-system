@@ -51,4 +51,7 @@ public class Order extends BaseEntity {
     @OneToOne
     @JoinColumn(name = "auction_id")
     private Auction auction;
+
+    @OneToOne(mappedBy = "order",cascade = CascadeType.ALL)
+    private TransactionSystem transactionSystem;
 }

@@ -38,11 +38,18 @@ public class TransactionSystem {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "vitural_account_name")
-    private String vituralAccountName;
+    @Column(name = "virtual_account_name")
+    private String virtualAccountName;
+
+    @ManyToOne
+    @JoinColumn(name = "wallet_system_id")
+    private WalletSystem walletSystem;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
+    @OneToOne
+    @JoinColumn(name = "order_id")
+    private Order order;
 }
