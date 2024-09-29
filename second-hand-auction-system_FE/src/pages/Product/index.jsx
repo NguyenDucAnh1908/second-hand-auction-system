@@ -19,6 +19,7 @@ const brands = [
 ];
 
 export default function ProductPage() {
+  const [selectedBrands, setSelectedBrands] = useState([]);
   const [priceRange, setPriceRange] = useState([1, 750]);
   const [percentageRange, setPercentageRange] = useState([0, 100]);
 
@@ -44,6 +45,30 @@ export default function ProductPage() {
 
   const onHighPercentageChange = (value) => {
     setPercentageRange([percentageRange[0], value]);
+  };
+
+  // const handleBrandChange = (brandName, checked) => {
+  //   if (checked) {
+  //     // Nếu được chọn, thêm vào danh sách
+  //     setSelectedBrands([...selectedBrands, brandName]);
+  //   } else {
+  //     // Nếu bỏ chọn, loại bỏ khỏi danh sách
+  //     setSelectedBrands(selectedBrands.filter(name => name !== brandName));
+  //   }
+  // };
+  const handleBrandChange = (brandName, checked) => {
+    if (checked) {
+      // Nếu được chọn, thêm vào danh sách
+      setSelectedBrands([...selectedBrands, brandName]);
+    } else {
+      // Nếu bỏ chọn, loại bỏ khỏi danh sách
+      setSelectedBrands(selectedBrands.filter(name => name !== brandName));
+    }
+  };
+
+  const handleTagClose = (brandName) => {
+    // Khi đóng tag, loại bỏ brand khỏi danh sách và bỏ chọn checkbox
+    setSelectedBrands(selectedBrands.filter(name => name !== brandName));
   };
 
   return (
@@ -81,7 +106,10 @@ export default function ProductPage() {
                             <Text size="textlg" as="p" className="text-[15px] font-normal leading-[30px] text-blue_gray-900_01">
                               {brands.map((brand) => (
                                 <div key={brand.name} className="flex items-center gap-2">
-                                  <Checkbox />
+                                  <Checkbox
+                                      checked={selectedBrands.includes(brand.name)}
+                                      onChange={(e) => handleBrandChange(brand.name, e.target.checked)}
+                                  />
                                   {brand.name}
                                 </div>
                               ))}
@@ -90,6 +118,22 @@ export default function ProductPage() {
                         </div>
                       </Panel>
                     </Collapse>
+                    {/*<Collapse defaultActiveKey={['1']} ghost>*/}
+                    {/*  <Panel key="1" header={<h2 className="text-lg font-semibold">Brand Filters</h2>}>*/}
+                    {/*    <div className="flex">*/}
+                    {/*      <div className="flex w-[78%] items-center gap-[13px]">*/}
+                    {/*        {brands.map((brand) => (*/}
+                    {/*            <div key={brand.name} className="flex items-center gap-2">*/}
+                    {/*              <Checkbox*/}
+                    {/*                  onChange={(e) => handleBrandChange(brand.name, e.target.checked)}*/}
+                    {/*              />*/}
+                    {/*              {brand.name}*/}
+                    {/*            </div>*/}
+                    {/*        ))}*/}
+                    {/*      </div>*/}
+                    {/*    </div>*/}
+                    {/*  </Panel>*/}
+                    {/*</Collapse>*/}
                   </div>
 
                   <div className="h-px w-[72%] bg-gray-200" />
@@ -297,14 +341,16 @@ export default function ProductPage() {
               </div>
               {/* Phần hiển thị sản phẩm */}
               <div className="flex w-[75%] flex-col gap-4 md:w-full">
-                <ProductSection />
+                {/*<span className="text-blue_gray-900_01">Categories:</span>*/}
+                {/*<ProductSection/>*/}
+                <ProductSection selectedBrands={selectedBrands} onTagClose={handleTagClose} />
                 <div className="flex justify-between px-3 items-center">
                   <Text className="text-[14px] font-normal">Hiển thị 1-16 trong 100 sản phẩm</Text>
                   <div className="flex gap-4">
                     <ButtonDH
-                      size="sm"
-                      shape="round"
-                      onClick={() => console.log('Đặt hàng')}
+                        size="sm"
+                        shape="round"
+                        onClick={() => console.log('Đặt hàng')}
                     >
                       Đặt hàng
                     </ButtonDH>
@@ -313,7 +359,7 @@ export default function ProductPage() {
               </div>
             </div>
           </div>
-        
+
         </div>
         <FooterBK />
       </div>
