@@ -3,6 +3,8 @@ package com.second_hand_auction_system.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,4 +22,10 @@ public class Notifications extends BaseEntity{
 
     @Column(name = "create_by")
     private String createBy;
+
+    @ManyToMany
+    @JoinTable(name = "user_notification",
+               joinColumns = @JoinColumn(name = "user_id"),
+                inverseJoinColumns = @JoinColumn(name = "notification_id"))
+    private List<User> users;
 }

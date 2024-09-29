@@ -41,5 +41,8 @@ public class TransactionSystem {
     @Column(name = "vitural_account_name")
     private String vituralAccountName;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
 }

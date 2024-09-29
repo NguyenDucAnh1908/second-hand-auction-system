@@ -2,7 +2,6 @@ package com.second_hand_auction_system.models;
 
 import com.second_hand_auction_system.utils.OrderStatus;
 import com.second_hand_auction_system.utils.PaymentMethod;
-import com.second_hand_auction_system.utils.PaymentStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,7 +10,8 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-@Table(name = "order")
+@Table(name = "`order`")
+@Entity
 public class Order extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,4 +43,12 @@ public class Order extends BaseEntity {
 
     @Column(name = "create_by")
     private String createBy;
+
+    @OneToOne
+    @JoinColumn(name = "item_id")
+    private Item item;
+
+    @OneToOne
+    @JoinColumn(name = "auction_id")
+    private Auction auction;
 }

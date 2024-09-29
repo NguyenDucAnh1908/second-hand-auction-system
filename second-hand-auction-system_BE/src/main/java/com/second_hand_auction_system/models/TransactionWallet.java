@@ -17,11 +17,11 @@ public class TransactionWallet extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int transactionWalletId;
 
-    @Column(name = "amout")
-    private int amout;
+    @Column(name = "amount")
+    private int amount;
 
     @Column(name = "commission_amout")
-    private int commissonAmout;
+    private int commissionAmount;
 
     @Column(name = "commission_rate")
     private int commissionRate;
@@ -34,6 +34,11 @@ public class TransactionWallet extends BaseEntity {
 
     @Column(name = "image")
     private String image;
+
+
+    @ManyToOne
+    @JoinColumn(name = "wallet_id")
+    private WalletSystem walletSystem;
 
 
 }

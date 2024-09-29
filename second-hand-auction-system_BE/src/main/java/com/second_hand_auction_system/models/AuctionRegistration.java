@@ -24,4 +24,8 @@ public class AuctionRegistration extends BaseEntity{
 
     @Column(name = "note")
     private String note;
+
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }

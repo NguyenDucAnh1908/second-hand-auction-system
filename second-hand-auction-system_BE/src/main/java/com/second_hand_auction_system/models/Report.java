@@ -25,7 +25,7 @@ public class Report extends BaseEntity{
     @Column(name = "reason")
     private String reason;
 
-    @Column(name = "createBy")
+    @Column(name = "create_By")
     private String createBy;
 
     @Enumerated(EnumType.STRING)
@@ -33,4 +33,8 @@ public class Report extends BaseEntity{
 
     @Enumerated(EnumType.STRING)
     private ReportType type;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }

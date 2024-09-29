@@ -4,6 +4,8 @@ package com.second_hand_auction_system.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,4 +26,7 @@ public class MainCategory extends BaseEntity{
 
     @Column(name = "icon_url")
     private String iconUrl;
+
+    @ManyToMany
+    private List<Item> items;
 }

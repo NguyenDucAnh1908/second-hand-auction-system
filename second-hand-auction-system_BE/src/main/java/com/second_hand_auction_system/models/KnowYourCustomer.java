@@ -51,4 +51,8 @@ public class KnowYourCustomer extends BaseEntity{
 
     @Column(name = "verified_at")
     private LocalDateTime verifiedAt;
+
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }

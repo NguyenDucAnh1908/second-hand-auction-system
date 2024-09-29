@@ -20,4 +20,8 @@ public class WalletCustomer extends BaseEntity{
 
     @Column(name = "last_transaction")
     private String lastTransaction;
+
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }

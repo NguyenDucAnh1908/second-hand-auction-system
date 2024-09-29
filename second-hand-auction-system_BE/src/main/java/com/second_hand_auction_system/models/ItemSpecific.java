@@ -45,4 +45,6 @@ public class ItemSpecific extends BaseEntity{
     @JoinColumn(name = "item_id")
     private Item item;
 
+
+
 }

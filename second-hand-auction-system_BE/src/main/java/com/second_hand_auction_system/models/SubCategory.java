@@ -21,5 +21,7 @@ public class SubCategory extends BaseEntity{
     @Column(name = "description")
     private String description;
 
-
+    @ManyToOne
+    @JoinColumn(name = "main_category")
+    private MainCategory mainCategory;
 }

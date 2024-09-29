@@ -4,6 +4,8 @@ import com.second_hand_auction_system.utils.ItemStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "item")
 @AllArgsConstructor
@@ -41,10 +43,10 @@ public class Item extends BaseEntity{
     @Column(name = "thumbnail")
     private String thumbnail;
 
-    @Column(name = "createBy")
+    @Column(name = "create_By")
     private String createBy;
 
-    @Column(name = "updateBy")
+    @Column(name = "update_By")
     private String updateBy;
 
     @ManyToOne
@@ -59,4 +61,10 @@ public class Item extends BaseEntity{
 
     @OneToOne(mappedBy = "item",cascade = CascadeType.ALL)
     private ItemSpecific itemSpecific;
+
+    @ManyToMany
+    @JoinTable(name = "item_category",
+                joinColumns = @JoinColumn(name = "item_id"),
+                inverseJoinColumns = @JoinColumn(name = "main_category_id"))
+    private List<MainCategory> mainCategories;
 }
