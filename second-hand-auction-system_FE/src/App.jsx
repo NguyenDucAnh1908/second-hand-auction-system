@@ -17,6 +17,7 @@ import CreateAddressPage from "pages/CreateAddress";
 import AddressPage from "pages/Address";
 import StatisticsAdmin from "pages/Admin/Statistics";
 import ListOfSellerProductPage from "./pages/Seller/ListOfSellerProducts/index.jsx";
+import RegisterProductPage from "./pages/Seller/RegisterProduct/index.jsx";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="AddAddress" index element={<CreateAddressPage />} />
         <Route path="StatisticsAdmin" index element={<StatisticsAdmin />} />
         <Route path="ListOfSellerProduct" index element={<ListOfSellerProductPage />} />
+        <Route path="RegisterProduct" index element={<RegisterProductPage />} />
         <Route path="TestComponent" index element={<TestComponent />} />
         <Route path="Test" index element={<TestAPI />} />
       </Route>
