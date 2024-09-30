@@ -19,10 +19,10 @@ import {
   PencilIcon,
 } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
-import { ProfileInfoCard, MessageCard } from "../../widgets/cards";
-import platformSettingsData from "../../data/platform-settings-data";
-import conversationsData from "../../data/conversations-data";
-import projectsData from "../../data/projects-data";
+import { ProfileInfoCard, MessageCard } from "../../../widgets/cards";
+import platformSettingsData from "../../../data/platform-settings-data";
+import conversationsData from "../../../data/conversations-data";
+import projectsData from "../../../data/projects-data";
 
 export function Profile() {
   return (

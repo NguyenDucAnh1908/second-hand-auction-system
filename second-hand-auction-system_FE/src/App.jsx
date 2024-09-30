@@ -15,7 +15,6 @@ import DepositMoneyPage from "pages/DepositMoney";
 import TestComponent from "./components/TestComponent.jsx";
 import CreateAddressPage from "pages/CreateAddress";
 import AddressPage from "pages/Address";
-import StatisticsAdmin from "pages/Admin/Statistics";
 import ListOfSellerProductPage from "./pages/Seller/ListOfSellerProducts/index.jsx";
 import RegisterProductPage from "./pages/Seller/RegisterProduct/index.jsx";
 import Dashboard from "./layouts/dashboard.jsx";
@@ -40,7 +39,6 @@ function App() {
         <Route path="DepositMoney" index element={<DepositMoneyPage />} />
         <Route path="Address" index element={<AddressPage />} />
         <Route path="AddAddress" index element={<CreateAddressPage />} />
-        <Route path="StatisticsAdmin" index element={<StatisticsAdmin />} />
         <Route
           path="ListOfSellerProduct"
           index

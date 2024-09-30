@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
+
+
   :root {
     /*------Color variables------*/
     --123329: #123329;
@@ -17,7 +20,7 @@
     --color_border: #eaeaea;
     --color_text_dark: #041e42;
     --color_text_light: #626974;
-    --f1fff2: #f1fff2;
+    --f1fff2: #ffffff;
     --text_head: #051036;
     --blue_700: #3086c8;
     --indigo_900: #142688;

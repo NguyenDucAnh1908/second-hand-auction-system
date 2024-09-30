@@ -5,7 +5,7 @@ import Sidenav from "../widgets/layout/sidenav";
 import DashboardNavbar from "../widgets/layout/dashboard-navbar";
 import Configurator from "../widgets/layout/configurator";
 import Footer from "../widgets/layout/footer";
-import routes from "../Routes";
+import routesAdmin from "../routes-admin";
 import { useMaterialTailwindController, setOpenConfigurator } from "../context";
 
 export function Dashboard() {
@@ -15,14 +15,14 @@ export function Dashboard() {
   return (
     <div className="min-h-screen bg-blue-gray-50/50">
       <Sidenav
-        routes={routes}
+        routes={routesAdmin}
         brandImg={
           sidenavType === "dark" ? "/img/logo-ct.png" : "/img/logo-ct-dark.png"
         }
       />
       <div className="p-4 xl:ml-80">
         <DashboardNavbar />
-        <Configurator />
+        <Configurator  />
         <IconButton
           size="lg"
           color="white"
@@ -33,7 +33,7 @@ export function Dashboard() {
           <Cog6ToothIcon className="h-5 w-5" />
         </IconButton>
         <Routes>
-          {routes.map(
+          {routesAdmin.map(
             ({ layout, pages }) =>
               layout === "dashboard" &&
               pages.map(({ path, element }) => (

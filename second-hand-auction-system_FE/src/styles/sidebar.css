@@ -1,0 +1,5 @@
+/* sidebar.css */
+.material-tailwind-provider {
+  background-color: #f8f9fa; /* Màu nền mong muốn */
+  min-height: 100vh; /* Đảm bảo chiếm toàn bộ chiều cao */
+}

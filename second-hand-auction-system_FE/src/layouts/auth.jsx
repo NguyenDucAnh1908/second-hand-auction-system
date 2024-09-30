@@ -7,7 +7,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { Navbar, Footer } from "@/widgets/layout";
 // import Navbar from "../../widgets/layout"
-import routes from "@/routes";
+import routesAdmin from "../routes-admin";
 
 export function Auth() {
   const navbarRoutes = [
@@ -31,12 +31,13 @@ export function Auth() {
       path: "/auth/sign-in",
       icon: ArrowRightOnRectangleIcon,
     },
+    
   ];
 
   return (
     <div className="relative min-h-screen w-full">
       <Routes>
-        {routes.map(
+        {routesAdmin.map(
           ({ layout, pages }) =>
             layout === "auth" &&
             pages.map(({ path, element }) => (

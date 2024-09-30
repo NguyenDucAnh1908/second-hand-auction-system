@@ -6,29 +6,22 @@ import {
   ServerStackIcon,
   RectangleStackIcon,
 } from "@heroicons/react/24/solid";
-import { Home, Profile, Tables, Notifications } from "./pages/Dashboard";
-import RegisterProductPage from "./pages/Dashboard/register-product";
-import { SignIn, SignUp } from "./pages/auth";
+import { Home, Profile, Tables, Notifications } from "./pages/Admin/Dashboard";
+import { SignIn, SignUp } from "./pages/Admin/auth";
 
 const icon = {
   className: "w-5 h-5 text-inherit",
 };
 
-export const routes = [
+export const routesAdmin = [
   {
     layout: "dashboard",
     pages: [
       {
         icon: <HomeIcon {...icon} />,
-        name: "dashboard",
+        name: "dashboard của admin",
         path: "/home",
         element: <Home />,
-      },
-      {
-        icon: <HomeIcon {...icon} />,
-        name: "Đăng ký sản phẩm",
-        path: "/RegisterProduct",
-        element: <RegisterProductPage />,
       },
       {
         icon: <UserCircleIcon {...icon} />,
@@ -36,6 +29,7 @@ export const routes = [
         path: "/profile",
         element: <Profile />,
       },
+      
       {
         icon: <TableCellsIcon {...icon} />,
         name: "tables",
@@ -70,4 +64,4 @@ export const routes = [
   },
 ];
 
-export default routes;
+export default routesAdmin;

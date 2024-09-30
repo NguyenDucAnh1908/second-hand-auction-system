@@ -9,19 +9,26 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
 
 export function Navbar({ brandName, routes, action }) {
   const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false),
-    );
+    const handleResize = () => {
+      if (window.innerWidth >= 960) {
+        setOpenNav(false);
+      }
+    };
+    
+    window.addEventListener("resize", handleResize);
+    
+    // Clean up event listener on unmount
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const navList = (
-    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+    <ul className=" ">
       {routes.map(({ name, path, icon }) => (
         <Typography
           key={name}
@@ -43,7 +50,7 @@ export function Navbar({ brandName, routes, action }) {
   );
 
   return (
-    <MTNavbar className="p-3">
+    <MTNavbar className="p-3 relative z-20"> {/* Thêm z-index cho navbar */}
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Link to="/">
           <Typography
@@ -71,19 +78,25 @@ export function Navbar({ brandName, routes, action }) {
         </IconButton>
       </div>
       <Collapse open={openNav}>
-        <div className="container mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }} // Vị trí ban đầu
+          animate={{ opacity: 1, y: 0 }} // Vị trí khi mở
+          exit={{ opacity: 0, y: -20 }} // Vị trí khi đóng
+          transition={{ duration: 0.3 }} // Thời gian chuyển động
+          className="container mx-auto bg-white shadow-md" // Thêm class cho navbar
+        >
           {navList}
           {React.cloneElement(action, {
             className: "w-full block lg:hidden",
           })}
-        </div>
+        </motion.div>
       </Collapse>
     </MTNavbar>
   );
 }
 
 Navbar.defaultProps = {
-  brandName: "Material Tailwind React",
+  brandName: "Bảng Quản Lý Của Hệ Thống",
   action: (
     <a
       href="https://www.creative-tim.com/product/material-tailwind-dashboard-react"
