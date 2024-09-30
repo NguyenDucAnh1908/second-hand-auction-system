@@ -26,14 +26,14 @@ export default function DepositMoneyPage() {
             <div className="w-full bg-bg-white">
                 <Header2 />
                 <div className="mx-[76px] mt-[30px] md:mx-0">
-                    <div className="flex items-center gap-1 md:flex-col">
+                    <div className="flex items-baseline gap-1 md:flex-col">
                         <div className="mb-[22px] flex w-[24%] flex-col gap-[46px] md:w-full md:px-5">
-                            <div className="flex flex-col items-center  -ml-[50px]">
+                            {/*<div className="flex flex-col items-center  -ml-[50px]">*/}
 
-                                {/* User name and Wallet amount */}
-                                <ProfileCard />
-                                <div className="mt-1.5 h-[1.84px] w-full self-stretch bg-gray-200" />
-                            </div>
+                            {/*    /!* User name and Wallet amount *!/*/}
+                            {/*    <ProfileCard />*/}
+                            {/*    <div className="mt-1.5 h-[1.84px] w-full self-stretch bg-gray-200" />*/}
+                            {/*</div>*/}
                             <div>
                                 <div className="flex flex-col gap-[38px]">
 
@@ -41,6 +41,10 @@ export default function DepositMoneyPage() {
 
                                 </div>
                             </div>
+                            {/*<div className="py-0">*/}
+                            {/*    <AccountOptions/>*/}
+
+                            {/*</div>*/}
                         </div>
                         <Tabs
                             className="flex flex-1 flex-col items-start gap-9 md:self-stretch md:px-5"
