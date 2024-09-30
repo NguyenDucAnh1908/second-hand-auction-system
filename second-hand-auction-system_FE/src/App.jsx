@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "pages/Home";
 import NotFound from "pages/NotFound";
 import HomePage from "pages/HomePage";
@@ -18,6 +18,8 @@ import AddressPage from "pages/Address";
 import StatisticsAdmin from "pages/Admin/Statistics";
 import ListOfSellerProductPage from "./pages/Seller/ListOfSellerProducts/index.jsx";
 import RegisterProductPage from "./pages/Seller/RegisterProduct/index.jsx";
+import Dashboard from "./layouts/dashboard.jsx";
+import Auth from "./layouts/auth.jsx";
 
 function App() {
   return (
@@ -29,19 +31,32 @@ function App() {
         <Route path="Auction" index element={<Auction />} />
         <Route path="Login" index element={<Login />} />
         <Route path="Register" index element={<Register />} />
-        <Route path="HistoryPage" index element={<CustomerTransactionHistoryPagePage />} />
+        <Route
+          path="HistoryPage"
+          index
+          element={<CustomerTransactionHistoryPagePage />}
+        />
         <Route path="ProfileDetail" index element={<ProfileDetailPage />} />
         <Route path="DepositMoney" index element={<DepositMoneyPage />} />
         <Route path="Address" index element={<AddressPage />} />
         <Route path="AddAddress" index element={<CreateAddressPage />} />
         <Route path="StatisticsAdmin" index element={<StatisticsAdmin />} />
-        <Route path="ListOfSellerProduct" index element={<ListOfSellerProductPage />} />
+        <Route
+          path="ListOfSellerProduct"
+          index
+          element={<ListOfSellerProductPage />}
+        />
         <Route path="RegisterProduct" index element={<RegisterProductPage />} />
         <Route path="TestComponent" index element={<TestComponent />} />
         <Route path="Test" index element={<TestAPI />} />
       </Route>
+
+      <Route path="/dashboard/*" element={<Dashboard />} />
+      <Route path="/auth/*" element={<Auth />} />
+      <Route path="*" element={<Navigate to="/dashboard/home" replace />} />
     </Routes>
   );
 }
 
 export default App;
+

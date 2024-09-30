@@ -28,6 +28,3 @@ const RatingBar = ({
 };
 
 export { RatingBar };
-
-
-

@@ -24,7 +24,11 @@ export default function RecentProductsSection() {
               <Slider
                 autoPlay
                 autoPlayInterval={2000}
-                responsive={{ 0: { items: 1 }, 551: { items: 1 }, 1051: { items: 4 } }}
+                responsive={{
+                  0: { items: 1 },
+                  551: { items: 1 },
+                  1051: { items: 4 },
+                }}
                 disableDotsControls
                 activeIndex={sliderState}
                 onSlideChanged={(e) => {
@@ -68,6 +72,3 @@ export default function RecentProductsSection() {
     </>
   );
 }
-
-
-

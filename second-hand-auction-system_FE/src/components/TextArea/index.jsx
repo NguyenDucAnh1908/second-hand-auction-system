@@ -6,7 +6,8 @@ const shapes = {
 };
 const variants = {
   tarOutlineGray200: "!border-gray-200 border border-solid bg-bg-white",
-  tarOutlineGreenA700: "!border-green-a700 border border-solid bg-bg-white shadow-lg",
+  tarOutlineGreenA700:
+    "!border-green-a700 border border-solid bg-bg-white shadow-lg",
 };
 const sizes = {
   sm: "h-[198px] p-5 text-[15px]",
@@ -54,6 +55,3 @@ TextArea.propTypes = {
 };
 
 export { TextArea };
-
-
-

@@ -10,7 +10,10 @@ export default function FeaturedProductsSection() {
           <div className="mr-3.5 self-stretch bg-gray-100_01 px-14 py-[60px] md:mr-0 md:p-5">
             <div className="flex flex-col items-start gap-6">
               <div className="flex flex-col items-start gap-2.5 self-stretch">
-                <Text as="p" className="text-[14px] font-normal text-blue_gray-600_01">
+                <Text
+                  as="p"
+                  className="text-[14px] font-normal text-blue_gray-600_01"
+                >
                   ĐỒNG HỒ ĐÔI - GẮN KẾT YÊU THƯƠNG
                 </Text>
                 <Heading
@@ -24,11 +27,19 @@ export default function FeaturedProductsSection() {
                     ĐỒNG HỒ CỦA BẠN
                   </>
                 </Heading>
-                <Text as="p" className="w-[22%] text-[14px] font-normal leading-[150%] text-blue_gray-600_01 md:w-full">
+                <Text
+                  as="p"
+                  className="w-[22%] text-[14px] font-normal leading-[150%] text-blue_gray-600_01 md:w-full"
+                >
                   Đồng hồ và dây đeo của bạn phải kết hợp hoàn hảo với nhau.
                 </Text>
               </div>
-              <ButtonDH color="green_A700" size="xl" shape="round" className="min-w-[176px] rounded-md px-[34px] sm:px-5">
+              <ButtonDH
+                color="green_A700"
+                size="xl"
+                shape="round"
+                className="min-w-[176px] rounded-md px-[34px] sm:px-5"
+              >
                 Khám phá ngay
               </ButtonDH>
             </div>
@@ -53,6 +64,3 @@ export default function FeaturedProductsSection() {
     </>
   );
 }
-
-
-

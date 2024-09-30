@@ -1,11 +1,21 @@
-module.exports = {
+/** @type {import('tailwindcss').Config} */
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+module.exports = withMT({
   mode: "jit",
-  content: ["./src/**/**/*.{js,ts,jsx,tsx,html,mdx}", "./src/**/*.{js,ts,jsx,tsx,html,mdx}"],
+  content: [
+    "./index.html", // Đảm bảo đường dẫn đến tệp HTML của template
+    "./src/**/*.{js,ts,jsx,tsx,html,mdx}", // Đường dẫn đến các tệp JSX trong dự án
+  ],
   darkMode: "class",
   theme: {
-    screens: { md: { max: "1050px" }, sm: { max: "550px" } },
+    screens: {
+      md: { max: "1050px" },
+      sm: { max: "550px" },
+    },
     extend: {
       colors: {
+        // Kết hợp các màu từ dự án cũ
         123329: "var(--123329)",
         red: { 700: "var(--red_700)", a700: "var(--red_a700)" },
         gray: {
@@ -72,7 +82,4 @@ module.exports = {
     },
   },
   plugins: [require("@tailwindcss/forms")],
-};
-
-
-
+});

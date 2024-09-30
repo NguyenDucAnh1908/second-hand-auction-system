@@ -74,6 +74,3 @@ const SeekBar = ({
 };
 
 export { SeekBar };
-
-
-

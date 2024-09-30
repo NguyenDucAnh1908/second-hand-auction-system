@@ -37,7 +37,7 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
           },
         },
         api,
-        extraOptions
+        extraOptions,
       );
 
       //console.log("Refresh result:", refreshResult);

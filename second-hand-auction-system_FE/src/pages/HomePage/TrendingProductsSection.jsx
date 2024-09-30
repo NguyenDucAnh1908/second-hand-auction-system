@@ -3,13 +3,41 @@ import ProductProfile from "../../components/ProductProfile";
 import React, { Suspense } from "react";
 
 const brandProductList = [
-  { productImage: "images/img_image_44.png", brandName: "Samsung", productCount: "29 sản phẩm" },
-  { productImage: "images/img_image_44.png", brandName: "Samsung", productCount: "29 sản phẩm" },
-  { productImage: "images/img_image_44.png", brandName: "Samsung", productCount: "29 sản phẩm" },
-  { productImage: "images/img_image_44.png", brandName: "Samsung", productCount: "29 sản phẩm" },
-  { productImage: "images/img_image_44.png", brandName: "Samsung", productCount: "29 sản phẩm" },
-  { productImage: "images/img_image_44.png", brandName: "Samsung", productCount: "29 sản phẩm" },
-  { productImage: "images/img_image_44.png", brandName: "Samsung", productCount: "29 sản phẩm" },
+  {
+    productImage: "images/img_image_44.png",
+    brandName: "Samsung",
+    productCount: "29 sản phẩm",
+  },
+  {
+    productImage: "images/img_image_44.png",
+    brandName: "Samsung",
+    productCount: "29 sản phẩm",
+  },
+  {
+    productImage: "images/img_image_44.png",
+    brandName: "Samsung",
+    productCount: "29 sản phẩm",
+  },
+  {
+    productImage: "images/img_image_44.png",
+    brandName: "Samsung",
+    productCount: "29 sản phẩm",
+  },
+  {
+    productImage: "images/img_image_44.png",
+    brandName: "Samsung",
+    productCount: "29 sản phẩm",
+  },
+  {
+    productImage: "images/img_image_44.png",
+    brandName: "Samsung",
+    productCount: "29 sản phẩm",
+  },
+  {
+    productImage: "images/img_image_44.png",
+    brandName: "Samsung",
+    productCount: "29 sản phẩm",
+  },
 ];
 
 export default function TrendingProductsSection() {
@@ -27,7 +55,11 @@ export default function TrendingProductsSection() {
               Xu hướng trên eBay
             </Heading>
             <div className="flex w-[6%] flex-col items-start justify-center gap-1">
-              <Text size="textlg" as="p" className="text-[11px] font-medium text-gray-900_01">
+              <Text
+                size="textlg"
+                as="p"
+                className="text-[11px] font-medium text-gray-900_01"
+              >
                 Xem tất cả
               </Text>
               <div className="h-[2px] w-[32px] bg-gray-900_01" />
@@ -45,6 +77,3 @@ export default function TrendingProductsSection() {
     </>
   );
 }
-
-
-

@@ -23,6 +23,6 @@ const user = JSON.parse(localStorage.getItem("user"));
 
 if (token && refreshToken && user) {
   store.dispatch(
-    setCredentials({ data: { user, token, refresh_token: refreshToken } })
+    setCredentials({ data: { user, token, refresh_token: refreshToken } }),
   );
 }

@@ -2,10 +2,30 @@ import DashboardAdminOne from "../../../components/DashboardAdminOne";
 import React, { Suspense } from "react";
 
 const adminDashboardStats = [
-  { tngthunhp: "Tổng Thu Nhập", snphmmi: "Sản phẩm mới", p59021100: "59.021.100đ", p365tr256: "365TR.256" },
-  { tngthunhp: "Tổng Thu Nhập", snphmmi: "Sản phẩm mới", p59021100: "59.021.100đ", p365tr256: "365TR.256" },
-  { tngthunhp: "Tổng Thu Nhập", snphmmi: "Sản phẩm mới", p59021100: "59.021.100đ", p365tr256: "365TR.256" },
-  { tngthunhp: "Tổng Thu Nhập", snphmmi: "Sản phẩm mới", p59021100: "59.021.100đ", p365tr256: "365TR.256" },
+  {
+    tngthunhp: "Tổng Thu Nhập",
+    snphmmi: "Sản phẩm mới",
+    p59021100: "59.021.100đ",
+    p365tr256: "365TR.256",
+  },
+  {
+    tngthunhp: "Tổng Thu Nhập",
+    snphmmi: "Sản phẩm mới",
+    p59021100: "59.021.100đ",
+    p365tr256: "365TR.256",
+  },
+  {
+    tngthunhp: "Tổng Thu Nhập",
+    snphmmi: "Sản phẩm mới",
+    p59021100: "59.021.100đ",
+    p365tr256: "365TR.256",
+  },
+  {
+    tngthunhp: "Tổng Thu Nhập",
+    snphmmi: "Sản phẩm mới",
+    p59021100: "59.021.100đ",
+    p365tr256: "365TR.256",
+  },
 ];
 
 export default function IncomeAndOrdersSection() {
@@ -22,6 +42,3 @@ export default function IncomeAndOrdersSection() {
     </>
   );
 }
-
-
-

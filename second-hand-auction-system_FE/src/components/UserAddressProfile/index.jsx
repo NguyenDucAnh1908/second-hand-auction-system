@@ -23,12 +23,22 @@ export default function UserAddressProfile({
     >
       <div className="mr-2 w-[88%]">
         <div className="flex items-center">
-          <Img src={userImage} alt="Contrastimage" className="h-[24px] w-[24px]" />
-          <Heading as="p" className="ml-1 text-[20px] font-medium text-bg-white">
+          <Img
+            src={userImage}
+            alt="Contrastimage"
+            className="h-[24px] w-[24px]"
+          />
+          <Heading
+            as="p"
+            className="ml-1 text-[20px] font-medium text-bg-white"
+          >
             {userTitle}
           </Heading>
         </div>
-        <Text as="p" className="mr-3.5 mt-9 text-center text-[15px] font-medium leading-[22px] text-bg-white">
+        <Text
+          as="p"
+          className="mr-3.5 mt-9 text-center text-[15px] font-medium leading-[22px] text-bg-white"
+        >
           {userAddress}
         </Text>
         <div className="mt-[52px] flex justify-between gap-5">
@@ -53,6 +63,3 @@ export default function UserAddressProfile({
     </div>
   );
 }
-
-
-

@@ -25,12 +25,19 @@ export default function HeaderComponent({
   const [searchBarValue1, setSearchBarValue1] = React.useState("");
 
   return (
-    <div {...props} className={`${props.className} flex flex-col sm:flex-col self-stretch items-center py-2.5`}>
+    <div
+      {...props}
+      className={`${props.className} flex flex-col sm:flex-col self-stretch items-center py-2.5`}
+    >
       <div className="flex flex-col items-center gap-1 self-stretch">
         <div className="container-sm flex items-start justify-between gap-5 self-stretch md:flex-col md:px-5">
           <div className="flex w-[36%] items-center justify-center md:w-full sm:flex-col">
             <a href="#">
-              <Img src="images/img_pin_1.svg" alt="Pin Image" className="h-[24px] sm:w-full" />
+              <Img
+                src="images/img_pin_1.svg"
+                alt="Pin Image"
+                className="h-[24px] sm:w-full"
+              />
             </a>
             <Text className="ml-1 self-start text-[13px] font-normal text-blue_gray-900_01 sm:ml-0 sm:self-auto">
               {p118cchmng}
@@ -38,7 +45,11 @@ export default function HeaderComponent({
             <div className="ml-4 h-[32px] w-px bg-gray-200 sm:ml-0 sm:h-px sm:w-[32px]" />
             <div className="ml-5 flex flex-1 items-start justify-center gap-1 sm:ml-0 sm:self-stretch">
               <a href="#">
-                <Img src="images/img_phone_1.svg" alt="Phone Image" className="h-[24px] self-end" />
+                <Img
+                  src="images/img_phone_1.svg"
+                  alt="Phone Image"
+                  className="h-[24px] self-end"
+                />
               </a>
               <Text className="font-bevietnampro text-[13px] font-normal text-blue_gray-900_01">
                 <span>Bạn cần trợ giúp? Gọi ngay:&nbsp;</span>
@@ -58,21 +69,37 @@ export default function HeaderComponent({
                 <ul className="relative !ml-[-82px] flex flex-wrap gap-[46px] self-end">
                   <li>
                     <a href="#">
-                      <Text className="text-[13px] font-normal text-blue_gray-900_01">{trgip}</Text>
+                      <Text className="text-[13px] font-normal text-blue_gray-900_01">
+                        {trgip}
+                      </Text>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <Text className="text-[13px] font-normal text-blue_gray-900_01">{tmcahng}</Text>
+                      <Text className="text-[13px] font-normal text-blue_gray-900_01">
+                        {tmcahng}
+                      </Text>
                     </a>
                   </li>
                 </ul>
               </div>
               <div className="h-[20px] w-px bg-gray-200" />
               <div className="flex items-center gap-4 self-end">
-                <Img src="images/img_facebook.svg" alt="Facebook Icon 1" className="h-[12px]" />
-                <Img src="images/img_facebook.svg" alt="Facebook Icon 2" className="h-[12px]" />
-                <Img src="images/img_facebook.svg" alt="Facebook Icon 3" className="h-[12px]" />
+                <Img
+                  src="images/img_facebook.svg"
+                  alt="Facebook Icon 1"
+                  className="h-[12px]"
+                />
+                <Img
+                  src="images/img_facebook.svg"
+                  alt="Facebook Icon 2"
+                  className="h-[12px]"
+                />
+                <Img
+                  src="images/img_facebook.svg"
+                  alt="Facebook Icon 3"
+                  className="h-[12px]"
+                />
                 <Img
                   src="images/img_facebook_blue_gray_900_01_1.png"
                   alt="Facebook Icon 4"
@@ -99,9 +126,17 @@ export default function HeaderComponent({
               onChange={(e) => setSearchBarValue1(e.target.value)}
               suffix={
                 searchBarValue1?.length > 0 ? (
-                  <CloseSVG onClick={() => setSearchBarValue1("")} width={22} fillColor="#112137ff" />
+                  <CloseSVG
+                    onClick={() => setSearchBarValue1("")}
+                    width={22}
+                    fillColor="#112137ff"
+                  />
                 ) : (
-                  <Img src="images/img_search.svg" alt="Search" className="h-[20px] w-[22px]" />
+                  <Img
+                    src="images/img_search.svg"
+                    alt="Search"
+                    className="h-[20px] w-[22px]"
+                  />
                 )
               }
               className="mb-1 h-[38px] w-[62%] gap-4 self-end rounded-md border border-solid border-green-a700 px-3.5 text-[14px] text-blue_gray-600_01 md:w-full md:self-auto"
@@ -110,7 +145,11 @@ export default function HeaderComponent({
               <div className="flex flex-1 justify-center gap-3.5 sm:self-stretch">
                 <div className="flex rounded-md bg-green-a700_11 p-2.5">
                   <a href="#">
-                    <Img src="images/img_heart_1.svg" alt="Heart Icon" className="h-[18px]" />
+                    <Img
+                      src="images/img_heart_1.svg"
+                      alt="Heart Icon"
+                      className="h-[18px]"
+                    />
                   </a>
                 </div>
                 <Text className="font-bevietnampro text-[14px] font-bold leading-[22px] text-blue_gray-900_01">
@@ -142,7 +181,11 @@ export default function HeaderComponent({
               <div className="relative h-[52px] w-[14%] self-center sm:w-full">
                 <div className="absolute bottom-[-0.82px] left-0 my-auto ml-auto mr-1 flex flex-1 flex-col items-center rounded-md bg-green-a700 px-3 py-3.5 md:mr-0">
                   <a href="#">
-                    <Img src="images/img_shopping_cart_1.svg" alt="Cart Icon" className="h-[18px]" />
+                    <Img
+                      src="images/img_shopping_cart_1.svg"
+                      alt="Cart Icon"
+                      className="h-[18px]"
+                    />
                   </a>
                 </div>
                 <Text className="absolute right-[0.12px] top-0 m-auto rounded-md bg-orange-300 p-0.5 text-[8px] font-bold text-blue_gray-900_02">
@@ -157,7 +200,13 @@ export default function HeaderComponent({
       <div className="container-xs mt-1.5 flex flex-col items-start md:px-5">
         <div className="flex w-[62%] items-start justify-between gap-5 md:w-full md:flex-col">
           <SelectBox
-            indicator={<Img src="images/img_vector_bg_white_.svg" alt="Vector" className="h-[6px] w-[8px]" />}
+            indicator={
+              <Img
+                src="images/img_vector_bg_white_.svg"
+                alt="Vector"
+                className="h-[6px] w-[8px]"
+              />
+            }
             name="Dropdown Categories"
             placeholder={`Danh mục`}
             options={dropDownOptions}
@@ -166,22 +215,30 @@ export default function HeaderComponent({
           <ul className="!mt-3.5 flex flex-wrap gap-[66px] md:gap-5">
             <li>
               <a href="#">
-                <Text className="text-[16px] font-medium text-blue_gray-900_01">{homeMenuItem}</Text>
+                <Text className="text-[16px] font-medium text-blue_gray-900_01">
+                  {homeMenuItem}
+                </Text>
               </a>
             </li>
             <li>
               <a href="#">
-                <Text className="text-[16px] font-medium text-blue_gray-900_01">{productsMenuItem}</Text>
+                <Text className="text-[16px] font-medium text-blue_gray-900_01">
+                  {productsMenuItem}
+                </Text>
               </a>
             </li>
             <li>
               <a href="#">
-                <Text className="text-[16px] font-medium text-blue_gray-900_01">{contactMenuItem}</Text>
+                <Text className="text-[16px] font-medium text-blue_gray-900_01">
+                  {contactMenuItem}
+                </Text>
               </a>
             </li>
             <li>
               <a href="#">
-                <Text className="text-[16px] font-medium text-blue_gray-900_01">{blogMenuItem}</Text>
+                <Text className="text-[16px] font-medium text-blue_gray-900_01">
+                  {blogMenuItem}
+                </Text>
               </a>
             </li>
           </ul>
@@ -190,8 +247,3 @@ export default function HeaderComponent({
     </div>
   );
 }
-
-
-
-
-

@@ -22,7 +22,11 @@ export default function DashboardAdminOne({
       </Heading>
       <div className="mx-auto flex flex-1 flex-col items-end">
         <div className="relative z-[2] mr-[18px] flex flex-col items-center rounded-[16px] bg-gray-100_01 px-2.5 py-5">
-          <Img src="images/img_wallet.svg" alt="Sort Icon" className="h-[40px]" />
+          <Img
+            src="images/img_wallet.svg"
+            alt="Sort Icon"
+            className="h-[40px]"
+          />
         </div>
         <Text
           size="texts"
@@ -52,6 +56,3 @@ export default function DashboardAdminOne({
     </div>
   );
 }
-
-
-

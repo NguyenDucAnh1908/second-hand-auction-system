@@ -20,16 +20,28 @@ export default function RecentlyViewedSection() {
               Các mục đã xem gần đây của bạn
             </Heading>
             <div className="flex flex-wrap gap-3 rounded-md bg-green-a700 p-2">
-              <Heading as="h3" className="text-[16px] font-medium text-gray-100_01">
+              <Heading
+                as="h3"
+                className="text-[16px] font-medium text-gray-100_01"
+              >
                 178 :
               </Heading>
-              <Heading as="h4" className="text-[16px] font-medium text-gray-100_01">
+              <Heading
+                as="h4"
+                className="text-[16px] font-medium text-gray-100_01"
+              >
                 23 :
               </Heading>
-              <Heading as="h5" className="text-[16px] font-medium text-gray-100_01">
+              <Heading
+                as="h5"
+                className="text-[16px] font-medium text-gray-100_01"
+              >
                 14 :
               </Heading>
-              <Heading as="h6" className="text-[16px] font-medium text-gray-100_01">
+              <Heading
+                as="h6"
+                className="text-[16px] font-medium text-gray-100_01"
+              >
                 39
               </Heading>
             </div>
@@ -39,7 +51,11 @@ export default function RecentlyViewedSection() {
               <Slider
                 autoPlay
                 autoPlayInterval={2000}
-                responsive={{ 0: { items: 1 }, 551: { items: 1 }, 1051: { items: 4 } }}
+                responsive={{
+                  0: { items: 1 },
+                  551: { items: 1 },
+                  1051: { items: 4 },
+                }}
                 disableDotsControls
                 activeIndex={sliderState}
                 onSlideChanged={(e) => {
@@ -79,6 +95,3 @@ export default function RecentlyViewedSection() {
     </>
   );
 }
-
-
-

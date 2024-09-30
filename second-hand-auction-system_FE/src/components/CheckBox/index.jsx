@@ -29,7 +29,9 @@ const CheckBox = React.forwardRef(
 
     return (
       <>
-        <div className={className + " flex items-center gap-[5px] cursor-pointer"}>
+        <div
+          className={className + " flex items-center gap-[5px] cursor-pointer"}
+        >
           <input
             className={` ${(size && sizes[size]) || ""} ${(variant && variants[variant]) || ""}`}
             ref={ref}
@@ -56,5 +58,3 @@ CheckBox.propTypes = {
 };
 
 export { CheckBox };
-
-

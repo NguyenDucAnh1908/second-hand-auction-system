@@ -24,7 +24,11 @@ export default function RegisterSection() {
             </Heading>
             <div className="mb-[142px] ml-4 flex flex-col items-center gap-[54px] self-stretch md:ml-0 sm:gap-[27px]">
               <div className="flex flex-col items-start justify-center gap-2.5 self-stretch">
-                <Heading size="headingxl" as="h2" className="text-[16px] font-semibold text-blue_gray-900_01">
+                <Heading
+                  size="headingxl"
+                  as="h2"
+                  className="text-[16px] font-semibold text-blue_gray-900_01"
+                >
                   Tên
                 </Heading>
                 <InputDH
@@ -35,7 +39,11 @@ export default function RegisterSection() {
                 />
               </div>
               <div className="flex flex-col items-start justify-center gap-2.5 self-stretch">
-                <Heading size="headingxl" as="h3" className="text-[16px] font-semibold text-blue_gray-900_01">
+                <Heading
+                  size="headingxl"
+                  as="h3"
+                  className="text-[16px] font-semibold text-blue_gray-900_01"
+                >
                   Số điện thoại
                 </Heading>
                 <InputDH
@@ -47,7 +55,11 @@ export default function RegisterSection() {
                 />
               </div>
               <div className="flex flex-col items-start justify-center gap-2.5 self-stretch">
-                <Heading size="headingxl" as="h4" className="text-[16px] font-semibold text-blue_gray-900_01">
+                <Heading
+                  size="headingxl"
+                  as="h4"
+                  className="text-[16px] font-semibold text-blue_gray-900_01"
+                >
                   Email
                 </Heading>
                 <InputDH
@@ -59,7 +71,11 @@ export default function RegisterSection() {
                 />
               </div>
               <div className="flex flex-col items-start justify-center gap-2.5 self-stretch">
-                <Heading size="headingxl" as="h5" className="text-[16px] font-semibold text-blue_gray-900_01">
+                <Heading
+                  size="headingxl"
+                  as="h5"
+                  className="text-[16px] font-semibold text-blue_gray-900_01"
+                >
                   Mật khẩu
                 </Heading>
                 <InputDH
@@ -70,7 +86,10 @@ export default function RegisterSection() {
                   className="self-stretch rounded-md border border-solid border-gray-200 px-3.5"
                 />
               </div>
-              <a href="https://www.youtube.com/embed/bv8Fxk0sz7I" target="_blank">
+              <a
+                href="https://www.youtube.com/embed/bv8Fxk0sz7I"
+                target="_blank"
+              >
                 <ButtonDH
                   color="green_A700"
                   size="5xl"
@@ -80,9 +99,17 @@ export default function RegisterSection() {
                   Tạo tài khoản
                 </ButtonDH>
               </a>
-              <a href="https://www.youtube.com/embed/bv8Fxk0sz7I" target="_blank">
-                <Text as="p" className="text-[14px] font-normal text-blue_gray-900_01">
-                  <span className="text-blue_gray-900_01">Bạn đã có tài khoản?&nbsp;</span>
+              <a
+                href="https://www.youtube.com/embed/bv8Fxk0sz7I"
+                target="_blank"
+              >
+                <Text
+                  as="p"
+                  className="text-[14px] font-normal text-blue_gray-900_01"
+                >
+                  <span className="text-blue_gray-900_01">
+                    Bạn đã có tài khoản?&nbsp;
+                  </span>
                   <span className="text-green-a700">Đăng nhập</span>
                 </Text>
               </a>
@@ -93,6 +120,3 @@ export default function RegisterSection() {
     </>
   );
 }
-
-
-

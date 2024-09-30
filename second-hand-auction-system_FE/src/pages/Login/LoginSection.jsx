@@ -1,4 +1,11 @@
-import { Img, ButtonDH, Text, CheckBox, InputDH, Heading } from "../../components";
+import {
+  Img,
+  ButtonDH,
+  Text,
+  CheckBox,
+  InputDH,
+  Heading,
+} from "../../components";
 import React from "react";
 import useHook from "./hook/useHook";
 //import { useTranslation } from "react-i18next";
@@ -50,7 +57,6 @@ export default function LoginSection() {
                   required
                   className="self-stretch rounded-md border-none outline-none px-3.5 !text-blue_gray-900_01 shadow-none"
                 />
-
               </div>
               <div className="mt-5 flex flex-col items-start justify-center gap-2.5">
                 <Heading

@@ -16,6 +16,3 @@ const CloseSVG = ({ fillColor = "#000000", className = "", ...props }) => {
   );
 };
 export { CloseSVG };
-
-
-

@@ -24,17 +24,23 @@ const sizes = {
   heading5xl: "text-[48px] font-semibold md:text-[44px] sm:text-[38px]",
 };
 
-const Heading = ({ children, className = "", size = "textxl", as, ...restProps }) => {
+const Heading = ({
+  children,
+  className = "",
+  size = "textxl",
+  as,
+  ...restProps
+}) => {
   const Component = as || "h6";
 
   return (
-    <Component className={`text-blue_gray-900_01 font-bevietnampro ${className} ${sizes[size]}`} {...restProps}>
+    <Component
+      className={`text-blue_gray-900_01 font-bevietnampro ${className} ${sizes[size]}`}
+      {...restProps}
+    >
       {children}
     </Component>
   );
 };
 
 export { Heading };
-
-
-

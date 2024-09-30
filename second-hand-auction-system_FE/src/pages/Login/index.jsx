@@ -17,12 +17,9 @@ export default function LoginPage() {
         {/* login section */}
         <LoginSection />
         <div className="mt-[194px] self-stretch">
-            <FooterBK className="mt-[34px] h-[388px] bg-[url(/public/images/img_group_19979.png)] bg-cover bg-no-repeat md:h-auto" />
-          </div>
+          <FooterBK className="mt-[34px] h-[388px] bg-[url(/public/images/img_group_19979.png)] bg-cover bg-no-repeat md:h-auto" />
+        </div>
       </div>
     </>
   );
 }
-
-
-

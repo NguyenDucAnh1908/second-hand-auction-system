@@ -92,7 +92,9 @@ export default function HomePagePage() {
   return (
     <>
       <Helmet>
-        <title>Home Fashion - Discover Winter Collection and Exclusive Deals</title>
+        <title>
+          Home Fashion - Discover Winter Collection and Exclusive Deals
+        </title>
         <meta
           name="description"
           content="Explore our Home Fashion page for the latest winter collection and enjoy exclusive end-of-month promotions. Free shipping on orders over 200K and a 30-day money-back guarantee."
@@ -108,7 +110,11 @@ export default function HomePagePage() {
                   <Slider
                     autoPlay
                     autoPlayInterval={2000}
-                    responsive={{ 0: { items: 1 }, 551: { items: 1 }, 1051: { items: 1 } }}
+                    responsive={{
+                      0: { items: 1 },
+                      551: { items: 1 },
+                      1051: { items: 1 },
+                    }}
                     disableDotsControls
                     activeIndex={sliderState1}
                     onSlideChanged={(e) => {
@@ -143,7 +149,8 @@ export default function HomePagePage() {
                                 as="h2"
                                 className="w-[86%] text-[16px] font-normal leading-[150%] text-blue_gray-600 md:w-full"
                               >
-                                Những gì chúng tôi mất hàng giờ để thực hiện sẽ là của bạn để tận hưởng
+                                Những gì chúng tôi mất hàng giờ để thực hiện sẽ
+                                là của bạn để tận hưởng
                               </Heading>
                             </div>
                             <ButtonDH
@@ -221,7 +228,11 @@ export default function HomePagePage() {
                 Sản phẩm nổi bật
               </Heading>
               <div className="flex w-[30%] flex-col items-start justify-center gap-0.5 md:w-full">
-                <Heading size="headingxl" as="h3" className="text-[16px] font-semibold text-blue_gray-600_01">
+                <Heading
+                  size="headingxl"
+                  as="h3"
+                  className="text-[16px] font-semibold text-blue_gray-600_01"
+                >
                   Top 10 Điện tử Thời trang Gia dụng Tất cả
                 </Heading>
                 {/*<div className="h-[2px] w-[48px] bg-blue_gray-900_01" />*/}
@@ -233,7 +244,11 @@ export default function HomePagePage() {
                   <Slider
                     autoPlay
                     autoPlayInterval={2000}
-                    responsive={{ 0: { items: 1 }, 551: { items: 1 }, 1051: { items: 1 } }}
+                    responsive={{
+                      0: { items: 1 },
+                      551: { items: 1 },
+                      1051: { items: 1 },
+                    }}
                     disableDotsControls
                     activeIndex={sliderState}
                     onSlideChanged={(e) => {
@@ -241,53 +256,53 @@ export default function HomePagePage() {
                     }}
                     ref={sliderRef}
                     items={[...Array(3)].map(() => (
-                        <React.Fragment key={Math.random()}>
-                          <div className="flex gap-8 md:flex-col">
-                            <div className="flex w-full gap-8 md:flex-col">
-                              <ProductDetails31 className="w-full border border-solid border-gray-200 bg-bg-white"/>
-                            </div>
-                            <div className="flex w-full gap-8 md:flex-col">
-                              <ProductDetails31 className="w-full border border-solid border-gray-200 bg-bg-white"/>
-                            </div>
-                            <div className="flex w-full gap-8 md:flex-col">
-                              <ProductDetails31 className="w-full border border-solid border-gray-200 bg-bg-white"/>
-                            </div>
-                            <div className="flex w-full gap-8 md:flex-col">
-                              <ProductDetails31 className="w-full border border-solid border-gray-200 bg-bg-white"/>
-                            </div>
+                      <React.Fragment key={Math.random()}>
+                        <div className="flex gap-8 md:flex-col">
+                          <div className="flex w-full gap-8 md:flex-col">
+                            <ProductDetails31 className="w-full border border-solid border-gray-200 bg-bg-white" />
                           </div>
-                          {/*<div className="flex gap-8 md:flex-col">*/}
-                          {/*  <div className="flex w-full gap-8 md:flex-col">*/}
-                          {/*    <ProductDetails4 className="w-full border border-solid border-gray-200 bg-bg-white"/>*/}
-                            {/*    <ProductDetails4*/}
-                            {/*        productImage="images/img_image_30_3.png"*/}
-                            {/*        productDescription="Áo nỉ chần bông màu xám có dây Nike"*/}
-                            {/*        className="w-full border border-solid border-gray-200 bg-bg-white"*/}
-                            {/*    />*/}
-                            {/*  </div>*/}
-                            {/*  <div className="flex w-full gap-[30px] md:flex-col">*/}
-                            {/*    <ProductDetails4*/}
-                            {/*        productImage="images/img_image_30_4.png"*/}
-                            {/*        productDescription="Khoác gió chống nắng thời trang Adidas"*/}
-                            {/*        className="w-full border border-solid border-gray-200 bg-bg-white"*/}
-                            {/*    />*/}
-                            {/*    <ProductDetails4*/}
-                            {/*        productImage="images/img_image_30_5.png"*/}
-                            {/*        productDescription="Áo khoác unisex màu trắng tập gym Adidas"*/}
-                            {/*        className="w-full border border-solid border-gray-200 bg-bg-white"*/}
-                            {/*    />*/}
-                            {/*  </div>*/}
-                            {/*</div>*/}
-                        </React.Fragment>
-                      ))}
-                    />
+                          <div className="flex w-full gap-8 md:flex-col">
+                            <ProductDetails31 className="w-full border border-solid border-gray-200 bg-bg-white" />
+                          </div>
+                          <div className="flex w-full gap-8 md:flex-col">
+                            <ProductDetails31 className="w-full border border-solid border-gray-200 bg-bg-white" />
+                          </div>
+                          <div className="flex w-full gap-8 md:flex-col">
+                            <ProductDetails31 className="w-full border border-solid border-gray-200 bg-bg-white" />
+                          </div>
+                        </div>
+                        {/*<div className="flex gap-8 md:flex-col">*/}
+                        {/*  <div className="flex w-full gap-8 md:flex-col">*/}
+                        {/*    <ProductDetails4 className="w-full border border-solid border-gray-200 bg-bg-white"/>*/}
+                        {/*    <ProductDetails4*/}
+                        {/*        productImage="images/img_image_30_3.png"*/}
+                        {/*        productDescription="Áo nỉ chần bông màu xám có dây Nike"*/}
+                        {/*        className="w-full border border-solid border-gray-200 bg-bg-white"*/}
+                        {/*    />*/}
+                        {/*  </div>*/}
+                        {/*  <div className="flex w-full gap-[30px] md:flex-col">*/}
+                        {/*    <ProductDetails4*/}
+                        {/*        productImage="images/img_image_30_4.png"*/}
+                        {/*        productDescription="Khoác gió chống nắng thời trang Adidas"*/}
+                        {/*        className="w-full border border-solid border-gray-200 bg-bg-white"*/}
+                        {/*    />*/}
+                        {/*    <ProductDetails4*/}
+                        {/*        productImage="images/img_image_30_5.png"*/}
+                        {/*        productDescription="Áo khoác unisex màu trắng tập gym Adidas"*/}
+                        {/*        className="w-full border border-solid border-gray-200 bg-bg-white"*/}
+                        {/*    />*/}
+                        {/*  </div>*/}
+                        {/*</div>*/}
+                      </React.Fragment>
+                    ))}
+                  />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 top-0 m-auto flex h-max flex-1 justify-between gap-5">
                   <ButtonDH
-                      onClick={() => {
-                        sliderRef?.current?.slidePrev();
-                      }}
-                      className="ml-2.5 w-[44px] rounded-[22px] border border-solid border-gray-200 px-3.5"
+                    onClick={() => {
+                      sliderRef?.current?.slidePrev();
+                    }}
+                    className="ml-2.5 w-[44px] rounded-[22px] border border-solid border-gray-200 px-3.5"
                   >
                     <Img src="images/img_arrow_left_blue_gray_900.svg" />
                   </ButtonDH>
@@ -317,7 +332,10 @@ export default function HomePagePage() {
                       className="absolute bottom-[-1px] right-[0.96px] m-auto h-[234px] w-[86%] rounded-md object-contain"
                     />
                     <div className="absolute left-0 right-0 top-[11%] mx-[46px] my-auto flex flex-1 flex-col items-start gap-2 md:mx-0">
-                      <Text as="p" className="text-[14px] font-normal text-blue-a700">
+                      <Text
+                        as="p"
+                        className="text-[14px] font-normal text-blue-a700"
+                      >
                         Chỉ từ 150K
                       </Text>
                       <Heading
@@ -331,7 +349,11 @@ export default function HomePagePage() {
                         </>
                       </Heading>
                       <div className="flex flex-col items-start justify-center gap-0.5 self-stretch">
-                        <Text size="textlg" as="p" className="text-[15px] font-medium text-gray-900_01">
+                        <Text
+                          size="textlg"
+                          as="p"
+                          className="text-[15px] font-medium text-gray-900_01"
+                        >
                           Mua ngay
                         </Text>
                         <div className="h-[2px] w-[32px] bg-gray-900_01" />
@@ -341,7 +363,11 @@ export default function HomePagePage() {
                   <div className="ml-[26px] flex flex-1 gap-3 md:ml-0 md:flex-col md:self-stretch">
                     <Suspense fallback={<div>Loading feed...</div>}>
                       {fashionItemsList.map((d, index) => (
-                        <ProductDetails {...d} key={"productList" + index} className="mt-1 w-[34%] md:mt-0 md:w-full" />
+                        <ProductDetails
+                          {...d}
+                          key={"productList" + index}
+                          className="mt-1 w-[34%] md:mt-0 md:w-full"
+                        />
                       ))}
                     </Suspense>
                   </div>
@@ -353,7 +379,7 @@ export default function HomePagePage() {
                   as="h6"
                   className="ml-2.5 text-[28px] font-medium text-black-900 md:ml-0 md:text-[26px] sm:text-[24px]"
                 >
-                     Các sản phẩm đang đấu giá
+                  Các sản phẩm đang đấu giá
                 </Heading>
                 <div className="mr-2.5 flex items-center gap-5 self-stretch md:mr-0 md:flex-col">
                   <div className="relative h-[390px] w-[42%] rounded-md bg-gray-100_01 md:w-full">
@@ -363,7 +389,10 @@ export default function HomePagePage() {
                       className="absolute bottom-[-1px] right-[1.54px] m-auto h-[234px] w-[86%] rounded-md object-contain"
                     />
                     <div className="absolute left-0 right-0 top-[11%] mx-12 my-auto flex flex-1 flex-col items-start gap-2 md:mx-0">
-                      <Text as="p" className="text-[14px] font-normal text-blue-a700">
+                      <Text
+                        as="p"
+                        className="text-[14px] font-normal text-blue-a700"
+                      >
                         Chỉ từ 150K
                       </Text>
                       <Heading
@@ -377,7 +406,11 @@ export default function HomePagePage() {
                         </>
                       </Heading>
                       <div className="flex flex-col items-start justify-center gap-0.5 self-stretch">
-                        <Text size="textlg" as="p" className="text-[15px] font-medium text-gray-900_01">
+                        <Text
+                          size="textlg"
+                          as="p"
+                          className="text-[15px] font-medium text-gray-900_01"
+                        >
                           Mua ngay
                         </Text>
                         <div className="h-[2px] w-[32px] bg-gray-900_01" />
@@ -387,7 +420,11 @@ export default function HomePagePage() {
                   <div className="ml-5 flex flex-1 md:ml-0 md:flex-col md:self-stretch">
                     <Suspense fallback={<div>Loading feed...</div>}>
                       {beautyProductsList.map((d, index) => (
-                        <ProductDetails11 {...d} key={"auctionProductList" + index} className="w-[32%]" />
+                        <ProductDetails11
+                          {...d}
+                          key={"auctionProductList" + index}
+                          className="w-[32%]"
+                        />
                       ))}
                     </Suspense>
                   </div>

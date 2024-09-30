@@ -14,8 +14,10 @@ const variants = {
     green_A700_11: "bg-green-a700_11",
   },
   outline: {
-    gray_200: "border-gray-200 border-2 border-solid shadow-md text-blue_gray-900_01",
-    green_A700: "border-green-a700 border-2 border-solid shadow-md text-blue_gray-900_01",
+    gray_200:
+      "border-gray-200 border-2 border-solid shadow-md text-blue_gray-900_01",
+    green_A700:
+      "border-green-a700 border-2 border-solid shadow-md text-blue_gray-900_01",
   },
 };
 const sizes = {
@@ -59,7 +61,17 @@ ButtonDH.propTypes = {
   leftIcon: PropTypes.node,
   rightIcon: PropTypes.node,
   shape: PropTypes.oneOf(["round"]),
-  size: PropTypes.oneOf(["4xl", "sm", "5xl", "md", "xs", "2xl", "3xl", "xl", "lg"]),
+  size: PropTypes.oneOf([
+    "4xl",
+    "sm",
+    "5xl",
+    "md",
+    "xs",
+    "2xl",
+    "3xl",
+    "xl",
+    "lg",
+  ]),
   variant: PropTypes.oneOf(["fill", "outline"]),
   color: PropTypes.oneOf([
     "blue_gray_900_01",
@@ -73,6 +85,3 @@ ButtonDH.propTypes = {
 };
 
 export { ButtonDH };
-
-
-

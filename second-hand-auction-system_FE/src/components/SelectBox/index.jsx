@@ -103,7 +103,11 @@ const SelectBox = React.forwardRef(
               margin: 0,
             }),
             menuPortal: (base) => ({ ...base, zIndex: 999999 }),
-            menu: (base) => ({ ...base, minWidth: "max-content", width: "max-content" }),
+            menu: (base) => ({
+              ...base,
+              minWidth: "max-content",
+              width: "max-content",
+            }),
           }}
           menuPortalTarget={document.body}
           closeMenuOnScroll={(event) => {
@@ -132,6 +136,3 @@ SelectBox.propTypes = {
 };
 
 export { SelectBox };
-
-
-

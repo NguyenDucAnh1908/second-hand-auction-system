@@ -13,18 +13,19 @@ const partnerLogosList = [
 ];
 
 export default function TrustedBrandsSection() {
-
   return (
     <>
       {/* trusted brands section */}
       <div className="mt-[158px] flex flex-col items-center self-stretch">
         <div className="container-xs flex flex-col items-center gap-6 px-[46px] md:px-5">
-          <Heading as="h2" className="text-[16px] font-normal text-blue_gray-900_01">
+          <Heading
+            as="h2"
+            className="text-[16px] font-normal text-blue_gray-900_01"
+          >
             Được tin cậy bởi những Nhãn Hàng Lớn
           </Heading>
           <div className="flex gap-[68px] self-stretch md:flex-col">
             <Suspense fallback={<div>Loading feed...</div>}>
-
               {partnerLogosList.map((d, index) => (
                 <Img
                   key={"partnersLogos" + index}
@@ -40,6 +41,3 @@ export default function TrustedBrandsSection() {
     </>
   );
 }
-
-
-
