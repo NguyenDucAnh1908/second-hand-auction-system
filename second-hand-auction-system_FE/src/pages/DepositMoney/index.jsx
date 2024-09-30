@@ -6,6 +6,8 @@ import React from "react";
 import { TabPanel, TabList, Tab, Tabs } from "react-tabs";
 import ProfileCard from "../../components/ProfileCard";
 import AccountOptions from "../../components/AccountOption";
+import {  Select, Input, InputNumber   } from 'antd';
+import { BankOutlined } from '@ant-design/icons';
 
 const dropDownOptions = [
     { label: "Option1", value: "option1" },
@@ -13,7 +15,18 @@ const dropDownOptions = [
     { label: "Option3", value: "option3" },
 ];
 
+
 export default function DepositMoneyPage() {
+    const handleChange = (value) => {
+        console.log(`selected ${value}`);
+    };
+    const onChange = (value) => {
+        console.log('changed', value);
+    };
+    const { TextArea } = Input;
+    const onChangeTextArea = (e) => {
+        console.log('Change:', e.target.value);
+    };
     return (
         <>
             <Helmet>
@@ -74,53 +87,89 @@ export default function DepositMoneyPage() {
                                                 <Heading as="h4" className="text-[16px] font-medium text-gray-900_02">
                                                     Phương thức nạp tiền
                                                 </Heading>
-                                                <SelectBox
-                                                    size="sm"
-                                                    shape="round"
-                                                    indicator={
-                                                        <Img
-                                                            src="images/img_vector_bg_black_.svg"
-                                                            alt="Arrow Down"
-                                                            className="h-[14px] w-[14px]"
-                                                        />
-                                                    }
-                                                    name="Bank Dropdown"
-                                                    placeholder={`Ngân hàng`}
-                                                    options={dropDownOptions}
-                                                    className="w-[48%] gap-4 rounded-md border border-solid border-gray-200 px-4 bg-transparent"
-                                                />
-
+                                                {/*<SelectBox*/}
+                                                {/*    size="sm"*/}
+                                                {/*    shape="round"*/}
+                                                {/*    indicator={*/}
+                                                {/*        <Img*/}
+                                                {/*            src="images/img_vector_bg_black_.svg"*/}
+                                                {/*            alt="Arrow Down"*/}
+                                                {/*            className="h-[14px] w-[14px]"*/}
+                                                {/*        />*/}
+                                                {/*    }*/}
+                                                {/*    name="Bank Dropdown"*/}
+                                                {/*    placeholder={`Ngân hàng`}*/}
+                                                {/*    options={dropDownOptions}*/}
+                                                {/*    className="w-[48%] gap-4 rounded-md border border-solid border-gray-200 px-4 bg-transparent"*/}
+                                                {/*/>*/}
+                                                {/* Thay SelectBox bằng Select của antd */}
+                                                {/*<Space wrap>*/}
+                                                    <Select
+                                                        defaultValue="Chọn ngân hàng"
+                                                        style={{
+                                                            width: '48%',
+                                                        }}
+                                                        allowClear
+                                                        options={dropDownOptions}
+                                                        placeholder="Chọn ngân hàng"
+                                                        onChange={handleChange}
+                                                        // className="rounded-md border border-solid border-gray-200 px-4"
+                                                    />
+                                                {/*</Space>*/}
                                             </div>
                                             <div className="mt-[30px] flex flex-col items-start justify-center gap-1.5">
                                                 <Heading as="h5" className="mt-1 text-[16px] font-medium text-blue_gray-900_01">
                                                     Tên ngân hàng
                                                 </Heading>
-                                                <InputDH
-                                                    shape="round"
-                                                    name="Bank Name InputDH"
-                                                    placeholder={`Bank`}
-                                                    className="w-[48%] rounded-md border border-gray-200 px-4"
+                                                {/*<InputDH*/}
+                                                {/*    shape="round"*/}
+                                                {/*    name="Bank Name InputDH"*/}
+                                                {/*    placeholder={`Bank`}*/}
+                                                {/*    className="w-[48%] rounded-md border border-gray-200 px-4"*/}
+                                                {/*/>*/}
+                                                <Input size="large"
+                                                       placeholder="large size"
+                                                       prefix={<BankOutlined />}
+                                                       className="w-[48%] rounded-md border border-gray-200 px-4"
                                                 />
                                             </div>
                                             <div className="mt-[30px] flex flex-col items-start justify-center gap-1.5">
                                                 <Heading as="h6" className="text-[16px] font-medium text-blue_gray-900_01">
                                                     Số tiền nạp
                                                 </Heading>
-                                                <InputDH
-                                                    shape="round"
-                                                    name="Amount InputDH"
-                                                    placeholder={`VNĐ`}
-                                                    className="w-[48%] rounded-md border border-gray-200 px-4"
+                                                {/*<InputDH*/}
+                                                {/*    shape="round"*/}
+                                                {/*    name="Amount InputDH"*/}
+                                                {/*    placeholder={`VNĐ`}*/}
+                                                {/*    className="w-[48%] rounded-md border border-gray-200 px-4"*/}
+                                                {/*/>*/}
+                                                <InputNumber
+                                                    defaultValue={1000}
+                                                    formatter={(value) => `VND ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                                                    parser={(value) => value?.replace(/\$\s?|(,*)/g, '')}
+                                                    onChange={onChange}
+                                                    className="w-[48%] rounded-md border border-gray-200 "
                                                 />
                                             </div>
                                             <div className="mt-6 flex flex-col items-start justify-center gap-2">
                                                 <Heading as="p" className="text-[16px] font-medium text-blue_gray-900_01">
                                                     Ghi chú
                                                 </Heading>
-                                                <InputDH
-                                                    shape="round"
-                                                    name="Note InputDH"
-                                                    placeholder={`ghi chú`}
+                                                {/*<InputDH*/}
+                                                {/*    shape="round"*/}
+                                                {/*    name="Note InputDH"*/}
+                                                {/*    placeholder={`ghi chú`}*/}
+                                                {/*    className="w-[48%] rounded-md border border-gray-200 px-3.5"*/}
+                                                {/*/>*/}
+                                                <TextArea
+                                                    showCount
+                                                    maxLength={100}
+                                                    onChange={onChangeTextArea}
+                                                    placeholder="disable resize"
+                                                    style={{
+                                                        height: 120,
+                                                        resize: 'none',
+                                                    }}
                                                     className="w-[48%] rounded-md border border-gray-200 px-3.5"
                                                 />
                                             </div>
