@@ -7,6 +7,7 @@ import {
   RectangleStackIcon,
 } from "@heroicons/react/24/solid";
 import { Home, Profile, Tables, Notifications } from "./pages/Dashboard";
+import RegisterProductPage from "./pages/Dashboard/register-product";
 import { SignIn, SignUp } from "./pages/auth";
 
 const icon = {
@@ -22,6 +23,12 @@ export const routes = [
         name: "dashboard",
         path: "/home",
         element: <Home />,
+      },
+      {
+        icon: <HomeIcon {...icon} />,
+        name: "Đăng ký sản phẩm",
+        path: "/RegisterProduct",
+        element: <RegisterProductPage />,
       },
       {
         icon: <UserCircleIcon {...icon} />,
