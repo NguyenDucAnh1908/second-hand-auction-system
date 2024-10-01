@@ -167,7 +167,7 @@ export default function ProfileDetailPage() {
           <div className="mr-[46px] flex items-start gap-5 md:mr-0 md:flex-col">
         
             {/* bên trái */}
-            <div className="mt-12 flex w-[24%] flex-col gap-[20px] md:w-full -mt-[10px]">
+            <div className="mt-12 flex w-[24%] flex-col gap-[20px] md:w-full -mt-[31px]">
               <div className="py-0">
                 {/*<AccountOptions />*/}
                 <SiderUserBK/>

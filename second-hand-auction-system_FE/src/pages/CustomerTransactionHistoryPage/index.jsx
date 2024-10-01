@@ -121,7 +121,7 @@ export default function CustomerTransactionHistoryPagePage() {
             <div className="mr-[46px] flex items-start gap-5 md:mr-0 md:flex-col">
 
               {/* bên trái */}
-              <div className="mt-12 flex w-[24%] flex-col gap-[20px] md:w-full -mt-[49.8px]">
+              <div className="mt-12 flex w-[24%] flex-col gap-[20px] md:w-full -mt-[71px]">
                 <div className="py-0">
                   {/*<AccountOptions />*/}
                   <SiderUserBK />
@@ -131,7 +131,7 @@ export default function CustomerTransactionHistoryPagePage() {
 
 
               {/* Phần bên phải chiếm phần còn lại */}
-              <div className="flex flex-1 flex-col items-center gap-[38px] self-center md:self-stretch -mt-[400px]">
+              <div className="flex flex-1 flex-col items-center gap-[38px] self-center md:self-stretch ">
                 <div className="self-stretch">
                   <div className="flex flex-col gap-4">
                     <div className="mr-1 md:mr-0">
@@ -140,7 +140,7 @@ export default function CustomerTransactionHistoryPagePage() {
                       <Heading
                         size="headingmd"
                         as="h4"
-                        className="text-[16px] font-semibold text-blue_gray-900_01"
+                        className="text-[16px] font-semibold text-blue_gray-900_01 -mt-[335px]"
                       >
                         Lịch sử nạp tiền{" "}
                       </Heading>

@@ -1,1 +1,3 @@
-export { default as AppraisalFormPage } from "../AppraisalForm/index.jsx"
+export * from "./AppraisalSection"
+export * from "./AppraisalSection2"
+export * from "./AppraisalResults"
