@@ -133,7 +133,7 @@ export default function ProductSection({ selectedBrands, onTagClose }) {
     <>
       <div className="mt-10 flex flex-col items-center self-stretch">
         <div className="flex items-center justify-between w-full">
-          <span className="text-blue_gray-900_01">Categories:</span>
+          <span className="text-blue_gray-900_01">Filter:</span>
 
           {/* Phần chứa các tag, đặt cùng hàng với Categories */}
           <div className="flex items-center gap-2 ml-4">

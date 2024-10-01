@@ -6,8 +6,10 @@ import Header2 from "../../components/Header2";
 import React, { Suspense, useState } from "react";
 import ProfileCard from "../../components/ProfileCard";
 import AccountOptions from "../../components/AccountOption";
-import { Button, Modal, message, Popconfirm } from "antd";
+import { Button, Modal, message, Popconfirm, Radio  } from "antd";
 import FooterBK from "../../components/FooterBK/index.jsx";
+import {FormAddAddress} from "./FormAddAddress.jsx";
+import {FormUpdateAddress} from "./FormUpdateAddress.jsx";
 
 const addressList = [
   {
@@ -60,7 +62,7 @@ export default function AddressPage() {
   const [updateAddress, setUpdateAddress] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [modalText, setModalText] = useState("Content of the modal");
-
+  const [selectedAddress, setSelectedAddress] = useState(null);
   const showModal = () => {
     setOpen(true);
   };
@@ -95,6 +97,9 @@ export default function AddressPage() {
     console.log("Clicked cancel button");
     setUpdateAddress(false);
   };
+  const handleRadioChange = (index) => {
+    setSelectedAddress(index);
+  };
 
   const confirm = (e) => {
     console.log(e);
@@ -108,13 +113,15 @@ export default function AddressPage() {
     <>
       {/*New Address*/}
       <Modal
-        title="New Address"
-        open={open}
-        onOk={handleOk}
-        confirmLoading={confirmLoading}
-        onCancel={handleCancel}
+          title="New Address"
+          open={open}
+          onOk={handleOk}
+          confirmLoading={confirmLoading}
+          onCancel={handleCancel}
+          okText="Lưu địa chỉ" // Tùy chỉnh chữ cho nút OK
+          cancelText="Hủy" // Tùy chỉnh chữ cho nút Cancel
       >
-        <p>{modalText}</p>
+        <FormAddAddress />
       </Modal>
       {/*Update Address*/}
       <Modal
@@ -124,7 +131,7 @@ export default function AddressPage() {
         confirmLoading={confirmLoading}
         onCancel={handleCancelUpdateAddress}
       >
-        <p>{modalText}</p>
+        <FormUpdateAddress />
       </Modal>
       <Helmet>
         <title>Manage Your Address Book - Update Shipping Information</title>
@@ -139,7 +146,7 @@ export default function AddressPage() {
             <Header2 />
             <div className="flex items-start gap-12">
               <div className="w-[24%]">
-                <ProfileCard />
+                {/*<ProfileCard />*/}
 
                 <AccountOptions />
               </div>
@@ -208,34 +215,6 @@ export default function AddressPage() {
 
                   <div className="mx-3 mb-[418px] md:mx-0">
                     <div className="relative z-[2] mr-5 flex flex-wrap gap-6 md:mr-0">
-                      {/*<Suspense fallback={<div>Loading feed...</div>}>*/}
-                      {/*    {addressList.map((d, index) => (*/}
-                      {/*        <div*/}
-                      {/*            className="bg-green-300 rounded-lg shadow-md border border-gray-300 p-5 flex-1 min-w-[250px] max-w-[300px] flex flex-col" // Đổi từ bg-green-200 sang bg-green-300*/}
-                      {/*            key={"addressesList" + index}*/}
-                      {/*        >*/}
-                      {/*            <div className="flex items-center">*/}
-                      {/*                <InputDH*/}
-                      {/*                    type="radio" // Thay đổi thành radio để chỉ cho phép chọn một*/}
-                      {/*                    name="addressSelection" // Đặt tên giống nhau để nhóm lại*/}
-                      {/*                    id={`addressRadio${index}`}*/}
-                      {/*                    className="mr-2 accent-green-400"*/}
-                      {/*                />*/}
-                      {/*                <label htmlFor={`addressRadio${index}`}*/}
-                      {/*                       className="font-semibold">*/}
-                      {/*                    {d.userTitle}*/}
-                      {/*                </label>*/}
-                      {/*            </div>*/}
-                      {/*            <div className="text-gray-600">{d.userAddress}</div>*/}
-                      {/*            <div className="flex justify-between mt-2">*/}
-                      {/*                <Button*/}
-                      {/*                    className="text-blue-500">{d.editButtonLabel}</Button>*/}
-                      {/*                <Button*/}
-                      {/*                    className="text-red-500">{d.deleteButtonLabel}</Button>*/}
-                      {/*            </div>*/}
-                      {/*        </div>*/}
-                      {/*    ))}*/}
-                      {/*</Suspense>*/}
                       <Suspense fallback={<div>Loading feed...</div>}>
                         {addressList.map((d, index) => (
                           <div
@@ -251,11 +230,10 @@ export default function AddressPage() {
                                 okText="Yes"
                                 cancelText="No"
                               >
-                                <InputDH
-                                  type="radio" // Chỉ cho phép chọn một
-                                  name="addressSelection" // Đặt tên giống nhau để nhóm lại
-                                  id={`addressRadio${index}`}
-                                  className="mr-2 accent-green-400"
+                                <Radio
+                                    value={index}
+                                    checked={selectedAddress === index}
+                                    onChange={() => handleRadioChange(index)}
                                 />
                               </Popconfirm>
                               <label
