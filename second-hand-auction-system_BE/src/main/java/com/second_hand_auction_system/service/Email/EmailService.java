@@ -30,27 +30,99 @@ public class EmailService {
     private final JavaMailSender mailSender;
     private final SpringTemplateEngine templateEngine;
     private final OtpService otpService;
+
     public String sendEmail(String to, String subject, String text, MultipartFile[] files) throws MessagingException {
         log.info("Sending email to " + to);
+
+        // Tạo email
         MimeMessage message = mailSender.createMimeMessage();
-        MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(message,true,"UTF-8");
+        MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(message, true, "UTF-8");
+
         mimeMessageHelper.setFrom(mail);
-        if(to.contains(",")){
+
+        if (to.contains(",")) {
             mimeMessageHelper.setTo(InternetAddress.parse(to));
-        }else {
+        } else {
             mimeMessageHelper.setTo(to);
         }
-        if(files != null){
-            for(MultipartFile file:files){
-                mimeMessageHelper.addAttachment(Objects.requireNonNull(file.getOriginalFilename()),file);
+
+        // Thêm các file đính kèm nếu có
+        if (files != null) {
+            for (MultipartFile file : files) {
+                mimeMessageHelper.addAttachment(Objects.requireNonNull(file.getOriginalFilename()), file);
             }
         }
+
+        // Thêm CSS và nội dung HTML
+        String htmlContent = """
+        <html>
+            <head>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        background-color: #f4f4f4;
+                        margin: 0;
+                        padding: 20px;
+                    }
+                    .email-container {
+                        background-color: #ffffff;
+                        border-radius: 8px;
+                        padding: 20px;
+                        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                    }
+                    .email-header {
+                        font-size: 24px;
+                        color: #333333;
+                        margin-bottom: 20px;
+                    }
+                    .email-content {
+                        font-size: 16px;
+                        color: #666666;
+                        line-height: 1.5;
+                    }
+                    .email-footer {
+                        font-size: 14px;
+                        color: #999999;
+                        margin-top: 30px;
+                        text-align: center;
+                    }
+                    a {
+                        color: #007bff;
+                        text-decoration: none;
+                    }
+                    a:hover {
+                        color: #0056b3;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="email-container">
+                    <div class="email-header">
+                        %s
+                    </div>
+                    <div class="email-content">
+                        %s
+                    </div>
+                    <div class="email-footer">
+                        <p>Thank you for choosing our service!</p>
+                        <p>For any questions, please contact us at <a href="mailto:support@example.com">support@example.com</a>.</p>
+                    </div>
+                </div>
+            </body>
+        </html>
+        """.formatted(subject, text);  // Chèn chủ đề và nội dung vào template HTML
+
+        // Cài đặt nội dung HTML vào email
         mimeMessageHelper.setSubject(subject);
-        mimeMessageHelper.setText(text, true);
+        mimeMessageHelper.setText(htmlContent, true);  // Đặt true để sử dụng HTML
+
+        // Gửi email
         mailSender.send(message);
         log.info("Email has been sent to " + to);
+
         return "Email has been sent to " + to;
     }
+
 
 
 
