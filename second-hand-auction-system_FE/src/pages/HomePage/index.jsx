@@ -14,6 +14,7 @@ import TrustedBrandsSection from "./TrustedBrandsSection";
 import React, { Suspense } from "react";
 import ProductDetails31 from "../../components/ProductDetails31/index.jsx";
 import FooterBK from "../../components/FooterBK/index.jsx";
+import {IconButton} from "@material-tailwind/react";
 
 const fashionItemsList = [
   {
@@ -186,22 +187,44 @@ export default function HomePagePage() {
                   />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 top-0 z-[2] m-auto flex h-max flex-1 justify-between gap-5">
-                  <ButtonDH
-                    onClick={() => {
-                      sliderRef1?.current?.slidePrev();
-                    }}
-                    className="w-[60px] rounded-[24px] px-4 shadow-xs"
+                  {/*<ButtonDH*/}
+                  {/*  onClick={() => {*/}
+                  {/*    sliderRef1?.current?.slidePrev();*/}
+                  {/*  }}*/}
+                  {/*  className="w-[60px] rounded-[24px] px-4 shadow-xs"*/}
+                  {/*>*/}
+                  {/*  <Img src="images/img_arrow_left.svg" />*/}
+                  {/*</ButtonDH>*/}
+                  <IconButton variant="outlined" className="rounded-full"
+                              onClick={() => {
+                                sliderRef?.current?.slidePrev();
+                              }}
                   >
-                    <Img src="images/img_arrow_left.svg" />
-                  </ButtonDH>
-                  <ButtonDH
-                    onClick={() => {
-                      sliderRef1?.current?.slideNext();
-                    }}
-                    className="mr-1 w-[60px] rounded-[24px] px-4 shadow-xs"
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                         strokeWidth={1.5}
+                         stroke="currentColor" className="size-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"/>
+                    </svg>
+                  </IconButton>
+                  {/*<ButtonDH*/}
+                  {/*  onClick={() => {*/}
+                  {/*    sliderRef1?.current?.slideNext();*/}
+                  {/*  }}*/}
+                  {/*  className="mr-1 w-[60px] rounded-[24px] px-4 shadow-xs"*/}
+                  {/*>*/}
+                  {/*  <Img src="images/img_arrow_right_blue_gray_900_1.svg" />*/}
+                  {/*</ButtonDH>*/}
+                  <IconButton variant="outlined" className="rounded-full"
+                              onClick={() => {
+                                sliderRef?.current?.slideNext();
+                              }}
                   >
-                    <Img src="images/img_arrow_right_blue_gray_900_1.svg" />
-                  </ButtonDH>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                         strokeWidth={1.5}
+                         stroke="currentColor" className="size-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
+                    </svg>
+                  </IconButton>
                 </div>
               </div>
             </div>
@@ -298,22 +321,44 @@ export default function HomePagePage() {
                   />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 top-0 m-auto flex h-max flex-1 justify-between gap-5">
-                  <ButtonDH
-                    onClick={() => {
-                      sliderRef?.current?.slidePrev();
-                    }}
-                    className="ml-2.5 w-[44px] rounded-[22px] border border-solid border-gray-200 px-3.5"
+                  {/*<ButtonDH*/}
+                  {/*  onClick={() => {*/}
+                  {/*    sliderRef?.current?.slidePrev();*/}
+                  {/*  }}*/}
+                  {/*  className="ml-2.5 w-[44px] rounded-[22px] border border-solid border-gray-200 px-3.5"*/}
+                  {/*>*/}
+                  {/*  <Img src="images/img_arrow_left_blue_gray_900.svg" />*/}
+                  {/*</ButtonDH>*/}
+                  <IconButton variant="outlined" className="rounded-full"
+                                onClick={() => {
+                                  sliderRef?.current?.slidePrev();
+                                }}
                   >
-                    <Img src="images/img_arrow_left_blue_gray_900.svg" />
-                  </ButtonDH>
-                  <ButtonDH
-                    onClick={() => {
-                      sliderRef?.current?.slideNext();
-                    }}
-                    className="w-[44px] rounded-[22px] border border-solid border-blue_gray-900 px-3.5"
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                         strokeWidth={1.5}
+                         stroke="currentColor" className="size-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"/>
+                    </svg>
+                  </IconButton>
+                  <IconButton variant="outlined" className="rounded-full"
+                              onClick={() => {
+                                sliderRef?.current?.slideNext();
+                              }}
                   >
-                    <Img src="images/img_arrow_right_blue_gray_900_1.svg" />
-                  </ButtonDH>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                         strokeWidth={1.5}
+                         stroke="currentColor" className="size-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
+                    </svg>
+                  </IconButton>
+                  {/*<ButtonDH*/}
+                  {/*  onClick={() => {*/}
+                  {/*    sliderRef?.current?.slideNext();*/}
+                  {/*  }}*/}
+                  {/*  className="w-[44px] rounded-[22px] border border-solid border-blue_gray-900 px-3.5"*/}
+                  {/*>*/}
+                  {/*  <Img src="images/img_arrow_right_blue_gray_900_1.svg" />*/}
+                  {/*</ButtonDH>*/}
                 </div>
               </div>
               <div className="mt-[116px] flex flex-col items-start gap-[30px]">

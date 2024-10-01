@@ -15,8 +15,9 @@ import FooterBK from "../../components/FooterBK";
 import Header2 from "../../components/Header2";
 import ProductSection from "./ProductSection";
 import React, { useState } from "react";
-import { Collapse, Checkbox, Slider, InputNumber } from "antd";
+import { Collapse, Checkbox, Slider, InputNumber, Breadcrumb  } from "antd";
 const { Panel } = Collapse;
+
 
 const brands = [
   { name: "Apple", count: 87 },
@@ -99,6 +100,7 @@ export default function ProductPage() {
                 {/* Bộ lọc tìm kiếm */}
                 <div className="flex flex-col items-start gap-6">
                   <div className="flex items-center justify-between gap-5 self-stretch sticky top-0 bg-white z-10 h-[60px]">
+
                     <Heading
                       size="text2xl"
                       as="h1"
@@ -440,6 +442,7 @@ export default function ProductPage() {
               <div className="flex w-[75%] flex-col gap-4 md:w-full">
                 {/*<span className="text-blue_gray-900_01">Categories:</span>*/}
                 {/*<ProductSection/>*/}
+
                 <ProductSection
                   selectedBrands={selectedBrands}
                   onTagClose={handleTagClose}
