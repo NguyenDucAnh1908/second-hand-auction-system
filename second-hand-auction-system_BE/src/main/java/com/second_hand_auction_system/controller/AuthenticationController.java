@@ -13,11 +13,11 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.LogoutHandler;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 
 
 @RestController
@@ -32,6 +32,18 @@ public class AuthenticationController {
     @PostMapping()
     public ResponseEntity<RegisterResponse> register(@Valid @RequestBody RegisterRequest registerRequest) {
         return userService.register(registerRequest);
+    }
+
+    @PostMapping("/verify")
+    public ResponseEntity<String> verifyOtp(@RequestParam String email, @RequestParam String otp) {
+        boolean isValid = userService.isValidOtp(email, otp).hasBody();
+
+        if (isValid) {
+            return ResponseEntity.ok("OTP verified successfully.");
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("Invalid OTP or OTP has expired.");
+        }
     }
 
     @PostMapping("/login")
@@ -84,9 +96,6 @@ public class AuthenticationController {
 //                                                               @RequestHeader String newPassword) {
 //        return  userService.resetPassword(email, otp,newPassword);
 //    }
-
-
-
 
 
 }

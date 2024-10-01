@@ -1,10 +1,8 @@
 package com.second_hand_auction_system.service.user;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.nimbusds.oauth2.sdk.Response;
 import com.second_hand_auction_system.dtos.request.user.Authentication;
 import com.second_hand_auction_system.dtos.request.user.RegisterRequest;
-import com.second_hand_auction_system.dtos.responses.ResponseObject;
 import com.second_hand_auction_system.dtos.responses.user.AuthenticationResponse;
 import com.second_hand_auction_system.dtos.responses.user.ListUserResponse;
 import com.second_hand_auction_system.dtos.responses.user.RegisterResponse;
@@ -13,6 +11,8 @@ import com.second_hand_auction_system.models.Token;
 import com.second_hand_auction_system.models.User;
 import com.second_hand_auction_system.repositories.TokenRepository;
 import com.second_hand_auction_system.repositories.UserRepository;
+import com.second_hand_auction_system.service.Email.EmailService;
+import com.second_hand_auction_system.service.Email.OtpService;
 import com.second_hand_auction_system.service.jwt.IJwtService;
 import com.second_hand_auction_system.utils.Role;
 import com.second_hand_auction_system.utils.TokenType;
@@ -32,7 +32,6 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -47,6 +46,8 @@ public class UserService implements IUserService {
     private final PasswordEncoder passwordEncoder;
     private final TokenRepository tokenRepository;
     private final ModelMapper modelMapper;
+    private final EmailService emailService;
+    private final OtpService otpService;
 
     @Override
     public ResponseEntity<RegisterResponse> register(RegisterRequest registerRequest) {
@@ -66,10 +67,15 @@ public class UserService implements IUserService {
                     .role(Role.BUYER)
                     .fullName(registerRequest.getFullName())
                     .phoneNumber(registerRequest.getPhoneNumber())
-                    .status(true)
+                    .status(false)
                     .build();
 
             userRepository.save(newUser);
+            if(newUser.getId() != null) {
+                //send mail confirm
+                emailService.sendOtp(newUser.getEmail(), newUser.getId());
+
+            }
             return ResponseEntity.ok(RegisterResponse.builder()
                     .status(HttpStatus.OK.value())
                     .message("User registered successfully")
@@ -180,14 +186,9 @@ public class UserService implements IUserService {
                                 .message("Missing or invalid Authorization header")
                                 .build());
             }
-
-            // Trích xuất token từ header
             String token = authHeader.substring(7);
             String userEmail = jwtService.extractUserEmail(token);
-
-            // Tìm người dùng dựa trên email từ token
             var requester = userRepository.findUserByEmail(userEmail).orElse(null);
-
             if (requester == null) {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                         .body(ListUserResponse.builder()
@@ -195,8 +196,6 @@ public class UserService implements IUserService {
                                 .message("Unauthorized request - User not found")
                                 .build());
             }
-
-            // Kiểm tra quyền admin
             if (!Role.ADMIN.equals(requester.getRole())) {
                 return ResponseEntity.status(HttpStatus.FORBIDDEN)
                         .body(ListUserResponse.builder()
@@ -204,8 +203,6 @@ public class UserService implements IUserService {
                                 .message("Access denied - Admin role required")
                                 .build());
             }
-
-            // Lấy danh sách người dùng nếu người yêu cầu có quyền admin
             List<User> users = userRepository.findAll();
             List<UserResponse> userResponses = users.stream()
                     .map(user -> modelMapper.map(user, UserResponse.class))
@@ -227,6 +224,39 @@ public class UserService implements IUserService {
                             .build());
         }
     }
+
+
+
+    @Override
+    public ResponseEntity<?> isValidOtp(String email, String otp) {
+        User user = userRepository.findByEmail(email).orElse(null);
+        if (user == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
+                    AuthenticationResponse.builder()
+                            .status(HttpStatus.NOT_FOUND.value())
+                            .message("User not found")
+                            .build()
+            );
+        }
+        String storedOtp = otpService.getOtp(email);
+        if (!otp.equals(storedOtp)) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
+                    AuthenticationResponse.builder()
+                            .status(HttpStatus.BAD_REQUEST.value())
+                            .message("Invalid OTP")
+                            .build()
+            );
+        }
+        user.setStatus(true);
+        userRepository.save(user);
+        return ResponseEntity.ok(
+                AuthenticationResponse.builder()
+                        .status(HttpStatus.OK.value())
+                        .message("OTP verified successfully and user status updated")
+                        .build()
+        );
+    }
+
 
 
     private void saveToken(User user, String jwtToken, String refreshToken) {

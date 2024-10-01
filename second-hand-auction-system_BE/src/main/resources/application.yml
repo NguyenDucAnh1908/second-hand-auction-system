@@ -26,8 +26,8 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     #Chanh
     #url: jdbc:mysql://localhost:3333/secondHandAuction
-    username: root
-    password: 12345
+    username: ${USER_NAME}
+    password: ${USER_PASSWORD}
 
   jpa:
     show-sql: false
@@ -36,12 +36,30 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
-        format_sql: false  # Consider setting to 'true' for easier SQL readability
+        format_sql: false
   logging:
     level:
       org:
         springframework:
-                  security: DEBUG
+          security: DEBUG
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+
+  servlet:
+    multipart:
+      max-file-size: 10MB    # Kích thước tối đa cho 1 file
+      max-request-size: 10MB # Kích thước tối đa của toàn bộ request (bao gồm các file)
+
   security:
     oauth2:
       client:
@@ -55,7 +73,7 @@ spring:
 application:
   security:
     jwt:
-      secret-key: "b60c9e7a2e251192f67c2b02773e76c8096a6e38ea49627334eddae82dc7da95"
+      secret-key: ${JWT_KEY}
       #expiration: 604800000  # 1 day in milliseconds
       expiration: 36000  # 1 day in milliseconds
       refresh-token:
