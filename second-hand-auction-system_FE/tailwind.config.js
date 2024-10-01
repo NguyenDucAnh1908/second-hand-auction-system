@@ -4,8 +4,8 @@ const withMT = require("@material-tailwind/react/utils/withMT");
 module.exports = withMT({
   mode: "jit",
   content: [
-    "./index.html", // Đảm bảo đường dẫn đến tệp HTML của template
-    "./src/**/*.{js,ts,jsx,tsx,html,mdx}", // Đường dẫn đến các tệp JSX trong dự án
+    "./index.html", 
+    "./src/**/*.{js,ts,jsx,tsx,html,mdx}", 
   ],
   darkMode: "class",
   theme: {

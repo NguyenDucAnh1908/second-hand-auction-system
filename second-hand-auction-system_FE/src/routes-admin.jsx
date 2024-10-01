@@ -8,6 +8,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { Home, Profile, Tables, Notifications } from "./pages/Admin/Dashboard";
 import { SignIn, SignUp } from "./pages/Admin/auth";
+import AppraisalFormPage from "./pages/Admin/AppraisalForm/index.jsx";
 
 const icon = {
   className: "w-5 h-5 text-inherit",
@@ -28,6 +29,13 @@ export const routesAdmin = [
         name: "profile",
         path: "/profile",
         element: <Profile />,
+      },
+
+      {
+        icon: <UserCircleIcon {...icon} />,
+        name: "Thẩm định sản phẩm",
+        path: "/AppraisalForm",
+        element: <AppraisalFormPage />,
       },
       
       {

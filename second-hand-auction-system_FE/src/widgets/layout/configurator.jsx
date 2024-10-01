@@ -14,7 +14,6 @@ import {
   setSidenavType,
   setFixedNavbar,
 } from "../../context";
-// import '../../styles/sidebar.css'; 
 
 function formatNumber(number, decPlaces) {
   decPlaces = Math.pow(10, decPlaces);
