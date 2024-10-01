@@ -11,6 +11,7 @@ import {
     AccordionHeader,
     AccordionBody,
     Alert,
+    Avatar,
 } from "@material-tailwind/react";
 import {
     PresentationChartBarIcon,
@@ -37,9 +38,21 @@ export function SiderUserBK() {
     return (
         <Card className="h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
             <div className="mb-2 p-4">
-                <Typography variant="h5" color="blue-gray">
-                    Sidebar
-                </Typography>
+                {/*<Typography variant="h5" color="blue-gray">*/}
+                {/*    số dư:100000000*/}
+                {/*</Typography>*/}
+                <div className="flex items-center gap-4">
+                    <Avatar src="https://docs.material-tailwind.com/img/face-2.jpg" alt="avatar"/>
+                    <div>
+                        <Typography variant="h6">Tania Andrew</Typography>
+                        <Typography variant="small" color="gray" className="font-normal">
+                            Số dư:100000000
+                        </Typography>
+                    </div>
+                </div>
+                {/*<Typography variant="h5" color="blue-gray">*/}
+                {/*    số dư:100000000*/}
+                {/*</Typography>*/}
             </div>
             <List>
                 <Accordion

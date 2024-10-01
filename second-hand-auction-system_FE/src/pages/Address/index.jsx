@@ -145,8 +145,8 @@ export default function AddressPage() {
         <div className="w-[94%] md:w-full">
           <div className="flex w-full flex-col gap-7 md:px-5">
             <Header2 />
-            <div className="flex items-start gap-12">
-              <div className="w-[24%]">
+            <div className="flex items-start gap-12 ">
+              <div className="w-[24%] mt-[10]">
                 {/*<ProfileCard />*/}
 
                 {/*<AccountOptions />*/}

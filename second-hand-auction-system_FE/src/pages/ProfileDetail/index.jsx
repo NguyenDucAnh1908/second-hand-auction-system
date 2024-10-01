@@ -165,7 +165,7 @@ export default function ProfileDetailPage() {
         <Header2 />
         <div className="mx-auto w-full max-w-[1328px] md:px-5">
           <div className="mr-[46px] flex items-start gap-5 md:mr-0 md:flex-col">
-            <div className="mt-12 flex w-[24%] flex-col gap-[20px] md:w-full">
+            <div className="mt-12 flex w-[24%] flex-col gap-[20px] md:w-full -mt-[1px]">
               {/* User Name and Wallet amount */}
               {/*<ProfileCard />*/}
               {/*<div className="h-[1.84px] bg-gray-200" />*/}

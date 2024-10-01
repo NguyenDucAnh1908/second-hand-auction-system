@@ -49,11 +49,9 @@ function App() {
                 <Route path="Test" index element={<TestAPI/>}/>
                 <Route path="NotFound" index element={<NotFound/>}/>
             </Route>
-
             <Route path="/dashboard/*" element={<Dashboard/>}/>
             <Route path="/auth/*" element={<Auth/>}/>
             <Route path="*" element={<Navigate to="/dashboard/home" replace/>}/>
-
         </Routes>
     );
 }
