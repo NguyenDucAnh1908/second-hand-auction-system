@@ -30,11 +30,9 @@ function App() {
                 <Route path="Auction" index element={<Auction/>}/>
                 <Route path="Login" index element={<Login/>}/>
                 <Route path="Register" index element={<Register/>}/>
-                <Route
-                    path="HistoryPage"
-                    index
-                    element={<CustomerTransactionHistoryPagePage/>}
-                />
+
+                {/* buyer */}
+                <Route path="HistoryPage" index element={<CustomerTransactionHistoryPagePage/>}/>
                 <Route path="ProfileDetail" index element={<ProfileDetailPage/>}/>
                 <Route path="DepositMoney" index element={<DepositMoneyPage/>}/>
                 <Route path="Address" index element={<AddressPage/>}/>
