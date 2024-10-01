@@ -447,20 +447,20 @@ export default function ProductPage() {
                   selectedBrands={selectedBrands}
                   onTagClose={handleTagClose}
                 />
-                <div className="flex justify-between px-3 items-center">
-                  <Text className="text-[14px] font-normal">
-                    Hiển thị 1-16 trong 100 sản phẩm
-                  </Text>
-                  <div className="flex gap-4">
-                    <ButtonDH
-                      size="sm"
-                      shape="round"
-                      onClick={() => console.log("Đặt hàng")}
-                    >
-                      Đặt hàng
-                    </ButtonDH>
-                  </div>
-                </div>
+                {/*<div className="flex justify-between px-3 items-center">*/}
+                {/*  <Text className="text-[14px] font-normal">*/}
+                {/*    Hiển thị 1-16 trong 100 sản phẩm*/}
+                {/*  </Text>*/}
+                {/*  <div className="flex gap-4">*/}
+                {/*    <ButtonDH*/}
+                {/*      size="sm"*/}
+                {/*      shape="round"*/}
+                {/*      onClick={() => console.log("Đặt hàng")}*/}
+                {/*    >*/}
+                {/*      Đặt hàng*/}
+                {/*    </ButtonDH>*/}
+                {/*  </div>*/}
+                {/*</div>*/}
               </div>
             </div>
           </div>
