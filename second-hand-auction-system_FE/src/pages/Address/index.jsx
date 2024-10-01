@@ -10,6 +10,7 @@ import { Button, Modal, message, Popconfirm, Radio  } from "antd";
 import FooterBK from "../../components/FooterBK/index.jsx";
 import {FormAddAddress} from "./FormAddAddress.jsx";
 import {FormUpdateAddress} from "./FormUpdateAddress.jsx";
+import {SiderUserBK} from "@/components/SiderUser/SiderUserBK.jsx";
 
 const addressList = [
   {
@@ -148,7 +149,8 @@ export default function AddressPage() {
               <div className="w-[24%]">
                 {/*<ProfileCard />*/}
 
-                <AccountOptions />
+                {/*<AccountOptions />*/}
+                <SiderUserBK/>
               </div>
 
               <div className="relative h-[904px] flex-1">

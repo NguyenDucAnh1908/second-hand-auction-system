@@ -14,6 +14,7 @@ import ProfileCard from "../../components/ProfileCard";
 import AccountOptions from "../../components/AccountOption";
 import { EditOutlined } from "@ant-design/icons";
 import { Button, Modal } from "antd";
+import {SiderUserBK} from "@/components/SiderUser/SiderUserBK.jsx";
 
 export default function ProfileDetailPage() {
   const [position, setPosition] = useState("end");
@@ -170,7 +171,8 @@ export default function ProfileDetailPage() {
               {/*<div className="h-[1.84px] bg-gray-200" />*/}
 
               <div className="py-0">
-                <AccountOptions />
+                {/*<AccountOptions />*/}
+                <SiderUserBK/>
               </div>
             </div>
             <div className="flex flex-1 flex-col items-center gap-[38px] self-center md:self-stretch">
