@@ -5,9 +5,8 @@ import {
   UserPlusIcon,
   ArrowRightOnRectangleIcon,
 } from "@heroicons/react/24/solid";
-import { Navbar, Footer } from "@/widgets/layout";
-// import Navbar from "../../widgets/layout"
 import routesAdmin from "../routes-admin";
+import { Navbar, Footer } from "../widgets/layout"
 
 export function Auth() {
   const navbarRoutes = [

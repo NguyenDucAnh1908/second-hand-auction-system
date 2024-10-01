@@ -17,8 +17,8 @@ import CreateAddressPage from "pages/CreateAddress";
 import AddressPage from "pages/Address";
 import ListOfSellerProductPage from "./pages/Seller/ListOfSellerProducts/index.jsx";
 import RegisterProductPage from "./pages/Seller/RegisterProduct/index.jsx";
-import Dashboard from "./layouts/dashboard.jsx";
-import Auth from "./layouts/auth.jsx";
+import Dashboard from "./layouts-admin/dashboard.jsx";
+import Auth from "./layouts-admin/auth.jsx";
 
 function App() {
   return (
