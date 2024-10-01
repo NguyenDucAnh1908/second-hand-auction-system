@@ -54,7 +54,8 @@ export function SiderUserBK() {
                     <ListItem className="p-0" selected={open === 3}>
                         <AccordionHeader onClick={() => handleOpen(3)} className="border-b-0 p-3">
                             <ListItemPrefix>
-                                <PresentationChartBarIcon className="h-5 w-5" />
+                                {/*<PresentationChartBarIcon className="h-5 w-5" />*/}
+                                <UserCircleIcon className="h-5 w-5" />
                             </ListItemPrefix>
                             <Typography color="blue-gray" className="mr-auto font-normal">
                                 Quản lý tài khoản
