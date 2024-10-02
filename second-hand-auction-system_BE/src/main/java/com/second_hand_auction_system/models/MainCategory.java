@@ -27,6 +27,5 @@ public class MainCategory extends BaseEntity{
     @Column(name = "icon_url")
     private String iconUrl;
 
-    @ManyToMany
-    private List<Item> items;
+
 }

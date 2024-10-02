@@ -3,6 +3,8 @@ package com.second_hand_auction_system.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,4 +26,6 @@ public class SubCategory extends BaseEntity{
     @ManyToOne
     @JoinColumn(name = "main_category")
     private MainCategory mainCategory;
+
+
 }

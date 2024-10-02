@@ -53,18 +53,17 @@ public class Item extends BaseEntity{
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToOne(mappedBy = "item",cascade = CascadeType.ALL)
-    private FeedBack feedBack;
+    @OneToOne(optional = true)
+    @JoinColumn(name = "feedback_id")
+    private FeedBack feedback;
 
-    @OneToOne(mappedBy = "item",cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "item",cascade = CascadeType.ALL,optional = true)
     private Auction auction;
 
     @OneToOne(mappedBy = "item",cascade = CascadeType.ALL)
     private ItemSpecific itemSpecific;
 
-    @ManyToMany
-    @JoinTable(name = "item_category",
-                joinColumns = @JoinColumn(name = "item_id"),
-                inverseJoinColumns = @JoinColumn(name = "main_category_id"))
-    private List<MainCategory> mainCategories;
+    @ManyToOne
+    @JoinColumn(name = "sub_category_id")
+    private SubCategory subCategory;
 }
