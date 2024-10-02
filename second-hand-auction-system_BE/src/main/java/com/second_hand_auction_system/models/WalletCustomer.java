@@ -23,7 +23,7 @@ public class WalletCustomer extends BaseEntity{
     private String lastTransaction;
 
     @Enumerated(EnumType.STRING)
-    private StatusWallet status;
+    private StatusWallet statusWallet;
 
     @OneToOne
     @JoinColumn(name = "user_id")

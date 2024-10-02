@@ -32,7 +32,7 @@ spring:
   jpa:
     show-sql: false
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
@@ -79,9 +79,9 @@ application:
 
 payos:
   api:
-    secret: ${PAYOS_SECRETKEY}
-    key: ${PAYOS_KEY}
-    check_sum: ${CHECK_SUM}
+    secret: 59a13a59-2685-487d-966c-8a0315c19477
+    key: 2f2ff35f-c481-4dbd-8140-f5af2649867e
+    check_sum: ffe3d79b57d6d0546c330aa86b3fb1d68812f581ae26ba7a23477e2691c5704c
 
 api:
   prefix: api/v1
