@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("api/v1/walletCustomer")
 public class WalletCustomerController {
-//    @PostMapping("/deposite")
-//    public ResponseEntity<ResponseObject>
+    @PostMapping("/deposit")
+    public ResponseEntity<ResponseObject> deposit (@)
 }
