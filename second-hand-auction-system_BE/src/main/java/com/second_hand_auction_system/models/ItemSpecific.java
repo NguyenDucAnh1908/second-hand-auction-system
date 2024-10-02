@@ -15,7 +15,7 @@ import java.util.Date;
 public class ItemSpecific extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int itemSpecificId;
+    private Integer itemSpecificId;
 
     @Column(name = "percent")
     private double percent;

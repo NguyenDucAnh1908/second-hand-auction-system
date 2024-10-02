@@ -15,7 +15,7 @@ import lombok.*;
 public class Order extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int orderId;
+    private Integer orderId;
 
     @Column(name = "total_amount")
     private double totalAmount;

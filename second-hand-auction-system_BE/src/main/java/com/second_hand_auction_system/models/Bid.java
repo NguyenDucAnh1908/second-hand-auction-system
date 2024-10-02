@@ -13,7 +13,7 @@ import lombok.*;
 public class Bid extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int bidId;
+    private Integer bidId;
 
     @Column(name = "bid_amout")
     private int bidAmount;

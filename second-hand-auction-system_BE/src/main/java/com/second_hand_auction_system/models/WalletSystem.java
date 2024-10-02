@@ -13,7 +13,7 @@ import lombok.*;
 public class WalletSystem extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int walletAdminId;
+    private Integer walletAdminId;
 
     @Column(name = "balance")
     private double balance;

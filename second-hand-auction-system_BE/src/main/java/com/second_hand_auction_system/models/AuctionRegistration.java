@@ -14,7 +14,7 @@ import lombok.*;
 public class AuctionRegistration extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int auctionRegistrationId;
+    private Integer auctionRegistrationId;
 
     @Column(name = "deposite_amount")
     private double depositeAmount;

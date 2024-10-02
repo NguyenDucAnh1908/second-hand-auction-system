@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 public class TransactionSystem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int transactionSystemId;
+    private Integer transactionSystemId;
 
     @Column(name = "account_number")
     private int accountNumber;

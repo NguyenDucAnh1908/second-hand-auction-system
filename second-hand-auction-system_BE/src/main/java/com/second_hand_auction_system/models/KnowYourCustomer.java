@@ -17,7 +17,7 @@ import java.util.Date;
 public class KnowYourCustomer extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int kycId;
+    private Integer kycId;
 
     @Column(name ="date_of_birth")
     private Date dateOfBirth;

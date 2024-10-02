@@ -1,5 +1,6 @@
 package com.second_hand_auction_system.models;
 
+import com.second_hand_auction_system.utils.StatusWallet;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -13,13 +14,16 @@ import lombok.*;
 public class WalletCustomer extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int walletCustomerId;
+    private Integer walletCustomerId;
 
     @Column(name = "balance")
     private double balance;
 
     @Column(name = "last_transaction")
     private String lastTransaction;
+
+    @Enumerated(EnumType.STRING)
+    private StatusWallet status;
 
     @OneToOne
     @JoinColumn(name = "user_id")

@@ -15,7 +15,7 @@ import java.util.List;
 public class Notifications extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int notificationId;
+    private Integer notificationId;
 
     @Column(name = "message")
     private String message;

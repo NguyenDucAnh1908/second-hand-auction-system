@@ -21,13 +21,13 @@ spring:
   application:
     name: second-hand-auction-system_BE
   datasource:
-    #Duc Anh
+    # Duc Anh
     url: jdbc:mysql://localhost:3306/secondHandAuction
     driver-class-name: com.mysql.cj.jdbc.Driver
-    #Chanh
-    #url: jdbc:mysql://localhost:3333/secondHandAuction
-    username: ${USER_NAME}
-    password: ${USER_PASSWORD}
+    # Chanh
+    # url: jdbc:mysql://localhost:3333/secondHandAuction
+    username: root
+    password: 12345
 
   jpa:
     show-sql: false
@@ -37,11 +37,11 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: false
+
   logging:
     level:
-      org:
-        springframework:
-          security: DEBUG
+      org.springframework.security: DEBUG
+
   mail:
     host: smtp.gmail.com
     port: 587
@@ -53,7 +53,6 @@ spring:
           auth: true
           starttls:
             enable: true
-
 
   servlet:
     multipart:
@@ -73,11 +72,16 @@ spring:
 application:
   security:
     jwt:
-      secret-key: ${JWT_KEY}
-      #expiration: 604800000  # 1 day in milliseconds
-      expiration: 36000  # 1 day in milliseconds
+      secret-key: b60c9e7a2e251192f67c2b02773e76c8096a6e38ea49627334eddae82dc7da95
+      expiration: 36000  # Expiration time in milliseconds
       refresh-token:
         expiration: 604800000  # 7 days in milliseconds
+
+payos:
+  api:
+    secret: ${PAYOS_SECRETKEY}
+    key: ${PAYOS_KEY}
+    check_sum: ${CHECK_SUM}
 
 api:
   prefix: api/v1

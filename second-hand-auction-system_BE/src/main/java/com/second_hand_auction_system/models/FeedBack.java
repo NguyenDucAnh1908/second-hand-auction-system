@@ -13,7 +13,7 @@ import lombok.*;
 public class FeedBack extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int feedbackId;
+    private Integer feedbackId;
 
     @Column(name = "comment")
     private String comment;

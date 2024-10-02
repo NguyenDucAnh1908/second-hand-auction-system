@@ -16,7 +16,7 @@ import java.util.List;
 public class Item extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int itemId;
+    private Integer itemId;
 
     @Column(name = "title")
     private String title;

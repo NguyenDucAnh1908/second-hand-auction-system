@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 public class WithdrawRequest extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int withdrawRequestId;
+    private Integer withdrawRequestId;
 
     @Column(name = "request_amount")
     private double requestAmount;

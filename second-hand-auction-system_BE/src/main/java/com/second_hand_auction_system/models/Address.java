@@ -13,7 +13,7 @@ import lombok.*;
 public class Address extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int addressId;
+    private Integer addressId;
 
     @Column(name = "distric_code")
     private String district_code;

@@ -16,7 +16,7 @@ import java.util.List;
 public class MainCategory extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int mainCategoryId;
+    private Integer mainCategoryId;
 
     @Column(name = "category_name")
     private String categoryName;

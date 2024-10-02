@@ -15,7 +15,7 @@ import lombok.*;
 public class TransactionWallet extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int transactionWalletId;
+    private Integer transactionWalletId;
 
     @Column(name = "amount")
     private int amount;

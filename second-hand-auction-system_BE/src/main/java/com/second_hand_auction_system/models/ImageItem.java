@@ -14,7 +14,7 @@ import java.awt.*;
 public class ImageItem extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int imageItemId;
+    private Integer imageItemId;
 
     @Column(name = "image_url")
     private String imageUrl;

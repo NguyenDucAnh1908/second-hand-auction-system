@@ -15,7 +15,7 @@ import java.util.List;
 public class SubCategory extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int subCategoryId;
+    private Integer subCategoryId;
 
     @Column(name = "sub_category")
     private String subCategory;

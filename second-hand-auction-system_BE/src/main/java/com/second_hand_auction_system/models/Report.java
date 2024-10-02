@@ -17,7 +17,7 @@ import lombok.Setter;
 public class Report extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int reportId;
+    private Integer reportId;
 
     @Column(name = "evidence")
     private String evidence;
