@@ -23,8 +23,13 @@ public class SubCategoryService implements ISubCategoryService {
 
     @Override
     public void addSubCategory(SubCategoryDto subCategory) throws Exception {
+
         MainCategory mainCategory = mainCategoryRepository.findById(subCategory.getMcId())
                 .orElseThrow(() -> new Exception("Main Category not found"));
+        SubCategory getSubCategoryName = subCategoryRepository.findBySubCategory(subCategory.getSubCategory());
+        if (getSubCategoryName != null) {
+            throw new Exception("SubCategory with name '" + subCategory.getSubCategory() + "' already exists");
+        }
         SubCategory subCategoryEntity = modelMapper.map(subCategory, SubCategory.class);
         subCategoryEntity.setMainCategory(mainCategory);
         subCategoryRepository.save(subCategoryEntity);
@@ -34,6 +39,10 @@ public class SubCategoryService implements ISubCategoryService {
     public void updateSubCategory(int scId, SubCategoryDto subCategory) throws Exception {
         MainCategory mainCategory = mainCategoryRepository.findById(subCategory.getMcId())
                 .orElseThrow(() -> new Exception("Main Category not found"));
+        SubCategory getSubCategoryName = subCategoryRepository.findBySubCategory(subCategory.getSubCategory());
+        if (getSubCategoryName != null) {
+            throw new Exception("SubCategory with name '" + subCategory.getSubCategory() + "' already exists");
+        }
         SubCategory subCategoryEntity = subCategoryRepository.findById(scId)
                 .orElseThrow(() -> new Exception("SubCategory not found"));
         modelMapper.map(subCategory, subCategoryEntity);
