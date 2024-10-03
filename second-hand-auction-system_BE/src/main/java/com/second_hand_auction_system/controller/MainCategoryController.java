@@ -99,5 +99,29 @@ public class MainCategoryController {
                             .build()
             );
         }
+
+    }
+
+    @GetMapping("{id}")
+    public ResponseEntity<?> getMainCategoryT(int id) throws Exception {
+        MainCategoryResponse mainCategoryResponses = mainCategoryService.getMainCategoryTest(id);
+        try {
+            return ResponseEntity.ok(
+                    ResponseObject.builder()
+                            .status(HttpStatus.OK)
+                            .message("Successfully")
+                            .data(mainCategoryResponses)
+                            .build()
+            );
+        } catch (Exception e) {
+            return ResponseEntity.ok(
+                    ResponseObject.builder()
+                            .status(HttpStatus.BAD_REQUEST)
+                            .message("Error product " + e.getMessage())
+                            //.error(e.getMessage())
+                            .build()
+            );
+        }
+
     }
 }

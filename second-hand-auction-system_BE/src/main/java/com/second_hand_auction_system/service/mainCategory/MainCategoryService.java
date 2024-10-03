@@ -19,20 +19,20 @@ public class MainCategoryService implements IMainCategoryService {
 
     @Override
     public void addMainCategory(MainCategoryDto mainCategory) throws Exception {
-//        MainCategory mainCategoryExist = mainCategoryRepository.findByCategoryName(mainCategory.getCategoryName());
-//        if (mainCategoryExist == null) {
-//            throw new Exception("MainCategory not found");
-//        }
+        MainCategory mainCategoryExisted = mainCategoryRepository.findByCategoryName(mainCategory.getCategoryName());
+        if (mainCategoryExisted != null) {
+            throw new Exception("MainCategory not found");
+        }
         MainCategory mainCategoryExist = modelMapper.map(mainCategory, MainCategory.class);
         mainCategoryRepository.save(mainCategoryExist);
     }
 
     @Override
     public void updateMainCategory(int id, MainCategoryDto mainCategory) throws Exception {
-//        MainCategory mainCategoryExist = mainCategoryRepository.findByCategoryName(mainCategory.getCategoryName());
-//        if (mainCategoryExist != null) {
-//            throw new Exception("MainCategory with name '" + mainCategory.getCategoryName() + "' already exists");
-//        }
+        MainCategory mainCategoryExist = mainCategoryRepository.findByCategoryName(mainCategory.getCategoryName());
+        if (mainCategoryExist != null) {
+            throw new Exception("MainCategory with name '" + mainCategory.getCategoryName() + "' already exists");
+        }
         MainCategory mainCategoryIdExisted = mainCategoryRepository.findById(id)
                 .orElseThrow(() -> new Exception("MainCategory not found"));
         modelMapper.map(mainCategory, mainCategoryIdExisted);
@@ -54,4 +54,15 @@ public class MainCategoryService implements IMainCategoryService {
                 .collect(Collectors.toList());
         return mainCategoryResponses;
     }
+    @Override
+    public MainCategoryResponse getMainCategoryTest(int id) throws Exception {
+        MainCategory mainCategory = mainCategoryRepository.findByMainCategoryId(id);
+        if (mainCategory == null) {
+            throw new Exception("MainCategory not found");
+        }
+        // Map đối tượng MainCategory sang MainCategoryResponse
+        MainCategoryResponse mainCategoryResponse = modelMapper.map(mainCategory, MainCategoryResponse.class);
+        return mainCategoryResponse;
+    }
+
 }

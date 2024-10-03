@@ -22,21 +22,19 @@ spring:
     name: second-hand-auction-system_BE
   datasource:
     # Duc Anh
-    url: jdbc:mysql://localhost:3306/secondHandAuction
+    url: jdbc:mysql://localhost:3306/secondHandAuction?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     driver-class-name: com.mysql.cj.jdbc.Driver
-    # Chanh
-    # url: jdbc:mysql://localhost:3333/secondHandAuction
     username: root
     password: 12345
 
   jpa:
-    show-sql: false
+    show-sql: true
     hibernate:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
-        format_sql: false
+      dialect: org.hibernate.dialect.MySQL8Dialect
+      format_sql: true
 
   logging:
     level:
