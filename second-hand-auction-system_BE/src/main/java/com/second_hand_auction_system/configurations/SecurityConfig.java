@@ -41,6 +41,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(WHILE_LIST).permitAll()
                         .requestMatchers(GET, "/api/v1/user/**").hasRole("ADMIN")
+                        .requestMatchers("/api/v1/main-category/**").permitAll()
+                        .requestMatchers("/api/v1/sub-category/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
