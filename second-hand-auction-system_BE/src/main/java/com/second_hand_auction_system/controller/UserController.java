@@ -1,20 +1,14 @@
 package com.second_hand_auction_system.controller;
 
-import com.second_hand_auction_system.dtos.responses.ResponseObject;
 import com.second_hand_auction_system.dtos.responses.user.ListUserResponse;
-import com.second_hand_auction_system.dtos.responses.user.UserResponse;
-import com.second_hand_auction_system.service.Email.EmailService;
+import com.second_hand_auction_system.service.email.EmailService;
 import com.second_hand_auction_system.service.user.IUserService;
 import jakarta.mail.MessagingException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/user")

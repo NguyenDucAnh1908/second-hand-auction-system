@@ -1,4 +1,4 @@
-package com.second_hand_auction_system.service.Email;
+package com.second_hand_auction_system.service.email;
 
 import org.springframework.stereotype.Service;
 

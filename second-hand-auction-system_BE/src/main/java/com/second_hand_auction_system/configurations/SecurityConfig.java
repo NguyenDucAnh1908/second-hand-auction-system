@@ -1,5 +1,6 @@
 package com.second_hand_auction_system.configurations;
 
+import com.second_hand_auction_system.utils.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,6 +16,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.security.web.authentication.logout.LogoutHandler;
 
 import static org.springframework.http.HttpMethod.GET;
+import static org.springframework.http.HttpMethod.POST;
 
 @Configuration
 @EnableWebSecurity
@@ -41,6 +43,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(WHILE_LIST).permitAll()
                         .requestMatchers(GET, "/api/v1/user/**").hasRole("ADMIN")
+                        .requestMatchers(POST, "api/v1/walletCustomer/**").permitAll()
                         .requestMatchers("/api/v1/main-category/**").permitAll()
                         .requestMatchers("/api/v1/sub-category/**").permitAll()
                         .requestMatchers("/api/v1/item/**").permitAll()
@@ -49,10 +52,10 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
-                .oauth2Login(oauth2 -> oauth2
-                        .successHandler(loginGoogleSuccess)
-                        .failureHandler(loginGoogleFailure)
-                )
+//                .oauth2Login(oauth2 -> oauth2
+//                        .successHandler(loginGoogleSuccess)
+//                        .failureHandler(loginGoogleFailure)
+//                )
                 .logout(logout -> logout
                         .logoutUrl("/api/v1/auth/logout")
                         .addLogoutHandler(logoutHandler)

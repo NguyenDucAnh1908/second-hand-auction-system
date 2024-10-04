@@ -29,9 +29,9 @@ public class LoginGoogleSuccess implements AuthenticationSuccessHandler {
         OAuth2User oauth2User = (OAuth2User) authentication.getPrincipal();
         String email = oauth2User.getAttribute("email");
         System.out.println("Email: " + email);
-        User user = userRepository.findByEmail(email).orElse(null);
+        User user = userRepository.findByEmailAndStatusIsTrue(email).orElse(null);
         if (user == null) {
-            String password = ""; // Placeholder, not used for Google login
+            String password = "";
             User userGG = User.builder()
                     .email(email)
                     .status(true)

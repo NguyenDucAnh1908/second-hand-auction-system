@@ -11,10 +11,10 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
-    @Query("SELECT u FROM User u where u.email = :email AND u.status = true ")
-    Optional<User> findByEmail(String email);
+
+    Optional<User> findByEmailAndStatusIsTrue(String email);
 
     boolean existsByEmail(@Email(message = "Invalid email format") @NotBlank(message = "Email is required") String email);
 
-    Optional<User> findUserByEmail(String userEmail);
+    Optional<User> findByEmail(String userEmail);
 }
