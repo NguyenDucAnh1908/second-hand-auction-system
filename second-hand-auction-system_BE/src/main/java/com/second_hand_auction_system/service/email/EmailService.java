@@ -1,9 +1,8 @@
-package com.second_hand_auction_system.service.Email;
+package com.second_hand_auction_system.service.email;
 
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,14 +10,11 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import org.thymeleaf.context.Context;
 import org.thymeleaf.spring6.SpringTemplateEngine;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 @Service
@@ -234,9 +230,8 @@ public class EmailService {
 
         // Send the email
         mailSender.send(message);
+        otpService.saveOtp(email,otp);
         log.info("OTP has been sent to " + email + " with OTP: " + otp);
-
-        // Optional: Save OTP to the database if needed
     }
 
 

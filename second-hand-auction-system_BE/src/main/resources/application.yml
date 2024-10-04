@@ -71,7 +71,7 @@ application:
   security:
     jwt:
       secret-key: b60c9e7a2e251192f67c2b02773e76c8096a6e38ea49627334eddae82dc7da95
-      expiration: 36000  # Expiration time in milliseconds
+      expiration: 360000  # Expiration time in milliseconds
       refresh-token:
         expiration: 604800000  # 7 days in milliseconds
 

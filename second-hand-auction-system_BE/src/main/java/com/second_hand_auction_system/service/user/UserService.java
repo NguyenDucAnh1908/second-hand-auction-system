@@ -11,8 +11,8 @@ import com.second_hand_auction_system.models.Token;
 import com.second_hand_auction_system.models.User;
 import com.second_hand_auction_system.repositories.TokenRepository;
 import com.second_hand_auction_system.repositories.UserRepository;
-import com.second_hand_auction_system.service.Email.EmailService;
-import com.second_hand_auction_system.service.Email.OtpService;
+import com.second_hand_auction_system.service.email.EmailService;
+import com.second_hand_auction_system.service.email.OtpService;
 import com.second_hand_auction_system.service.jwt.IJwtService;
 import com.second_hand_auction_system.utils.Role;
 import com.second_hand_auction_system.utils.TokenType;
@@ -102,7 +102,7 @@ public class UserService implements IUserService {
                     )
             );
 
-            User user = userRepository.findByEmail(authenticationRequest.getEmail())
+            User user = userRepository.findByEmailAndStatusIsTrue(authenticationRequest.getEmail())
                     .orElseThrow(() -> new RuntimeException("User not found"));
 
             String jwtToken = jwtService.generateToken(user);
@@ -152,7 +152,7 @@ public class UserService implements IUserService {
         refreshToken = authHeader.substring(7);
         userEmail = jwtService.extractUserEmail(refreshToken);
         if (userEmail != null) {
-            var user = this.userRepository.findByEmail(userEmail).orElseThrow();
+            var user = this.userRepository.findByEmailAndStatusIsTrue(userEmail).orElseThrow();
             if (jwtService.isTokenValid(refreshToken, user)) {
                 var newToken = jwtService.generateToken(user);
                 revokeAllUserTokens(user);
@@ -188,7 +188,7 @@ public class UserService implements IUserService {
             }
             String token = authHeader.substring(7);
             String userEmail = jwtService.extractUserEmail(token);
-            var requester = userRepository.findUserByEmail(userEmail).orElse(null);
+            var requester = userRepository.findByEmailAndStatusIsTrue(userEmail).orElse(null);
             if (requester == null) {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                         .body(ListUserResponse.builder()
@@ -232,27 +232,27 @@ public class UserService implements IUserService {
         User user = userRepository.findByEmail(email).orElse(null);
         if (user == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
-                    AuthenticationResponse.builder()
+                    RegisterResponse.builder()
                             .status(HttpStatus.NOT_FOUND.value())
                             .message("User not found")
                             .build()
             );
         }
-        String storedOtp = otpService.getOtp(email);
-        if (!otp.equals(storedOtp)) {
+        boolean storedOtp = otpService.isValidOtp(email,otp);
+        user.setStatus(true);
+        userRepository.save(user);
+        if (!storedOtp) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
-                    AuthenticationResponse.builder()
+                    RegisterResponse.builder()
                             .status(HttpStatus.BAD_REQUEST.value())
                             .message("Invalid OTP")
                             .build()
             );
         }
-        user.setStatus(true);
-        userRepository.save(user);
-        return ResponseEntity.ok(
-                AuthenticationResponse.builder()
+        return ResponseEntity.status(HttpStatus.OK).body(
+                RegisterResponse.builder()
                         .status(HttpStatus.OK.value())
-                        .message("OTP verified successfully and user status updated")
+                        .message("Verify success ")
                         .build()
         );
     }

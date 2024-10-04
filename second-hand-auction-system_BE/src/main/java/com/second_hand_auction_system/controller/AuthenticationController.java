@@ -35,15 +35,9 @@ public class AuthenticationController {
     }
 
     @PostMapping("/verify")
-    public ResponseEntity<String> verifyOtp(@RequestParam String email, @RequestParam String otp) {
-        boolean isValid = userService.isValidOtp(email, otp).hasBody();
+    public ResponseEntity<?> verifyOtp(@Valid @RequestParam String email, @RequestParam String otp) {
+        return userService.isValidOtp(email, otp);
 
-        if (isValid) {
-            return ResponseEntity.ok("OTP verified successfully.");
-        } else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body("Invalid OTP or OTP has expired.");
-        }
     }
 
     @PostMapping("/login")
