@@ -46,6 +46,7 @@ public class SecurityConfig {
                         .requestMatchers(POST, "api/v1/walletCustomer/**").permitAll()
                         .requestMatchers("/api/v1/main-category/**").permitAll()
                         .requestMatchers("/api/v1/sub-category/**").permitAll()
+                        .requestMatchers("/api/v1/item/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

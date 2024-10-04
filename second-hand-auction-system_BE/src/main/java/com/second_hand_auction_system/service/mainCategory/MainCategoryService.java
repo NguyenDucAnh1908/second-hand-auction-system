@@ -21,7 +21,7 @@ public class MainCategoryService implements IMainCategoryService {
     public void addMainCategory(MainCategoryDto mainCategory) throws Exception {
         MainCategory mainCategoryExisted = mainCategoryRepository.findByCategoryName(mainCategory.getCategoryName());
         if (mainCategoryExisted != null) {
-            throw new Exception("MainCategory not found");
+            throw new Exception("MainCategory with name '" + mainCategory.getCategoryName() + "' already exists");
         }
         MainCategory mainCategoryExist = modelMapper.map(mainCategory, MainCategory.class);
         mainCategoryRepository.save(mainCategoryExist);
@@ -60,7 +60,6 @@ public class MainCategoryService implements IMainCategoryService {
         if (mainCategory == null) {
             throw new Exception("MainCategory not found");
         }
-        // Map đối tượng MainCategory sang MainCategoryResponse
         MainCategoryResponse mainCategoryResponse = modelMapper.map(mainCategory, MainCategoryResponse.class);
         return mainCategoryResponse;
     }

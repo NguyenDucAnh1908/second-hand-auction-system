@@ -1,5 +1,6 @@
 package com.second_hand_auction_system.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.second_hand_auction_system.utils.ItemStatus;
 import jakarta.persistence.*;
 import lombok.*;
@@ -36,12 +37,22 @@ public class Item extends BaseEntity{
     @Column(name = "brand_name")
     private String brandName;
 
-    @Lob
-    @Column(name = "document")
-    private byte[] fileData;
+//    @Lob
+//    @Column(name = "document")
+//    private byte[] fileData;
 
     @Column(name = "thumbnail")
     private String thumbnail;
+
+    @Column(name = "img_default")
+    private String imgDefault;
+
+//    @Column(name = "img_item")
+//    private String imgItem;
+
+    @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<ImageItem> imageItems;
 
     @Column(name = "create_By")
     private String createBy;
@@ -57,8 +68,8 @@ public class Item extends BaseEntity{
     @JoinColumn(name = "feedback_id")
     private FeedBack feedback;
 
-    @OneToOne(mappedBy = "item",cascade = CascadeType.ALL,optional = true)
-    private Auction auction;
+//    @OneToOne(mappedBy = "item",cascade = CascadeType.ALL,optional = true)
+//    private Auction auction;
 
     @OneToOne(mappedBy = "item",cascade = CascadeType.ALL)
     private ItemSpecific itemSpecific;
