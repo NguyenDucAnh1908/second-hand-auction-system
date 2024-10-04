@@ -9,10 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -40,6 +37,33 @@ public class ItemController {
             );
         }
         itemService.addItem(itemDto);
+        return ResponseEntity.ok(
+                ResponseObject.builder()
+                        .status(HttpStatus.OK)
+                        .message("Success")
+                        .build()
+        );
+    }
+
+    @PutMapping("/{itemId}")
+    public ResponseEntity<?> updateItem(
+            @PathVariable Integer itemId,
+            @Valid @RequestBody ItemDto itemDto,
+            BindingResult result
+    ) throws Exception {
+        if (result.hasErrors()) {
+            List<String> errorMessages = result.getFieldErrors()
+                    .stream()
+                    .map(FieldError::getDefaultMessage)
+                    .toList();
+            return ResponseEntity.badRequest().body(
+                    ResponseObject.builder()
+                            .status(HttpStatus.BAD_REQUEST)
+                            .message(String.valueOf(errorMessages))
+                            .build()
+            );
+        }
+        itemService.updateItem(itemId, itemDto);
         return ResponseEntity.ok(
                 ResponseObject.builder()
                         .status(HttpStatus.OK)

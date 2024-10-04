@@ -54,15 +54,6 @@ public class ItemDto {
     @JsonProperty("img_item")
     private List<ImgItemDto> imgItem;
 
-    // Người tạo sản phẩm
-    @NotBlank(message = "Created by is required")
-    @JsonProperty("created_by")
-    private String createBy;
-
-    // Người cập nhật sản phẩm
-    @JsonProperty("updated_by")
-    private String updateBy;
-
     // Mã người dùng (liên kết với người dùng)
     @NotNull(message = "User ID is required")
     @JsonProperty("user_id")

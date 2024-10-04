@@ -4,13 +4,8 @@ import com.second_hand_auction_system.dtos.request.item.ImgItemDto;
 import com.second_hand_auction_system.dtos.request.item.ItemDto;
 import com.second_hand_auction_system.dtos.request.item.ItemSpecificDto;
 import com.second_hand_auction_system.exceptions.DataNotFoundException;
-import com.second_hand_auction_system.models.ImageItem;
-import com.second_hand_auction_system.models.Item;
-import com.second_hand_auction_system.models.ItemSpecific;
-import com.second_hand_auction_system.models.SubCategory;
-import com.second_hand_auction_system.repositories.ImageItemRepository;
-import com.second_hand_auction_system.repositories.ItemRepository;
-import com.second_hand_auction_system.repositories.SubCategoryRepository;
+import com.second_hand_auction_system.models.*;
+import com.second_hand_auction_system.repositories.*;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -21,11 +16,13 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class ItemService implements IItemService{
+public class ItemService implements IItemService {
     private final ItemRepository itemRepository;
     private final SubCategoryRepository subCategoryRepository;
     private final ImageItemRepository imageItemRepository;
+    private final UserRepository userRepository;
     private final ModelMapper modelMapper;
+    private final ItemSpecificRepository itemSpecificRepository;
 
     @Override
     @Transactional
@@ -33,33 +30,23 @@ public class ItemService implements IItemService{
         Item item = modelMapper.map(itemDto, Item.class);
         SubCategory subCategory = subCategoryRepository.findById(itemDto.getScId())
                 .orElseThrow(() -> new DataNotFoundException("SubCategory not found with id: " + itemDto.getScId()));
+        User userExist = userRepository.findById(itemDto.getUserId())
+                .orElseThrow(() -> new DataNotFoundException("User not found with id: " + itemDto.getUserId()));
+
         item.setSubCategory(subCategory);
+        item.setUser(userExist);
+        item.setCreateBy(userExist.getUsername());
+        item.setUpdateBy(userExist.getUsername());
         if (itemDto.getItemSpecific() != null) {
             ItemSpecific itemSpecific = modelMapper.map(itemDto.getItemSpecific(), ItemSpecific.class);
             item.setItemSpecific(itemSpecific);
         }
-
-//        if (itemDto.getImgItem() != null && !itemDto.getImgItem().isEmpty()) {
-//            List<ImageItem> imageItems = new ArrayList<>();
-//            for (ImgItemDto imgItemDto : itemDto.getImgItem()) {
-//                ImageItem imageItem = new ImageItem();
-//                imageItem.setImageUrl(imgItemDto.getImageUrl()); // Set image URL
-//                imageItem.setItem(item);  // Set the relationship with Item
-//                imageItems.add(imageItem);
-//            }
-//            // Save all image items in one go
-//            imageItemRepository.saveAll(imageItems);
-//            // Optionally, associate the list of image items back to the item object
-//            item.setImageItems(imageItems);
-//        }
         if (itemDto.getImgItem() != null && !itemDto.getImgItem().isEmpty()) {
             List<ImgItemDto> imgItemDtos = itemDto.getImgItem();
-
             // Limit to 5 images
             if (imgItemDtos.size() > 5) {
                 throw new Exception("Cannot upload more than 5 images.");
             }
-
             List<ImageItem> imageItems = new ArrayList<>();
             for (int i = 0; i < imgItemDtos.size(); i++) {
                 ImgItemDto imgItemDto = imgItemDtos.get(i);
@@ -73,23 +60,61 @@ public class ItemService implements IItemService{
                     item.setThumbnail(imgItemDto.getImageUrl());
                 }
             }
-
             // Save all image items in one go
             imageItemRepository.saveAll(imageItems);
             // Optionally, associate the list of image items back to the item object
             item.setImageItems(imageItems);
         }
         itemRepository.save(item);
-
     }
 
     @Override
-    public void updateItem(ItemDto itemDto) throws Exception {
-
+    public void updateItem(int itemId, ItemDto itemDto) throws Exception {
+        Item itemExist = itemRepository.findById(itemId)
+                .orElseThrow(() -> new DataNotFoundException("Item not found"));
+        SubCategory subCategory = subCategoryRepository.findById(itemDto.getScId())
+                .orElseThrow(() -> new DataNotFoundException("SubCategory not found with id: " + itemDto.getScId()));
+        User userExist = userRepository.findById(itemDto.getUserId())
+                .orElseThrow(() -> new DataNotFoundException("User not found with id: " + itemDto.getUserId()));
+        modelMapper.map(itemDto, itemExist);
+        itemExist.setSubCategory(subCategory);
+        itemExist.setUser(userExist);
+        itemExist.setCreateBy(userExist.getUsername());
+        itemExist.setUpdateBy(userExist.getUsername());
+        if (itemDto.getItemSpecific() != null) {
+            ItemSpecific itemSpecificExist = itemSpecificRepository.findById(itemExist.getItemSpecific().getItemSpecificId())
+                    .orElseThrow(() -> new DataNotFoundException("Item not found"));
+            modelMapper.map(itemDto.getItemSpecific(), itemSpecificExist);
+            itemExist.setItemSpecific(itemSpecificExist);
+        }
+        if (itemDto.getImgItem() != null && !itemDto.getImgItem().isEmpty()) {
+            List<ImgItemDto> imgItemDtos = itemDto.getImgItem();
+            // Limit to 5 images
+            if (imgItemDtos.size() > 5) {
+                throw new Exception("Cannot upload more than 5 images.");
+            }
+            List<ImageItem> imageItems = new ArrayList<>();
+            for (int i = 0; i < imgItemDtos.size(); i++) {
+                ImgItemDto imgItemDto = imgItemDtos.get(i);
+                ImageItem imageItem = new ImageItem();
+                imageItem.setImageUrl(imgItemDto.getImageUrl()); // Set image URL
+                imageItem.setItem(itemExist);  // Set the relationship with Item
+                imageItems.add(imageItem);
+                // Set the first image as thumbnail
+                if (i == 0) {
+                    itemExist.setThumbnail(imgItemDto.getImageUrl());
+                }
+            }
+            // Save all image items in one go
+            imageItemRepository.saveAll(imageItems);
+            // Optionally, associate the list of image items back to the item object
+            itemExist.setImageItems(imageItems);
+        }
+        itemRepository.save(itemExist);
     }
 
     @Override
-    public void deleteItem(ItemDto itemDto) throws Exception {
+    public void deleteItem(int itemId, ItemDto itemDto) throws Exception {
 
     }
 }
