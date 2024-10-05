@@ -6,6 +6,7 @@ import com.second_hand_auction_system.dtos.request.item.ItemSpecificDto;
 import com.second_hand_auction_system.exceptions.DataNotFoundException;
 import com.second_hand_auction_system.models.*;
 import com.second_hand_auction_system.repositories.*;
+import com.second_hand_auction_system.utils.ItemStatus;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -87,34 +88,14 @@ public class ItemService implements IItemService {
             modelMapper.map(itemDto.getItemSpecific(), itemSpecificExist);
             itemExist.setItemSpecific(itemSpecificExist);
         }
-        if (itemDto.getImgItem() != null && !itemDto.getImgItem().isEmpty()) {
-            List<ImgItemDto> imgItemDtos = itemDto.getImgItem();
-            // Limit to 5 images
-            if (imgItemDtos.size() > 5) {
-                throw new Exception("Cannot upload more than 5 images.");
-            }
-            List<ImageItem> imageItems = new ArrayList<>();
-            for (int i = 0; i < imgItemDtos.size(); i++) {
-                ImgItemDto imgItemDto = imgItemDtos.get(i);
-                ImageItem imageItem = new ImageItem();
-                imageItem.setImageUrl(imgItemDto.getImageUrl()); // Set image URL
-                imageItem.setItem(itemExist);  // Set the relationship with Item
-                imageItems.add(imageItem);
-                // Set the first image as thumbnail
-                if (i == 0) {
-                    itemExist.setThumbnail(imgItemDto.getImageUrl());
-                }
-            }
-            // Save all image items in one go
-            imageItemRepository.saveAll(imageItems);
-            // Optionally, associate the list of image items back to the item object
-            itemExist.setImageItems(imageItems);
-        }
         itemRepository.save(itemExist);
     }
 
     @Override
-    public void deleteItem(int itemId, ItemDto itemDto) throws Exception {
-
+    public void deleteItem(int itemId) throws Exception {
+        Item item = itemRepository.findById(itemId)
+                .orElseThrow(() -> new DataNotFoundException("Item not found"));
+        item.setItemStatus(ItemStatus.INACTIVE);
+        itemRepository.save(item);
     }
 }

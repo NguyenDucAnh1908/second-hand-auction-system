@@ -71,4 +71,17 @@ public class ItemController {
                         .build()
         );
     }
+
+    @DeleteMapping("/{itemId}")
+    public ResponseEntity<?> deleteItem(
+            @PathVariable Integer itemId
+    ) throws Exception {
+        itemService.deleteItem(itemId);
+        return ResponseEntity.ok(
+                ResponseObject.builder()
+                        .status(HttpStatus.OK)
+                        .message("Success")
+                        .build()
+        );
+    }
 }

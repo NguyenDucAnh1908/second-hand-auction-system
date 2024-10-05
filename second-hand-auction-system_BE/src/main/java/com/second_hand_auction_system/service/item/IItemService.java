@@ -7,5 +7,5 @@ public interface IItemService {
 
     void updateItem(int itemId, ItemDto itemDto) throws Exception;
 
-    void deleteItem(int itemId, ItemDto itemDto) throws Exception;
+    void deleteItem(int itemId) throws Exception;
 }
