@@ -23,6 +23,9 @@ public class TransactionSystem {
     @Column(name = "transaction_type")
     private String transactionType;
 
+    @Column(name = "transaction_wallet_code")
+    private String transactionWalletCode;
+
     @Column(name = "status")
     private String status;
 

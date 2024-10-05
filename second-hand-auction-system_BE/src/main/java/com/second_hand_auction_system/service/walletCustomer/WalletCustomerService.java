@@ -3,14 +3,18 @@ package com.second_hand_auction_system.service.walletCustomer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.second_hand_auction_system.dtos.request.walletCustomer.Deposit;
+import com.second_hand_auction_system.dtos.request.walletCustomer.PaymentRequest;
 import com.second_hand_auction_system.dtos.responses.ResponseObject;
+import com.second_hand_auction_system.models.TransactionSystem;
 import com.second_hand_auction_system.models.TransactionWallet;
 import com.second_hand_auction_system.models.User;
 import com.second_hand_auction_system.models.WalletCustomer;
+import com.second_hand_auction_system.repositories.TransactionWalletRepository;
 import com.second_hand_auction_system.repositories.UserRepository;
 import com.second_hand_auction_system.repositories.WalletCustomerRepository;
 import com.second_hand_auction_system.service.jwt.IJwtService;
 import com.second_hand_auction_system.utils.StatusWallet;
+import com.second_hand_auction_system.utils.TransactionType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +25,7 @@ import vn.payos.PayOS;
 import vn.payos.type.CheckoutResponseData;
 import vn.payos.type.ItemData;
 import vn.payos.type.PaymentData;
+import vn.payos.type.PaymentLinkData;
 
 import java.util.Date;
 import java.util.Objects;
@@ -33,6 +38,7 @@ public class WalletCustomerService implements IWalletCustomerService {
     private final PayOS payOS;
     private final IJwtService jwtService;
     private final UserRepository userRepository;
+    private final TransactionWalletRepository transactionWalletRepository;
 
     @Override
     public ResponseEntity<ResponseObject> depositWallet(Deposit deposit) {
@@ -70,13 +76,15 @@ public class WalletCustomerService implements IWalletCustomerService {
                 wallet = WalletCustomer.builder()
                         .balance(balance)
                         .statusWallet(StatusWallet.ACTIVE)
-                        .lastTransaction(null)
-                        .walletCustomerId(requester.getId())
+                        .lastTransaction(bankName)
+                        .user(requester)
                         .build();
                 walletCustomerRepository.save(wallet);
             } else {
                 wallet = walletOpt.get();
                 double newBalance = wallet.getBalance() + balance;
+                wallet.setBalance(newBalance);
+                wallet.setUser(requester);
                 walletCustomerRepository.save(wallet);
             }
             String currentTime = String.valueOf(new Date().getTime());
@@ -96,24 +104,55 @@ public class WalletCustomerService implements IWalletCustomerService {
                     .returnUrl(successUrl)
                     .cancelUrl(cancelUrl)
                     .build();
-
             CheckoutResponseData paymentLinkData = payOS.createPaymentLink(paymentData);
+            TransactionWallet transactionWallet = new TransactionWallet();
+            transactionWallet.setAmount((int) balance);
+            transactionWallet.setTransactionType(TransactionType.DEPOSIT);
+            transactionWallet.setCommissionRate(0);
+            transactionWallet.setCommissionAmount(0);
+            transactionWallet.setTransactionWalletCode(paymentLinkData.getOrderCode());
+            transactionWalletRepository.save(transactionWallet);
 
-            // Success response
+
             response.put("error", 0);
             response.put("message", "success");
             response.set("data", mapper.valueToTree(paymentLinkData));
             return ResponseEntity.ok(new ResponseObject("Deposit success",HttpStatus.valueOf(HttpStatus.OK.value()),paymentLinkData));
-
-
-
         } catch (Exception e) {
-            // Handle exceptions
             response.put("error", -1);
             response.put("message", "An error occurred: " + e.getMessage());
             response.set("data", null);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ResponseObject("An error occurred",HttpStatus.INTERNAL_SERVER_ERROR,null));
         }
+    }
+
+    @Override
+    public ResponseEntity<ResponseObject> getWalletCustomer(Long id) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectNode response = objectMapper.createObjectNode();
+
+        try {
+            PaymentLinkData order = payOS.getPaymentLinkInformation(id);
+
+//            TransactionWallet transactionWallet = transactionWalletRepository.findBy
+            response.set("data", objectMapper.valueToTree(order));
+            response.put("error", 0);
+            response.put("message", "ok");
+            return ResponseEntity.ok().body(new ResponseObject("ok",HttpStatus.OK,response));
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.put("error", -1);
+            response.put("message", e.getMessage());
+            response.set("data", null);
+            return ResponseEntity.ok().body(new ResponseObject("fail",HttpStatus.BAD_REQUEST,response));
+        }
+
+    }
+
+    @Override
+    public ResponseEntity<?> updateStatus(PaymentRequest payment) {
+
+        return null;
     }
 
 }

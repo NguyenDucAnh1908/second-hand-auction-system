@@ -17,6 +17,9 @@ public class TransactionWallet extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer transactionWalletId;
 
+    @Column(name = "transactionWallet_code")
+    private long transactionWalletCode;
+
     @Column(name = "amount")
     private int amount;
 
