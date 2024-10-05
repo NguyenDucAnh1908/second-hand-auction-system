@@ -186,16 +186,15 @@ export default function ProductReviewSection() {
                             <div className="w-full flex justify-center">
                                 <div
                                     className="mb-[30px] flex flex-col items-start gap-[18px] bg-white p-5 rounded-[20px] shadow-md">
-                                    <div className="flex items-center gap-[13px]">
-                                        <Img
-                                            src="https://docs.material-tailwind.com/img/face-2.jpg"
-                                            alt="Seller Image"
-                                            className="h-[44px] w-[14%] object-contain rounded-full"
-                                        />
-                                        <Heading size="textxs" as="p"
-                                                 className="text-[15px] font-medium text-black-900">
-                                            Nguyễn Hồng Chánh
-                                        </Heading>
+                                    <div className="flex items-center gap-4">
+                                        <Avatar src="https://docs.material-tailwind.com/img/face-2.jpg" alt="avatar"
+                                                variant="rounded"/>
+                                        <div>
+                                            <Typography variant="h6">Tania Andrew</Typography>
+                                            <Typography variant="small" color="gray" className="font-normal">
+                                                Web Developer
+                                            </Typography>
+                                        </div>
                                     </div>
                                     <Heading size="textxs" as="p" className="text-[15px] font-medium text-black-900">
                                         Số điện thoại: 0937534654
