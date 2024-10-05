@@ -37,10 +37,7 @@ function App() {
                 <Route path="DepositMoney" index element={<DepositMoneyPage/>}/>
                 <Route path="Address" index element={<AddressPage/>}/>
                 {/*<Route path="AddAddress" index element={<CreateAddressPage/>}/>*/}
-                <Route
-                    path="ListOfSellerProduct"
-                    index
-                    element={<ListOfSellerProductPage/>}
+                <Route path="ListOfSellerProduct" index element={<ListOfSellerProductPage/>}
                 />
                 <Route path="RegisterProduct" index element={<RegisterProductPage/>}/>
                 <Route path="TestComponent" index element={<TestComponent/>}/>
