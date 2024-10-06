@@ -1,6 +1,7 @@
 package com.second_hand_auction_system.dtos.responses.mainCategory;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.second_hand_auction_system.dtos.responses.BaseResponse;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.*;
@@ -11,7 +12,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class MainCategoryResponse {
+public class MainCategoryResponse extends BaseResponse {
     @JsonProperty("main_category_id")
     private Integer mainCategoryId;
 

@@ -1,9 +1,11 @@
 package com.second_hand_auction_system.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.second_hand_auction_system.utils.AuctionStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.sql.Time;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -20,10 +22,20 @@ public class Auction extends BaseEntity{
     private Integer auctionId;
 
     @Column(name = "start_time")
-    private LocalDateTime startTime;
+    @JsonFormat(pattern = "HH:mm:ss", shape = JsonFormat.Shape.STRING)
+    private Time startTime;
 
     @Column(name = "end_time")
-    private LocalDateTime  endTime;
+    @JsonFormat(pattern = "HH:mm:ss", shape = JsonFormat.Shape.STRING)
+    private Time endTime;
+
+    @Column(name = "start_date")
+    @JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)
+    private Date startDate;
+
+    @Column(name = "end_date")
+    @JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)
+    private Date endDate;
 
     @Column(name = "start_price")
     private double startPrice;
@@ -58,4 +70,5 @@ public class Auction extends BaseEntity{
     @OneToOne
     @JoinColumn(name = "item_id")
     private Item item;
+
 }

@@ -47,6 +47,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/v1/main-category/**").permitAll()
                         .requestMatchers("/api/v1/sub-category/**").permitAll()
                         .requestMatchers("/api/v1/item/**").permitAll()
+                        .requestMatchers("/api/v1/auction/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
