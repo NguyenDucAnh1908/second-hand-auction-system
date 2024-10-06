@@ -1,4 +1,13 @@
+// import React, { useState } from 'react';
 import { Helmet } from "react-helmet";
+
+import Sidebar from '../../../partials/Sidebar';
+import Header from '../../../partials/Header';
+import FilterButton from '../../../components/DashboardSeller/DropdownFilter';
+import Datepicker from '../../../components/DashboardSeller/Datepicker';
+
+import Banner from '../../../partials/Banner';
+
 import {
   ButtonDH,
   Img,
@@ -9,43 +18,43 @@ import {
   TextArea,
 } from "../../../components";
 import React, { useState } from "react";
-import HeaderSeller from "../../../components/HeaderSeller";
-import SidebarSeller from "../../../components/SidebarSeller/index.jsx";
 
-const dropDownOptions = [
-  { label: "Option1", value: "option1" },
-  { label: "Option2", value: "option2" },
-  { label: "Option3", value: "option3" },
-];
 
-export default function RegisterProductPage() {
-  const [isSidebarVisible, setSidebarVisible] = useState(true);
+function RegisterProductPage() {
 
-  const toggleSidebar = () => {
-    setSidebarVisible((prev) => !prev);
-  };
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <>
-      <Helmet>
-        <title>Product Registration - Manage Your Items with Ease</title>
-        <meta
-          name="description"
-          content="Register your products on EZShop to manage listings, track orders, and ensure secure transactions. Complete product details, upload images, and set pricing with confidence."
-        />
-      </Helmet>
-      <div className="flex w-full flex-col items-center gap-[132px] bg-bg-white md:gap-[99px] sm:gap-[66px]">
-        <div className=" w-[100%] md:w-full md:px-5 ">
-          <HeaderSeller toggleSidebar={toggleSidebar} />
-          <div className="flex">
-            <div
-              className={`transition-all duration-300 ${isSidebarVisible ? "w-[25%]" : "hidden"}`}
-            >
-              <SidebarSeller />
+    <div className="flex h-screen overflow-hidden">
+
+      {/* Sidebar */}
+      <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+
+      {/* Content area */}
+      <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
+
+        {/*  Site header */}
+        <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+
+        <main className="grow">
+          <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
+
+            {/* Dashboard actions */}
+            <div className="sm:flex sm:justify-between sm:items-center mb-8">
+
+              {/* Left: Title */}
+          
+
+              {/* Right: Actions */}
+             
+             
+
             </div>
 
+           
+          {/* cái chính */}
             <div
-              className={`transition-all duration-300 ${isSidebarVisible ? "w-[75%]" : "w-full"}`}
+              className="w-[75%]"
             >
               <div className="flex items-start md:flex-col">
                 <div className="mt-3.5 flex flex-1 flex-col gap-16 self-center md:self-stretch sm:gap-8">
@@ -185,7 +194,7 @@ export default function RegisterProductPage() {
                                 }
                                 name="Category Dropdown"
                                 placeholder={`Danh mục sản phẩm`}
-                                options={dropDownOptions}
+                              
                                 color="white"
                                 className="gap-4 self-stretch rounded-md border border-solid border-gray-200 px-3 font-jost "
                               />
@@ -208,7 +217,7 @@ export default function RegisterProductPage() {
                                 }
                                 name="Condition Dropdown"
                                 placeholder={`Tình trạng sản phẩm`}
-                                options={dropDownOptions}
+                             
                                 color="white"
                                 className="gap-4 self-stretch rounded-md border border-solid border-gray-200 px-3 font-jost"
                               />
@@ -324,7 +333,7 @@ export default function RegisterProductPage() {
                               }
                               name="Manufacture Date Dropdown"
                               placeholder={`Ngày sản xuất`}
-                              options={dropDownOptions}
+                        
                               className="gap-4 self-stretch rounded-md border border-solid border-gray-200 px-3 font-jost"
                             />
                           </div>
@@ -446,9 +455,18 @@ export default function RegisterProductPage() {
                 </div>
               </div>
             </div>
+
           </div>
-        </div>
+        </main>
+
+        <Banner />
+
       </div>
-    </>
+    </div>
   );
 }
+
+
+export default RegisterProductPage;
+
+

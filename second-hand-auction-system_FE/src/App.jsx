@@ -40,7 +40,7 @@ function App() {
                 {/*<Route path="AddAddress" index element={<CreateAddressPage/>}/>*/}
                 <Route path="ListOfSellerProduct" index element={<ListOfSellerProductPage/>}
                 />
-                <Route path="RegisterProduct" index element={<RegisterProductPage/>}/>
+               
                 <Route path="TestComponent" index element={<TestComponent/>}/>
                 <Route path="Test" index element={<TestAPI/>}/>
                 <Route path="NotFound" index element={<NotFound/>}/>
@@ -50,7 +50,8 @@ function App() {
             <Route path="*" element={<Navigate to="/dashboard/home" replace/>}/>
 
             {/* seller */}
-            <Route path="/dashboard-seller/*" element={<DashboardSeller />} /> {/* Thêm route cho dashboard seller */}
+            <Route path="/dashboard-seller/*" element={<DashboardSeller />} /> 
+            <Route path="RegisterProduct" index element={<RegisterProductPage/>}/>
         </Routes>
     );
 }
