@@ -19,6 +19,7 @@ import ListOfSellerProductPage from "./pages/Seller/ListOfSellerProducts/index.j
 import RegisterProductPage from "./pages/Seller/RegisterProduct/index.jsx";
 import Dashboard from "./layouts-admin/dashboard.jsx";
 import Auth from "./layouts-admin/auth.jsx";
+import DashboardSeller from "./pages/Seller/Dashboard.jsx";
 
 function App() {
     return (
@@ -47,6 +48,9 @@ function App() {
             <Route path="/dashboard/*" element={<Dashboard/>}/>
             <Route path="/auth/*" element={<Auth/>}/>
             <Route path="*" element={<Navigate to="/dashboard/home" replace/>}/>
+
+            {/* seller */}
+            <Route path="/dashboard-seller/*" element={<DashboardSeller />} /> {/* Thêm route cho dashboard seller */}
         </Routes>
     );
 }
