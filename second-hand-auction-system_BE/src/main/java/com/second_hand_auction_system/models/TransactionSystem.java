@@ -23,8 +23,8 @@ public class TransactionSystem {
     @Column(name = "transaction_type")
     private String transactionType;
 
-    @Column(name = "transaction_wallet_code")
-    private String transactionWalletCode;
+    @Column(name = "transaction_system_code")
+    private String transactionSystemCode;
 
     @Column(name = "status")
     private String status;

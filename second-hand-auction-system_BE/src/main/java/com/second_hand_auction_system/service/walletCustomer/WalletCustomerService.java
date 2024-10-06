@@ -9,12 +9,15 @@ import com.second_hand_auction_system.models.TransactionSystem;
 import com.second_hand_auction_system.models.TransactionWallet;
 import com.second_hand_auction_system.models.User;
 import com.second_hand_auction_system.models.WalletCustomer;
+import com.second_hand_auction_system.repositories.TransactionSystemRepository;
 import com.second_hand_auction_system.repositories.TransactionWalletRepository;
 import com.second_hand_auction_system.repositories.UserRepository;
 import com.second_hand_auction_system.repositories.WalletCustomerRepository;
 import com.second_hand_auction_system.service.jwt.IJwtService;
 import com.second_hand_auction_system.utils.StatusWallet;
+import com.second_hand_auction_system.utils.TransactionStatus;
 import com.second_hand_auction_system.utils.TransactionType;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,8 +42,10 @@ public class WalletCustomerService implements IWalletCustomerService {
     private final IJwtService jwtService;
     private final UserRepository userRepository;
     private final TransactionWalletRepository transactionWalletRepository;
+    private final TransactionSystemRepository transactionSystemRepository;
 
     @Override
+    @Transactional
     public ResponseEntity<ResponseObject> depositWallet(Deposit deposit) {
         ObjectMapper mapper = new ObjectMapper();
         ObjectNode response = mapper.createObjectNode();
@@ -110,8 +115,10 @@ public class WalletCustomerService implements IWalletCustomerService {
             transactionWallet.setTransactionType(TransactionType.DEPOSIT);
             transactionWallet.setCommissionRate(0);
             transactionWallet.setCommissionAmount(0);
+            transactionWallet.setTransactionStatus(TransactionStatus.PENDING);
             transactionWallet.setTransactionWalletCode(paymentLinkData.getOrderCode());
             transactionWalletRepository.save(transactionWallet);
+
 
 
             response.put("error", 0);
@@ -133,25 +140,57 @@ public class WalletCustomerService implements IWalletCustomerService {
 
         try {
             PaymentLinkData order = payOS.getPaymentLinkInformation(id);
+            String authHeader = ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder.getRequestAttributes())).getRequest().getHeader("Authorization");
+            if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body(ResponseObject.builder()
+                                .status(HttpStatus.UNAUTHORIZED)
+                                .message("Missing or invalid Authorization header")
+                                .build());
+            }
+            String token = authHeader.substring(7);
+            String userEmail = jwtService.extractUserEmail(token);
+            User requester = userRepository.findByEmailAndStatusIsTrue(userEmail).orElse(null);
+            if (requester == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ResponseObject.builder()
+                                .status(HttpStatus.NOT_FOUND)
+                                .message("Unauthorized request - User not found")
+                                .data(null)
+                        .build());
+            }
+            WalletCustomer walletCustomer = walletCustomerRepository.findByWalletCustomerId(requester.getId()).orElse(null);
+            var transactionWallet = transactionWalletRepository.findTransactionWalletByTransactionWalletCode(id).orElse(null);
+            if(transactionWallet == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ResponseObject.builder()
+                                .status(HttpStatus.NOT_FOUND)
+                                .message("Not found ")
+                                .data(null)
+                        .build());
+            }
 
-//            TransactionWallet transactionWallet = transactionWalletRepository.findBy
+            transactionWallet.setCommissionAmount(0);
+            transactionWallet.setCommissionRate(0);
+            transactionWallet.setWalletCustomer(walletCustomer);
+            transactionWallet.setTransactionType(TransactionType.DEPOSIT);
+            transactionWallet.setTransactionStatus(TransactionStatus.COMPLETED);
+            transactionWalletRepository.save(transactionWallet);
+//            var transactionSystem = transactionSystemRepository.f
             response.set("data", objectMapper.valueToTree(order));
             response.put("error", 0);
             response.put("message", "ok");
-            return ResponseEntity.ok().body(new ResponseObject("ok",HttpStatus.OK,response));
+            return ResponseEntity.ok().body(new ResponseObject("Transaction success",HttpStatus.OK,response));
         } catch (Exception e) {
             e.printStackTrace();
             response.put("error", -1);
             response.put("message", e.getMessage());
             response.set("data", null);
-            return ResponseEntity.ok().body(new ResponseObject("fail",HttpStatus.BAD_REQUEST,response));
+            return ResponseEntity.ok().body(new ResponseObject("Transaction Fail",HttpStatus.BAD_REQUEST,response));
         }
 
     }
 
     @Override
     public ResponseEntity<?> updateStatus(PaymentRequest payment) {
-
         return null;
     }
 
