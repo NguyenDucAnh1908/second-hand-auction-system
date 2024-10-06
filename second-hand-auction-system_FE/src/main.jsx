@@ -38,12 +38,13 @@ import "./styles/index.css";
 import "./styles/font.css";
 import './css/style.css';
 
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <ThemeProvider>
         <MaterialTailwindControllerProvider>
-          <App />
+            <App />
         </MaterialTailwindControllerProvider>
       </ThemeProvider>
     </BrowserRouter>
