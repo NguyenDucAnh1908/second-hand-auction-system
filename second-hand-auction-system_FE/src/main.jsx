@@ -36,6 +36,7 @@ import "../public/css/tailwind.css";
 import "./styles/tailwind.css";
 import "./styles/index.css";
 import "./styles/font.css";
+import './css/style.css';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
